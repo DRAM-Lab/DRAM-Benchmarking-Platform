@@ -6,6 +6,8 @@
   "tests/test_platform.py::test_validate_model_provenance_passes",
   "tests/test_read_path_report.py::test_deck_only_report_has_scope_section",
   "tests/test_read_path_report.py::test_signal_report_executive_summary",
+  "tests/test_results_readme.py::test_finalize_results_markdown_combines_index_and_lane_body",
+  "tests/test_results_readme.py::test_finalize_results_markdown_is_idempotent",
   "tests/test_suites.py::test_pareto_derive_flat_device_layout",
   "tests/test_suites.py::test_suite_spec_corner_sweep_paths",
   "tests/test_suites.py::test_suite_spec_multi_tool_paths",

@@ -1,7 +1,7 @@
 {
   "platform": "OpenDRAMBench",
   "platform_version": "0.2.0",
-  "generated_at": "2026-06-23T06:04:58Z",
+  "generated_at": "2026-06-23T06:26:41Z",
   "status": "complete",
   "suite": "device",
   "corner": "tt",
@@ -48,34 +48,29 @@
       "sha256": "24e3940f985d039712190253b914ce7bfe5cfe3be3f09df6c0354655c9d259c5"
     },
     {
-      "path": "MANIFEST.json",
-      "bytes": 2777,
-      "sha256": "41f321aa5a2fefb819c52746c4b5ce67bd5aaf456d2d23702624d916fff6a685"
-    },
-    {
       "path": "RESULTS.md",
-      "bytes": 7143,
-      "sha256": "954aa7f6dd003a9964caf48bfba1ac488f8a3e1e58ed9cf7084df9be49547543"
+      "bytes": 6247,
+      "sha256": "351161449c03f5c2d009c9b8498ce6c5663c382c92ff2304c4fbf5597b0518bd"
     },
     {
       "path": "figures/ccell_scaling.svg",
       "bytes": 50462,
-      "sha256": "496f91717a9726dfb95510cbd2bdf1fa4aa6106888728b985358ae52b586db40"
+      "sha256": "96f0d5aa160516c1d63fc682fc59d65973cefa2bbd7b1e79fe70b343ba9f0098"
     },
     {
       "path": "figures/pareto_ion_ioff.svg",
       "bytes": 50212,
-      "sha256": "da5ee339aef1fa8de24c5bf261f58aedb2140be269b1abb8843db8df8da68e78"
+      "sha256": "ccd075845f77595ae6f3a2c1b72d3c34d7e118fe9250d6b33ed4a7d3939f05c3"
     },
     {
       "path": "figures/radar_fom.svg",
       "bytes": 59184,
-      "sha256": "d1515d35907cae1d50d688cadbda2a33224a4c953d6636e33228c3a77adfeb26"
+      "sha256": "8677ec59e299774d9838f37618082c297ca260a1f874abeb8b8dc470d6c5707e"
     },
     {
       "path": "figures/vct_scaling.svg",
       "bytes": 47331,
-      "sha256": "8babf2cdb946ccc39107ca86febe19d3421a65259c888bd0fcf68b4dd3ff8d33"
+      "sha256": "3a9970a68efd7cab66878ab024de602d757cdd763a9800306dfc4b7b30b1b5b4"
     }
   ]
 }

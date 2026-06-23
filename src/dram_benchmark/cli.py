@@ -11,7 +11,7 @@ from pathlib import Path
 from dram_benchmark.manifest import write_manifest
 from dram_benchmark.orchestrator import generate_platform_report, run_suite
 from dram_benchmark.paths import RESULTS_ROOT, list_access_model_ids, resolve_model_root
-from dram_benchmark.report.platform import prepend_platform_header
+from dram_benchmark.report.platform import finalize_results_markdown
 from dram_benchmark.report.summary import write_aggregate_summary
 from dram_benchmark.suites import PAPER_A1_SUITES, SUITE_CHOICES, suite_spec
 from dram_benchmark.validation import validate_results_tree
@@ -88,16 +88,18 @@ def _postprocess_suite(
 ) -> int:
     spec = suite_spec(suite, results_dir, corner=corner)
     generate_platform_report(spec)
-    prepend_platform_header(
-        spec.results_dir / "RESULTS.md",
-        suite=spec.name,
-        corner=spec.reference_corner,
-    )
 
     write_manifest(
         results_dir,
         suite=suite,
         corner=corner,
+        simulator=simulator,
+    )
+    finalize_results_markdown(
+        spec.results_dir / "RESULTS.md",
+        results_dir,
+        suite=spec.name,
+        corner=spec.reference_corner,
         simulator=simulator,
     )
     validation = validate_results_tree(results_dir, suite=suite, corner=corner)
@@ -149,6 +151,13 @@ def main(argv: list[str] | None = None) -> int:
                 exit_code = max(exit_code, code)
             write_aggregate_summary(args.output, corner=args.corner, simulator=args.simulator)
             write_manifest(
+                args.output,
+                suite="all",
+                corner=args.corner,
+                simulator=args.simulator,
+            )
+            finalize_results_markdown(
+                args.output / "RESULTS.md",
                 args.output,
                 suite="all",
                 corner=args.corner,

@@ -15,6 +15,14 @@ from bench.simulator import resolve_backend
 from bench.simulator_compare import list_compared_backends, simulator_compare_report_markdown
 from bench.vct_analysis import vct_scaling_summary_markdown
 
+_FIGURE_TITLES: dict[str, str] = {
+    "pareto_ion_ioff": "Pareto: Ion vs Ioff",
+    "vct_scaling": "VCT node scaling",
+    "radar_fom": "Composite figure of merit",
+    "ccell_scaling": "1T1C read time vs Ccell",
+    "corner_sensitivity": "Corner sensitivity",
+}
+
 # Columns shown in the summary table (human-readable headers).
 _TABLE_COLUMNS: list[tuple[str, str, str]] = [
     ("model_id", "Model", "s"),
@@ -193,6 +201,35 @@ def _cell_ccell_sweep_table(cell_df: pd.DataFrame) -> str:
     return _simple_table(sweep, _CELL_COLUMNS)
 
 
+def _figure_block(path: Path, rel_fig_dir: str) -> str:
+    title = _FIGURE_TITLES.get(path.stem, path.stem.replace("_", " ").title())
+    return f"### {title}\n\n![{title}]({rel_fig_dir}/{path.name})"
+
+
+def _executive_summary(device_df: pd.DataFrame, cell_df: pd.DataFrame) -> str:
+    """Short lead bullets for the report."""
+    lines: list[str] = []
+    if not device_df.empty and "ion_a" in device_df.columns:
+        best_ion = device_df.loc[device_df["ion_a"].idxmax()]
+        best_ioff = device_df.loc[device_df["ioff_a"].idxmin()]
+        lines.append(
+            f"- **Highest Ion:** `{best_ion['model_id']}` ({best_ion['ion_a']:.3e} A)"
+        )
+        lines.append(
+            f"- **Lowest Ioff:** `{best_ioff['model_id']}` ({best_ioff['ioff_a']:.3e} A)"
+        )
+    if not cell_df.empty and "t_read_s" in cell_df.columns:
+        ref = cell_df[cell_df["ccell_ff"] == 20.0] if "ccell_ff" in cell_df.columns else cell_df
+        if ref.empty:
+            ref = cell_df.groupby("model_id").first().reset_index()
+        fastest = ref.loc[ref["t_read_s"].idxmin()]
+        lines.append(
+            f"- **Fastest 1T1C read @ 20 fF:** `{fastest['model_id']}` "
+            f"({fastest['t_read_s']:.3e} s)"
+        )
+    return "\n".join(lines) if lines else "_No summary metrics available._"
+
+
 def generate_report(
     metrics_csv: Path,
     output_md: Path,
@@ -271,11 +308,7 @@ def generate_report(
         model_rev = "unknown"
 
     rel_fig_dir = figures_dir.name if figures_dir else "figures"
-    fig_blocks = "\n\n".join(
-        f"### {path.stem.replace('_', ' ').title()}\n\n"
-        f"![{path.stem}]({rel_fig_dir}/{path.name})"
-        for path in figure_paths
-    )
+    fig_blocks = "\n\n".join(_figure_block(path, rel_fig_dir) for path in figure_paths)
 
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     n_models = df["model_id"].nunique() if "model_id" in df.columns else len(df)
@@ -336,7 +369,7 @@ Full transient sweep at 10, 20, and 30 fF per model.
 {_simple_table(mini_df, _MINI_COLUMNS)}
 """
 
-    body = f"""# OpenDRAM Device Benchmark — Results
+    body = f"""# Device benchmark
 
 **Generated:** {timestamp}  
 **Corners:** {corner} (reference: **{reference_corner}** for tables/plots)  
@@ -344,7 +377,11 @@ Full transient sweep at 10, 20, and 30 fF per model.
 **Models:** {n_models} access devices  
 **OpenDRAMmodelV1 revision:** `{model_rev}`{golden_line}{corner_registry_line}
 
-Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1. See [benchmark_spec.md](../docs/benchmark_spec.md) for metric definitions.
+Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
+
+## Executive summary
+
+{_executive_summary(df, cell_df)}
 {compare_section}{corner_section}
 ## Architecture highlights ({reference_corner})
 
@@ -361,19 +398,6 @@ Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) usin
 ## Summary figures
 
 {fig_blocks}
-
-## Artifacts
-
-| File | Description |
-|------|-------------|
-| `{metrics_csv.name}` | Device metrics (CSV) |
-| `cell_1t1c_metrics_all_corners.csv` | 1T1C sweep (all corners, when present) |
-| `mini_array_metrics_all_corners.csv` | Mini-array (all corners, when present) |
-| `{rel_fig_dir}/` | Pareto, VCT scaling, radar, corner sensitivity, Ccell scaling |
-| `../docs/vct_scaling_analysis.md` | VCT node scaling write-up |
-
----
-*Report produced by `dram-device report` / `run_experiments.sh`*
 """
     output_md.parent.mkdir(parents=True, exist_ok=True)
     output_md.write_text(body, encoding="utf-8")

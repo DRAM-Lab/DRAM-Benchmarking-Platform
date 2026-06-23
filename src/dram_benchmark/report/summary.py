@@ -18,9 +18,8 @@ def write_aggregate_summary(parent_dir: Path, *, corner: str = "tt", simulator: 
         f"**Generated:** {timestamp}",
         f"**Reference corner:** {corner}",
         "",
-        "Self-contained benchmark automation for Open DRAM Model cards. This aggregate bundles",
-        "device extraction, corner/matrix sweeps, multi-tool comparison, read-path signal "
-        "+ SA requirement sweeps, Ccell roadmap, and validation audits.",
+        "Self-contained benchmark automation for Open DRAM Model cards. "
+        "This aggregate indexes each Paper A1 lane; open a suite report for detailed tables.",
         "",
         "| Suite | Role | Primary artifact |",
         "|-------|------|------------------|",

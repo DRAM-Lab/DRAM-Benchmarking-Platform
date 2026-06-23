@@ -1,27 +1,51 @@
-# OpenDRAMBench — Platform Results
+# OpenDRAMBench — Results
 
-**Generated:** 2026-06-23 06:04 UTC
-**Suite:** device
-**Corner scope:** tt
-**Model bundle:** OpenDRAMmodelV1 `e692790da857`
+Reproducible benchmark automation for Open DRAM model cards (Paper A1). This platform extends the Open DRAM Model Part I/II artifacts with push-button reruns, multi-tool comparison, validation, and provenance manifests.
+
 **Models:** 3D_gaa_AOS, 3D_gaa_Si, BCAT_125, VCT_082, VCT_091, VCT_102, VCT_125
 
-Reproducible benchmark automation for Open DRAM model cards (Paper A1 positioning).
-This platform extends the Open DRAM Model Part I/II artifacts with push-button reruns,
-multi-tool comparison, validation, and provenance manifests.
-See [benchmark_spec.md](../docs/benchmark_spec.md) for metric definitions.
+## Run summary
+
+| Field | Value |
+|-------|-------|
+| Suite | `device` |
+| Corner | `tt` |
+| Simulator | ngspice |
+| Generated | 2026-06-23 06:26 UTC |
+| Status | complete |
+| Model bundle | OpenDRAMmodelV1 `e692790da857` |
+
+## Contents
+
+- [Device benchmark](#device-benchmark)
+- [Executive summary](#executive-summary)
+- [Architecture highlights (tt)](#architecture-highlights-tt)
+- [Device vs cell ranking (tt)](#device-vs-cell-ranking-tt)
+- [Metric table (tt)](#metric-table-tt)
+- [VCT scaling summary (tt)](#vct-scaling-summary-tt)
+- [1T1C macro (20 fF reference)](#1t1c-macro-20-ff-reference)
+- [1T1C Ccell sweep (tt)](#1t1c-ccell-sweep-tt)
+- [Mini-array (layout BL RC)](#mini-array-layout-bl-rc)
+- [Summary figures](#summary-figures)
+- [Artifacts](#artifacts)
+- [Reproduce](#reproduce)
 
 ---
+## Device benchmark
 
-# OpenDRAM Device Benchmark — Results
-
-**Generated:** 2026-06-23 06:04 UTC  
+**Generated:** 2026-06-23 06:26 UTC  
 **Corners:** tt (reference: **tt** for tables/plots)  
 **Simulator:** ngspice  
 **Models:** 7 access devices  
-**OpenDRAMmodelV1 revision:** `b204668`
+**OpenDRAMmodelV1 revision:** `caffc74`
 
-Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1. See [benchmark_spec.md](../docs/benchmark_spec.md) for metric definitions.
+Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
+
+## Executive summary
+
+- **Highest Ion:** `3D_gaa_AOS` (4.534e-06 A)
+- **Lowest Ioff:** `BCAT_125` (8.684e-15 A)
+- **Fastest 1T1C read @ 20 fF:** `3D_gaa_AOS` (2.264e-08 s)
 
 ## Architecture highlights (tt)
 
@@ -116,31 +140,42 @@ Full transient sweep at 10, 20, and 30 fF per model.
 
 ## Summary figures
 
-### Pareto Ion Ioff
+### Pareto: Ion vs Ioff
 
-![pareto_ion_ioff](figures/pareto_ion_ioff.svg)
+![Pareto: Ion vs Ioff](figures/pareto_ion_ioff.svg)
 
-### Vct Scaling
+### VCT node scaling
 
-![vct_scaling](figures/vct_scaling.svg)
+![VCT node scaling](figures/vct_scaling.svg)
 
-### Radar Fom
+### Composite figure of merit
 
-![radar_fom](figures/radar_fom.svg)
+![Composite figure of merit](figures/radar_fom.svg)
 
-### Ccell Scaling
+### 1T1C read time vs Ccell
 
-![ccell_scaling](figures/ccell_scaling.svg)
+![1T1C read time vs Ccell](figures/ccell_scaling.svg)
 
 ## Artifacts
 
 | File | Description |
 |------|-------------|
-| `device_metrics.csv` | Device metrics (CSV) |
-| `cell_1t1c_metrics_all_corners.csv` | 1T1C sweep (all corners, when present) |
-| `mini_array_metrics_all_corners.csv` | Mini-array (all corners, when present) |
-| `figures/` | Pareto, VCT scaling, radar, corner sensitivity, Ccell scaling |
-| `../docs/vct_scaling_analysis.md` | VCT node scaling write-up |
+| [`MANIFEST.json`](MANIFEST.json) | Provenance manifest with SHA-256 checksums |
+| [`device_metrics.csv`](device_metrics.csv) | Device-level metrics (Ion, Ioff, Ron, Cgg, …) |
+| [`cell_1t1c_metrics.csv`](cell_1t1c_metrics.csv) | 1T1C transient sweep (10 / 20 / 30 fF) |
+| [`cell_1t1c_metrics_20ff.csv`](cell_1t1c_metrics_20ff.csv) | 1T1C @ 20 fF reference (one row per model) |
+| [`mini_array_metrics.csv`](mini_array_metrics.csv) | Mini-array BL RC and settle metrics |
+| [`decks/`](decks/) | Generated SPICE decks |
+| [`figures/`](figures/) | Summary SVG plots |
+## Reproduce
+
+```bash
+./scripts/run_experiments.sh                    # default: device @ tt
+SUITE=device ./scripts/run_experiments.sh     # replay this suite
+dram-bench run --suite device --corner tt --output results
+```
+
+Metric definitions: [docs/benchmark_spec.md](../docs/benchmark_spec.md)
 
 ---
-*Report produced by `dram-device report` / `run_experiments.sh`*
+*Report produced by `dram-bench` / `run_experiments.sh`*
