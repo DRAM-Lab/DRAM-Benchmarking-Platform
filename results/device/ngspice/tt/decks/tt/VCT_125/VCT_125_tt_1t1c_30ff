@@ -35,7 +35,7 @@ i_hold              =  -3.06585e-11 from=  2.50000e-08 to=  3.50250e-08
 q_read              =   1.01209e-18 from=  1.20000e-08 to=  2.20000e-08
 
                               * 1t1c ccell=30.0ff
-                              Transient Analysis  Tue Jun 23 16:30:44  2026
+                              Transient Analysis  Tue Jun 23 21:10:26  2026
 --------------------------------------------------------------------------------
 Index   time            v(cell)         v(bl)           vpre#branch     
 --------------------------------------------------------------------------------
@@ -915,16 +915,16 @@ Index   time            v(cell)         v(bl)           vpre#branch
 831	4.000000e-08	4.499673e-01	4.500000e-01	-2.55913e-18	
 
 
-Total analysis time (seconds) = 0.122566
+Total analysis time (seconds) = 0.0734544
 
-Total elapsed time (seconds) = 0.135 
+Total elapsed time (seconds) = 0.085 
 
 Total DRAM available = 386307.215 MB.
-DRAM currently available = 20467.367 MB.
+DRAM currently available = 12642.562 MB.
 Maximum ngspice program size =  529.719 MB.
-Current ngspice program size =   14.148 MB.
+Current ngspice program size =   14.082 MB.
 
-Shared ngspice pages =   12.332 MB.
+Shared ngspice pages =   12.266 MB.
 Text (code) pages =    6.266 MB.
 Stack = 0 bytes.
 Library pages =   59.137 MB.

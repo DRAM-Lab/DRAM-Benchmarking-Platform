@@ -206,15 +206,32 @@ def _figure_block(path: Path, rel_fig_dir: str) -> str:
     return f"### {title}\n\n![{title}]({rel_fig_dir}/{path.name})"
 
 
+def _best_row(
+    df: pd.DataFrame,
+    column: str,
+    *,
+    ascending: bool = False,
+) -> pd.Series | None:
+    """Return the row with the best value in *column*, or None if no valid data."""
+    if column not in df.columns or df.empty:
+        return None
+    valid = df.dropna(subset=[column])
+    if valid.empty:
+        return None
+    idx = valid[column].idxmin() if ascending else valid[column].idxmax()
+    return valid.loc[idx]
+
+
 def _executive_summary(device_df: pd.DataFrame, cell_df: pd.DataFrame) -> str:
     """Short lead bullets for the report."""
     lines: list[str] = []
-    if not device_df.empty and "ion_a" in device_df.columns:
-        best_ion = device_df.loc[device_df["ion_a"].idxmax()]
-        best_ioff = device_df.loc[device_df["ioff_a"].idxmin()]
+    best_ion = _best_row(device_df, "ion_a")
+    best_ioff = _best_row(device_df, "ioff_a", ascending=True)
+    if best_ion is not None:
         lines.append(
             f"- **Highest Ion:** `{best_ion['model_id']}` ({best_ion['ion_a']:.3e} A)"
         )
+    if best_ioff is not None:
         lines.append(
             f"- **Lowest Ioff:** `{best_ioff['model_id']}` ({best_ioff['ioff_a']:.3e} A)"
         )
@@ -222,11 +239,12 @@ def _executive_summary(device_df: pd.DataFrame, cell_df: pd.DataFrame) -> str:
         ref = cell_df[cell_df["ccell_ff"] == 20.0] if "ccell_ff" in cell_df.columns else cell_df
         if ref.empty:
             ref = cell_df.groupby("model_id").first().reset_index()
-        fastest = ref.loc[ref["t_read_s"].idxmin()]
-        lines.append(
-            f"- **Fastest 1T1C read @ 20 fF:** `{fastest['model_id']}` "
-            f"({fastest['t_read_s']:.3e} s)"
-        )
+        fastest = _best_row(ref, "t_read_s", ascending=True)
+        if fastest is not None:
+            lines.append(
+                f"- **Fastest 1T1C read @ 20 fF:** `{fastest['model_id']}` "
+                f"({fastest['t_read_s']:.3e} s)"
+            )
     return "\n".join(lines) if lines else "_No summary metrics available._"
 
 

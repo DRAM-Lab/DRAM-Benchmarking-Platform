@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2790262
-Memory  available: 228.6218 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3337043
+Memory  available: 231.3777 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2827.3] ( 24 ),  1 [2828.0] ( 25 ),  2 [2828.0] ( 26 )
-                 3 [2828.1] ( 27 ),  4 [2828.1] ( 28 ),  5 [2828.2] ( 29 )
-                 6 [2828.1] ( 30 ),  7 [2828.2] ( 31 ),  8 [2828.0] ( 32 )
-                 9 [2828.1] ( 33 ), 10 [2828.0] ( 34 ), 11 [2828.2] ( 35 )
+        0:       0 [2899.7] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [2899.8] ( 28 ),  5 [2886.3] ( 29 )
+                 6 [2899.7] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [2900.1] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.4] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.6] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.9] ( 41 )
+                18 [2899.8] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [3300.0] ( 47 )
         
-System load averages (1min, 5min, 15min) : 145.5 %, 148.5 %, 157.3 %
+System load averages (1min, 5min, 15min) : 71.9 %, 83.4 %, 88.3 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_125_ff_read_15ff_vbl40.sp' on river at 4:50:05 PM, Tue Jun 23, 2026 (process id: 2790262).
+Simulating `VCT_125_ff_read_15ff_vbl40.sp' on river at 9:22:36 PM, Tue Jun 23, 2026 (process id: 3337043).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/sense_amp/decks/ff/VCT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         VCT_125_ff_read_15ff_vbl40.sp
 
 Licensing Information:
-[16:50:06.010641] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:22:36.010625] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

@@ -1,0 +1,22 @@
+model_id,metric,open_value,literature_band,direction_match,magnitude_match,gap_notes
+BCAT_125,fpitch,42.0,"[38.0, 52.0] nm",True,H,D0-class extrapolation if below literature min pitch
+BCAT_125,Vdd,0.85,"[0.85, 1.0] V",True,H,ULP nodes may sit below mainstream DRAM Vdd band
+BCAT_125,Ion,3.02361376e-07,directional (VCT Ion increases 082→125),True,M,No public Ion table — simulation projection only
+VCT_082,fpitch,59.99999999999999,"[38.0, 52.0] nm",True,L,D0-class extrapolation if below literature min pitch
+VCT_082,Vdd,0.9,"[0.85, 1.0] V",True,H,ULP nodes may sit below mainstream DRAM Vdd band
+VCT_082,Ion,9.28467071e-07,directional (VCT Ion increases 082→125),True,M,No public Ion table — simulation projection only
+VCT_091,fpitch,59.99999999999999,"[38.0, 52.0] nm",True,L,D0-class extrapolation if below literature min pitch
+VCT_091,Vdd,0.9,"[0.85, 1.0] V",True,H,ULP nodes may sit below mainstream DRAM Vdd band
+VCT_091,Ion,9.74204122e-07,directional (VCT Ion increases 082→125),True,M,No public Ion table — simulation projection only
+VCT_102,fpitch,59.99999999999999,"[38.0, 52.0] nm",True,L,D0-class extrapolation if below literature min pitch
+VCT_102,Vdd,0.9,"[0.85, 1.0] V",True,H,ULP nodes may sit below mainstream DRAM Vdd band
+VCT_102,Ion,1.03505969e-06,directional (VCT Ion increases 082→125),True,M,No public Ion table — simulation projection only
+VCT_125,fpitch,59.99999999999999,"[38.0, 52.0] nm",True,L,D0-class extrapolation if below literature min pitch
+VCT_125,Vdd,0.9,"[0.85, 1.0] V",True,H,ULP nodes may sit below mainstream DRAM Vdd band
+VCT_125,Ion,1.40567031e-06,directional (VCT Ion increases 082→125),True,M,No public Ion table — simulation projection only
+3D_gaa_Si,fpitch,22.0,"[38.0, 52.0] nm",True,L,D0-class extrapolation if below literature min pitch
+3D_gaa_Si,Vdd,0.75,"[0.85, 1.0] V",True,L,ULP nodes may sit below mainstream DRAM Vdd band
+3D_gaa_Si,Ion,1.04072468e-06,directional (VCT Ion increases 082→125),True,M,No public Ion table — simulation projection only
+3D_gaa_AOS,fpitch,59.99999999999999,"[38.0, 52.0] nm",True,L,D0-class extrapolation if below literature min pitch
+3D_gaa_AOS,Vdd,0.75,"[0.85, 1.0] V",True,L,ULP nodes may sit below mainstream DRAM Vdd band
+3D_gaa_AOS,Ion,1.88547097e-06,directional (VCT Ion increases 082→125),True,M,No public Ion table — simulation projection only

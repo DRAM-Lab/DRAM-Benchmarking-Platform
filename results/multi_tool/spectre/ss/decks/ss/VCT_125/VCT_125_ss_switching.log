@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2762196
-Memory  available: 228.4570 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3317159
+Memory  available: 230.3141 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2799.7] ( 24 ),  1 [2799.7] ( 25 ),  2 [2799.7] ( 26 )
-                 3 [2799.7] ( 27 ),  4 [2799.7] ( 28 ),  5 [2799.7] ( 29 )
-                 6 [2799.7] ( 30 ),  7 [2799.7] ( 31 ),  8 [2799.7] ( 32 )
-                 9 [2799.7] ( 33 ), 10 [2799.7] ( 34 ), 11 [2799.7] ( 35 )
+        0:       0 [2824.4] ( 24 ),  1 [2824.4] ( 25 ),  2 [2824.4] ( 26 )
+                 3 [2824.4] ( 27 ),  4 [2824.3] ( 28 ),  5 [2824.4] ( 29 )
+                 6 [2824.4] ( 30 ),  7 [2824.3] ( 31 ),  8 [2824.4] ( 32 )
+                 9 [2824.5] ( 33 ), 10 [2824.3] ( 34 ), 11 [2824.4] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
                 15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                21 [2899.7] ( 45 ), 22 [2899.8] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 151.3 %, 154.2 %, 163.2 %
+System load averages (1min, 5min, 15min) : 92.3 %, 94.1 %, 92.0 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_125_ss_switching.sp' on river at 4:43:10 PM, Tue Jun 23, 2026 (process id: 2762196).
+Simulating `VCT_125_ss_switching.sp' on river at 9:17:44 PM, Tue Jun 23, 2026 (process id: 3317159).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss/decks/ss/VCT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         VCT_125_ss_switching.sp
 
 Licensing Information:
-[16:43:11.010625] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:17:44.010649] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

@@ -5,25 +5,24 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2735589
-Memory  available: 229.4478 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3296979
+Memory  available: 230.8276 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
-        Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2841.1] ( 24 ),  1 [2841.2] ( 25 ),  2 [2841.1] ( 26 )
-                 3 [2841.2] ( 27 ),  4 [2841.0] ( 28 ),  5 [2841.2] ( 29 )
-                 6 [2841.0] ( 30 ),  7 [2841.0] ( 31 ),  8 [2841.0] ( 32 )
-                 9 [2840.9] ( 33 ), 10 [2841.0] ( 34 ), 11 [2867.5] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.8] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+All processors running at 2899.7 MHz
+        Socket: Processors (Hyperthreaded Processor)
+        0:       0 ( 24 ),  1 ( 25 ),  2 ( 26 ),  3 ( 27 ),  4 ( 28 )
+                 5 ( 29 ),  6 ( 30 ),  7 ( 31 ),  8 ( 32 ),  9 ( 33 )
+                10 ( 34 ), 11 ( 35 )
+        1:      12 ( 36 ), 13 ( 37 ), 14 ( 38 ), 15 ( 39 ), 16 ( 40 )
+                17 ( 41 ), 18 ( 42 ), 19 ( 43 ), 20 ( 44 ), 21 ( 45 )
+                22 ( 46 ), 23 ( 47 )
         
-System load averages (1min, 5min, 15min) : 154.2 %, 153.5 %, 168.0 %
+System load averages (1min, 5min, 15min) : 96.0 %, 96.7 %, 91.9 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_102_cold_switching.sp' on river at 4:35:48 PM, Tue Jun 23, 2026 (process id: 2735589).
+Simulating `VCT_102_cold_switching.sp' on river at 9:13:21 PM, Tue Jun 23, 2026 (process id: 3296979).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/cold/decks/cold/VCT_102
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +30,7 @@ Command line:
         VCT_102_cold_switching.sp
 
 Licensing Information:
-[16:35:48.010713] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:13:21.010577] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

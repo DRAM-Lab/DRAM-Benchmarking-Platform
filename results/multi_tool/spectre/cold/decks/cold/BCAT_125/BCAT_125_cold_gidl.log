@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2765468
-Memory  available: 228.1082 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3319601
+Memory  available: 230.3450 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2854.9] ( 24 ),  1 [2854.9] ( 25 ),  2 [2854.9] ( 26 )
-                 3 [2854.9] ( 27 ),  4 [2854.9] ( 28 ),  5 [2854.9] ( 29 )
-                 6 [2854.9] ( 30 ),  7 [2855.0] ( 31 ),  8 [2854.9] ( 32 )
-                 9 [2854.9] ( 33 ), 10 [2854.9] ( 34 ), 11 [2854.9] ( 35 )
+        0:       0 [2844.9] ( 24 ),  1 [2845.0] ( 25 ),  2 [2844.8] ( 26 )
+                 3 [2844.9] ( 27 ),  4 [2845.0] ( 28 ),  5 [2800.7] ( 29 )
+                 6 [2845.0] ( 30 ),  7 [2844.9] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [2899.7] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                15 [2899.7] ( 39 ), 16 [2899.8] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
                 21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 151.4 %, 153.4 %, 162.4 %
+System load averages (1min, 5min, 15min) : 90.4 %, 93.4 %, 91.8 %
 Hyperthreading is enabled
 
 
-Simulating `BCAT_125_cold_gidl.sp' on river at 4:44:07 PM, Tue Jun 23, 2026 (process id: 2765468).
+Simulating `BCAT_125_cold_gidl.sp' on river at 9:18:20 PM, Tue Jun 23, 2026 (process id: 3319601).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/cold/decks/cold/BCAT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         BCAT_125_cold_gidl.sp
 
 Licensing Information:
-[16:44:07.010673] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:18:20.010609] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

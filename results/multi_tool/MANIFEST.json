@@ -1,0 +1,56 @@
+{
+  "platform": "OpenDRAMBench",
+  "platform_version": "0.2.0",
+  "generated_at": "2026-06-23T13:24:42Z",
+  "status": "complete",
+  "suite": "multi_tool",
+  "corner": "tt",
+  "simulator": null,
+  "python": "3.12.12",
+  "host": "Linux-5.14.0-611.54.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "project_root": "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform",
+  "engine_root": "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform",
+  "model_root": "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx",
+  "model_bundle_revision": "e692790da857",
+  "model_cards": {
+    "3D_gaa_AOS.inc": "46e9cdac6afcb287cfdcc12acf8377ab5eb2d583b9989983e39b59e88c3c8aad",
+    "3D_gaa_Si.inc": "43e1c1d004a79fa30079824acaf6fdbf29921ab9456234494148a48a898998cf",
+    "BCAT_125.inc": "ddaf6b5572803f3167d9b675e464dc063778d0a0198be784e200305df8b36c4f",
+    "VCT_082.inc": "c9d00646315bbb3d33a6f32796767c03504a290420c093d943d6ebd4f9878e31",
+    "VCT_091.inc": "eb4e6209433d029b74e58673946401904256e141e00e595fc377440bbf7a9866",
+    "VCT_102.inc": "60f51e88584143b4791f0e4581af3e57dfe228430e15aab7024389e5ea8103d5",
+    "VCT_125.inc": "7461669b2dffee82020c3d97ebf6e0edb6e32494b844d76e3b2d40a7c215d316"
+  },
+  "tool_versions": {
+    "ngspice": "******",
+    "hspice": null,
+    "spectre": "@(#)$CDS: spectre  version 24.1.0 64bit 11/28/2024 21:35 (mmsimcm40c-2) $"
+  },
+  "artifacts": [
+    {
+      "path": "RESULTS.md",
+      "bytes": 6163,
+      "sha256": "5e14c51e9c20fc66ea43819da3bc8c971d421a7a3a059b0390e42e0102d5477d"
+    },
+    {
+      "path": "figures/ccell_scaling.svg",
+      "bytes": 42902,
+      "sha256": "03bb5adc673fca0edaf2c8700cd4628f1bd2cab2ddc97159b2ecb132fe816114"
+    },
+    {
+      "path": "figures/pareto_ion_ioff.svg",
+      "bytes": 45214,
+      "sha256": "5c3be21ee4999fb816674bdcf2cb92d3f4fb57474909009b1ceb94c10083390f"
+    },
+    {
+      "path": "figures/radar_fom.svg",
+      "bytes": 55557,
+      "sha256": "46e7f19548f92baf0ed519d90b0e65c92147263e88557843b50518460dccffa2"
+    },
+    {
+      "path": "figures/vct_scaling.svg",
+      "bytes": 46465,
+      "sha256": "ed1be48b412444f9490b61f0432351a97607fdc410f757a098bee7c7af7bda23"
+    }
+  ]
+}

@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2778079
-Memory  available: 228.7390 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3327928
+Memory  available: 231.1630 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2851.2] ( 24 ),  1 [2851.4] ( 25 ),  2 [2851.3] ( 26 )
-                 3 [2851.3] ( 27 ),  4 [2851.1] ( 28 ),  5 [2851.2] ( 29 )
-                 6 [2851.1] ( 30 ),  7 [2851.1] ( 31 ),  8 [2851.3] ( 32 )
-                 9 [2851.1] ( 33 ), 10 [2851.4] ( 34 ), 11 [2851.2] ( 35 )
+        0:       0 [2892.2] ( 24 ),  1 [2856.2] ( 25 ),  2 [2861.7] ( 26 )
+                 3 [2861.5] ( 27 ),  4 [2861.3] ( 28 ),  5 [2860.4] ( 29 )
+                 6 [2861.6] ( 30 ),  7 [2861.6] ( 31 ),  8 [2861.5] ( 32 )
+                 9 [2861.8] ( 33 ), 10 [2861.6] ( 34 ), 11 [2810.3] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                15 [2899.5] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.8] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.8] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 145.8 %, 150.5 %, 159.6 %
+System load averages (1min, 5min, 15min) : 83.9 %, 90.3 %, 90.9 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_ss_125_idvd_vwl.sp' on river at 4:47:16 PM, Tue Jun 23, 2026 (process id: 2778079).
+Simulating `3D_gaa_Si_ss_125_idvd_vwl.sp' on river at 9:20:22 PM, Tue Jun 23, 2026 (process id: 3327928).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss_125/decks/ss_125/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         3D_gaa_Si_ss_125_idvd_vwl.sp
 
 Licensing Information:
-[16:47:16.010697] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:20:22.010569] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2774729
-Memory  available: 227.9895 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3325167
+Memory  available: 230.5459 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2893.8] ( 24 ),  1 [2893.7] ( 25 ),  2 [2893.9] ( 26 )
-                 3 [2893.9] ( 27 ),  4 [2893.9] ( 28 ),  5 [2893.9] ( 29 )
-                 6 [2893.8] ( 30 ),  7 [2893.5] ( 31 ),  8 [2893.8] ( 32 )
-                 9 [2893.9] ( 33 ), 10 [2893.9] ( 34 ), 11 [2893.9] ( 35 )
+        0:       0 [2821.4] ( 24 ),  1 [2822.3] ( 25 ),  2 [2821.3] ( 26 )
+                 3 [2821.4] ( 27 ),  4 [2822.5] ( 28 ),  5 [2821.5] ( 29 )
+                 6 [2821.5] ( 30 ),  7 [2821.5] ( 31 ),  8 [2800.0] ( 32 )
+                 9 [2803.9] ( 33 ), 10 [2800.1] ( 34 ), 11 [2800.0] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.2] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.8] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2900.3] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 148.8 %, 151.9 %, 160.7 %
+System load averages (1min, 5min, 15min) : 85.6 %, 91.4 %, 91.3 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_102_hot_1t1c_10ff.sp' on river at 4:46:10 PM, Tue Jun 23, 2026 (process id: 2774729).
+Simulating `VCT_102_hot_1t1c_10ff.sp' on river at 9:19:44 PM, Tue Jun 23, 2026 (process id: 3325167).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/VCT_102
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         VCT_102_hot_1t1c_10ff.sp
 
 Licensing Information:
-[16:46:10.010641] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:19:44.010665] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

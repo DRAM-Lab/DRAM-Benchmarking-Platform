@@ -5,11 +5,11 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2730505
-Memory  available: 229.8182 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3293032
+Memory  available: 230.3588 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
-All processors running at 2799.7 MHz
+All processors running at 2899.7 MHz
         Socket: Processors (Hyperthreaded Processor)
         0:       0 ( 24 ),  1 ( 25 ),  2 ( 26 ),  3 ( 27 ),  4 ( 28 )
                  5 ( 29 ),  6 ( 30 ),  7 ( 31 ),  8 ( 32 ),  9 ( 33 )
@@ -18,11 +18,11 @@ All processors running at 2799.7 MHz
                 17 ( 41 ), 18 ( 42 ), 19 ( 43 ), 20 ( 44 ), 21 ( 45 )
                 22 ( 46 ), 23 ( 47 )
         
-System load averages (1min, 5min, 15min) : 153.7 %, 153.2 %, 169.8 %
+System load averages (1min, 5min, 15min) : 99.6 %, 97.5 %, 91.9 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_091_ss_idvd_vwl.sp' on river at 4:34:02 PM, Tue Jun 23, 2026 (process id: 2730505).
+Simulating `VCT_091_ss_idvd_vwl.sp' on river at 9:12:23 PM, Tue Jun 23, 2026 (process id: 3293032).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ss/decks/ss/VCT_091
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -30,7 +30,7 @@ Command line:
         VCT_091_ss_idvd_vwl.sp
 
 Licensing Information:
-[16:34:03.010633] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:12:23.010585] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

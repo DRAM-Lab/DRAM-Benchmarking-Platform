@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2763599
-Memory  available: 228.4555 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3318492
+Memory  available: 230.5084 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2799.7] ( 24 ),  1 [2799.7] ( 25 ),  2 [2799.7] ( 26 )
-                 3 [2799.8] ( 27 ),  4 [2799.7] ( 28 ),  5 [2799.7] ( 29 )
-                 6 [2799.7] ( 30 ),  7 [2799.8] ( 31 ),  8 [2799.7] ( 32 )
-                 9 [2799.7] ( 33 ), 10 [2898.2] ( 34 ), 11 [2862.7] ( 35 )
+        0:       0 [2799.8] ( 24 ),  1 [2799.7] ( 25 ),  2 [2799.7] ( 26 )
+                 3 [2799.7] ( 27 ),  4 [2799.7] ( 28 ),  5 [2799.7] ( 29 )
+                 6 [2799.7] ( 30 ),  7 [2799.7] ( 31 ),  8 [2799.7] ( 32 )
+                 9 [2799.7] ( 33 ), 10 [2799.8] ( 34 ), 11 [2799.7] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
                 15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.8] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.8] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.6] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 145.5 %, 152.6 %, 162.4 %
+System load averages (1min, 5min, 15min) : 90.1 %, 93.5 %, 91.8 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_102_ss_mini_array.sp' on river at 4:43:34 PM, Tue Jun 23, 2026 (process id: 2763599).
+Simulating `VCT_102_ss_mini_array.sp' on river at 9:18:05 PM, Tue Jun 23, 2026 (process id: 3318492).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss/decks/ss/VCT_102
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         VCT_102_ss_mini_array.sp
 
 Licensing Information:
-[16:43:34.010665] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:18:05.010633] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

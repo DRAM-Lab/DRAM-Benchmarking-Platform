@@ -23,6 +23,101 @@ SUITE_CHOICES: tuple[str, ...] = (*BENCHMARK_SUITES, "all")
 SIMULATOR_BACKENDS: tuple[str, ...] = ("spectre", "hspice", "ngspice")
 
 
+def _device_metrics_csv(results_dir: Path, reference_corner: str) -> Path:
+    """Resolve primary device metrics CSV for the device suite."""
+    backend_dir = _backend_with_all_corners_csv(results_dir)
+    if backend_dir is not None:
+        return backend_dir / "device_metrics_all_corners.csv"
+    for backend in SIMULATOR_BACKENDS:
+        path = results_dir / backend / reference_corner / "device_metrics.csv"
+        if path.is_file():
+            return path
+    corner_path = results_dir / reference_corner / "device_metrics.csv"
+    if corner_path.is_file():
+        return corner_path
+    return results_dir / "device_metrics.csv"
+
+
+def _device_cell_metrics_csv(results_dir: Path, reference_corner: str) -> Path:
+    """Resolve 1T1C metrics CSV for the device suite."""
+    backend_dir = _backend_with_all_corners_csv(results_dir)
+    if backend_dir is not None:
+        return backend_dir / "cell_1t1c_metrics_all_corners.csv"
+    for backend in SIMULATOR_BACKENDS:
+        path = results_dir / backend / reference_corner / "cell_1t1c_metrics.csv"
+        if path.is_file():
+            return path
+    corner_path = results_dir / reference_corner / "cell_1t1c_metrics.csv"
+    if corner_path.is_file():
+        return corner_path
+    return results_dir / "cell_1t1c_metrics.csv"
+
+
+def _device_mini_array_metrics_csv(results_dir: Path, reference_corner: str) -> Path:
+    """Resolve mini-array metrics CSV for the device suite."""
+    backend_dir = _backend_with_all_corners_csv(results_dir)
+    if backend_dir is not None:
+        return backend_dir / "mini_array_metrics_all_corners.csv"
+    for backend in SIMULATOR_BACKENDS:
+        path = results_dir / backend / reference_corner / "mini_array_metrics.csv"
+        if path.is_file():
+            return path
+    corner_path = results_dir / reference_corner / "mini_array_metrics.csv"
+    if corner_path.is_file():
+        return corner_path
+    return results_dir / "mini_array_metrics.csv"
+
+
+def _backend_with_all_corners_csv(tree: Path) -> Path | None:
+    """Return ``tree/{backend}`` when it holds aggregated all-corner device metrics."""
+    for backend in SIMULATOR_BACKENDS:
+        backend_dir = tree / backend
+        if (backend_dir / "device_metrics_all_corners.csv").is_file():
+            return backend_dir
+    return None
+
+
+def resolve_bench_input_dir(
+    parent_results: Path,
+    *,
+    reference_corner: str = "tt",
+) -> Path | None:
+    """Locate device-benchmark CSV tree for pareto/ccell derive.
+
+    Multi-simulator runs store aggregates under ``{suite}/{backend}/`` rather than
+    at the suite root. Prefer ``corner_sweep`` when present, then fall back to
+    ``device``.
+    """
+    parent = parent_results.resolve()
+    corner_sweep = parent / "corner_sweep"
+    if corner_sweep.is_dir():
+        backend_dir = _backend_with_all_corners_csv(corner_sweep)
+        if backend_dir is not None:
+            return backend_dir
+        if (corner_sweep / "device_metrics_all_corners.csv").is_file():
+            return corner_sweep
+
+    device = parent / "device"
+    if not device.is_dir():
+        return None
+
+    backend_dir = _backend_with_all_corners_csv(device)
+    if backend_dir is not None:
+        return backend_dir
+    if (device / "device_metrics_all_corners.csv").is_file():
+        return device
+
+    for backend in SIMULATOR_BACKENDS:
+        corner_dir = device / backend / reference_corner
+        if (corner_dir / "device_metrics.csv").is_file():
+            return corner_dir
+    if (device / reference_corner / "device_metrics.csv").is_file():
+        return device / reference_corner
+    if (device / "device_metrics.csv").is_file():
+        return device
+    return None
+
+
 @dataclass(frozen=True)
 class SuiteSpec:
     """Resolved paths and report parameters for one benchmark suite."""
@@ -49,6 +144,9 @@ class SuiteSpec:
                     return path
             return None
         if self.name == "corner_sweep":
+            backend_dir = _backend_with_all_corners_csv(self.results_dir)
+            if backend_dir is not None:
+                return backend_dir / "device_metrics_all_corners.csv"
             return self.results_dir / "device_metrics_all_corners.csv"
         if self.name == "multi_tool":
             for backend in SIMULATOR_BACKENDS:
@@ -56,7 +154,7 @@ class SuiteSpec:
                 if path.is_file():
                     return path
             return None
-        return self.results_dir / "device_metrics.csv"
+        return _device_metrics_csv(self.results_dir, self.reference_corner)
 
     @property
     def simulator_compare_dir(self) -> Path | None:
@@ -68,11 +166,13 @@ class SuiteSpec:
     @property
     def cell_metrics_csv(self) -> Path | None:
         if self.name in {"corner_sweep"}:
-            path = self.results_dir / "cell_1t1c_metrics_all_corners.csv"
+            backend_dir = _backend_with_all_corners_csv(self.results_dir)
+            base = backend_dir if backend_dir is not None else self.results_dir
+            path = base / "cell_1t1c_metrics_all_corners.csv"
         elif self.name == "multi_tool" and self.metrics_csv is not None:
             path = self.metrics_csv.parent / "cell_1t1c_metrics.csv"
         elif self.name == "device":
-            path = self.results_dir / "cell_1t1c_metrics.csv"
+            path = _device_cell_metrics_csv(self.results_dir, self.reference_corner)
         else:
             return None
         return path if path.is_file() else None
@@ -80,11 +180,13 @@ class SuiteSpec:
     @property
     def mini_array_metrics_csv(self) -> Path | None:
         if self.name == "corner_sweep":
-            path = self.results_dir / "mini_array_metrics_all_corners.csv"
+            backend_dir = _backend_with_all_corners_csv(self.results_dir)
+            base = backend_dir if backend_dir is not None else self.results_dir
+            path = base / "mini_array_metrics_all_corners.csv"
         elif self.name == "multi_tool" and self.metrics_csv is not None:
             path = self.metrics_csv.parent / "mini_array_metrics.csv"
         elif self.name == "device":
-            path = self.results_dir / "mini_array_metrics.csv"
+            path = _device_mini_array_metrics_csv(self.results_dir, self.reference_corner)
         else:
             return None
         return path if path.is_file() else None

@@ -5,24 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2773946
-Memory  available: 228.0491 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3324556
+Memory  available: 230.5171 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
-All processors running at 2899.7 MHz
-        Socket: Processors (Hyperthreaded Processor)
-        0:       0 ( 24 ),  1 ( 25 ),  2 ( 26 ),  3 ( 27 ),  4 ( 28 )
-                 5 ( 29 ),  6 ( 30 ),  7 ( 31 ),  8 ( 32 ),  9 ( 33 )
-                10 ( 34 ), 11 ( 35 )
-        1:      12 ( 36 ), 13 ( 37 ), 14 ( 38 ), 15 ( 39 ), 16 ( 40 )
-                17 ( 41 ), 18 ( 42 ), 19 ( 43 ), 20 ( 44 ), 21 ( 45 )
-                22 ( 46 ), 23 ( 47 )
+        Socket: Processors [Frequency] (Hyperthreaded Processor)
+        0:       0 [2891.9] ( 24 ),  1 [2891.8] ( 25 ),  2 [2891.8] ( 26 )
+                 3 [2891.8] ( 27 ),  4 [2891.6] ( 28 ),  5 [2891.4] ( 29 )
+                 6 [2891.7] ( 30 ),  7 [2891.9] ( 31 ),  8 [2891.7] ( 32 )
+                 9 [2880.0] ( 33 ), 10 [2891.9] ( 34 ), 11 [2891.9] ( 35 )
+        1:      12 [2899.7] ( 36 ), 13 [3300.0] ( 37 ), 14 [2899.7] ( 38 )
+                15 [2899.7] ( 39 ), 16 [2899.8] ( 40 ), 17 [2899.6] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [3300.0] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 150.9 %, 152.3 %, 160.9 %
+System load averages (1min, 5min, 15min) : 86.7 %, 91.8 %, 91.4 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_hot_switching.sp' on river at 4:46:00 PM, Tue Jun 23, 2026 (process id: 2773946).
+Simulating `3D_gaa_Si_hot_switching.sp' on river at 9:19:34 PM, Tue Jun 23, 2026 (process id: 3324556).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -30,7 +31,7 @@ Command line:
         3D_gaa_Si_hot_switching.sp
 
 Licensing Information:
-[16:46:00.010633] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:19:35.010665] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

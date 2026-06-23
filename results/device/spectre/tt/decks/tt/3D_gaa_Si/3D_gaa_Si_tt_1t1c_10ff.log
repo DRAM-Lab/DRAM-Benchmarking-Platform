@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2719253
-Memory  available: 229.2857 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3283385
+Memory  available: 230.2364 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2802.8] ( 24 ),  1 [2802.8] ( 25 ),  2 [2802.7] ( 26 )
-                 3 [2802.8] ( 27 ),  4 [2802.8] ( 28 ),  5 [2802.8] ( 29 )
-                 6 [2802.8] ( 30 ),  7 [2802.8] ( 31 ),  8 [2802.7] ( 32 )
-                 9 [2802.7] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
+        0:       0 [2817.7] ( 24 ),  1 [2818.4] ( 25 ),  2 [2818.4] ( 26 )
+                 3 [2817.8] ( 27 ),  4 [2846.2] ( 28 ),  5 [2818.4] ( 29 )
+                 6 [2818.3] ( 30 ),  7 [2818.4] ( 31 ),  8 [2818.4] ( 32 )
+                 9 [2818.3] ( 33 ), 10 [2818.5] ( 34 ), 11 [2818.3] ( 35 )
+        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2898.0] ( 38 )
                 15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
                 21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 148.4 %, 153.0 %, 174.4 %
+System load averages (1min, 5min, 15min) : 104.2 %, 96.5 %, 90.7 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_tt_1t1c_10ff.sp' on river at 4:30:13 PM, Tue Jun 23, 2026 (process id: 2719253).
+Simulating `3D_gaa_Si_tt_1t1c_10ff.sp' on river at 9:10:13 PM, Tue Jun 23, 2026 (process id: 3283385).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/device/spectre/tt/decks/tt/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         3D_gaa_Si_tt_1t1c_10ff.sp
 
 Licensing Information:
-[16:30:13.010609] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:10:13.010561] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

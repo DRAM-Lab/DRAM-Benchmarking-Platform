@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2762490
-Memory  available: 228.7340 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3317416
+Memory  available: 230.2959 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2810.8] ( 24 ),  1 [2810.9] ( 25 ),  2 [2810.9] ( 26 )
-                 3 [2810.9] ( 27 ),  4 [2810.9] ( 28 ),  5 [2812.4] ( 29 )
-                 6 [2810.9] ( 30 ),  7 [2810.9] ( 31 ),  8 [2810.7] ( 32 )
-                 9 [2811.1] ( 33 ), 10 [2810.9] ( 34 ), 11 [2811.0] ( 35 )
+        0:       0 [2884.7] ( 24 ),  1 [2887.7] ( 25 ),  2 [2890.5] ( 26 )
+                 3 [2890.5] ( 27 ),  4 [2890.5] ( 28 ),  5 [2886.0] ( 29 )
+                 6 [2890.4] ( 30 ),  7 [2890.3] ( 31 ),  8 [2890.5] ( 32 )
+                 9 [2890.3] ( 33 ), 10 [2890.5] ( 34 ), 11 [2890.5] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                15 [2899.7] ( 39 ), 16 [2899.9] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.6] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.8] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 150.9 %, 154.0 %, 163.1 %
+System load averages (1min, 5min, 15min) : 91.4 %, 93.9 %, 91.9 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_ss_switching.sp' on river at 4:43:15 PM, Tue Jun 23, 2026 (process id: 2762490).
+Simulating `3D_gaa_Si_ss_switching.sp' on river at 9:17:47 PM, Tue Jun 23, 2026 (process id: 3317416).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss/decks/ss/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         3D_gaa_Si_ss_switching.sp
 
 Licensing Information:
-[16:43:15.010657] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:17:47.010673] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

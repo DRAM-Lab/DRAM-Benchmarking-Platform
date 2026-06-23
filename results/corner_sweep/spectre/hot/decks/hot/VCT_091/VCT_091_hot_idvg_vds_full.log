@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2742097
-Memory  available: 230.6701 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3300700
+Memory  available: 230.2019 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2842.2] ( 24 ),  1 [2842.2] ( 25 ),  2 [2842.0] ( 26 )
-                 3 [2842.2] ( 27 ),  4 [2842.0] ( 28 ),  5 [2810.4] ( 29 )
-                 6 [2843.2] ( 30 ),  7 [2843.2] ( 31 ),  8 [2843.1] ( 32 )
-                 9 [2843.2] ( 33 ), 10 [2843.2] ( 34 ), 11 [2843.2] ( 35 )
+        0:       0 [2856.4] ( 24 ),  1 [2863.6] ( 25 ),  2 [2856.3] ( 26 )
+                 3 [2856.3] ( 27 ),  4 [2856.3] ( 28 ),  5 [2832.0] ( 29 )
+                 6 [2836.5] ( 30 ),  7 [2856.3] ( 31 ),  8 [2856.3] ( 32 )
+                 9 [2856.3] ( 33 ), 10 [2858.0] ( 34 ), 11 [2863.3] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.8] ( 40 ), 17 [2899.7] ( 41 )
+                15 [2899.8] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
                 21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 160.9 %, 155.9 %, 167.3 %
+System load averages (1min, 5min, 15min) : 91.7 %, 95.4 %, 91.7 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_091_hot_idvg_vds_full.sp' on river at 4:37:42 PM, Tue Jun 23, 2026 (process id: 2742097).
+Simulating `VCT_091_hot_idvg_vds_full.sp' on river at 9:14:09 PM, Tue Jun 23, 2026 (process id: 3300700).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/hot/decks/hot/VCT_091
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         VCT_091_hot_idvg_vds_full.sp
 
 Licensing Information:
-[16:37:42.010681] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:14:09.010633] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

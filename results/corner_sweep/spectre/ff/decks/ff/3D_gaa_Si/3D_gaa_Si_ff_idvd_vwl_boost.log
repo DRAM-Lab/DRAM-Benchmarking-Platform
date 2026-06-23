@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2727069
-Memory  available: 229.2890 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3290264
+Memory  available: 230.2522 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2863.8] ( 24 ),  1 [2863.7] ( 25 ),  2 [2863.8] ( 26 )
-                 3 [2863.8] ( 27 ),  4 [2863.7] ( 28 ),  5 [2863.7] ( 29 )
-                 6 [2863.7] ( 30 ),  7 [2863.6] ( 31 ),  8 [2863.7] ( 32 )
-                 9 [2863.7] ( 33 ), 10 [2863.8] ( 34 ), 11 [2863.7] ( 35 )
+        0:       0 [2837.8] ( 24 ),  1 [2866.1] ( 25 ),  2 [2866.0] ( 26 )
+                 3 [2816.7] ( 27 ),  4 [2866.1] ( 28 ),  5 [2866.1] ( 29 )
+                 6 [2866.0] ( 30 ),  7 [2866.0] ( 31 ),  8 [2864.0] ( 32 )
+                 9 [2866.0] ( 33 ), 10 [2866.0] ( 34 ), 11 [2866.0] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
                 15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.8] ( 46 ), 23 [2899.7] ( 47 )
+                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 151.0 %, 152.8 %, 171.1 %
+System load averages (1min, 5min, 15min) : 98.0 %, 96.9 %, 91.4 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_ff_idvd_vwl_boost.sp' on river at 4:32:47 PM, Tue Jun 23, 2026 (process id: 2727069).
+Simulating `3D_gaa_Si_ff_idvd_vwl_boost.sp' on river at 9:11:44 PM, Tue Jun 23, 2026 (process id: 3290264).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ff/decks/ff/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         3D_gaa_Si_ff_idvd_vwl_boost.sp
 
 Licensing Information:
-[16:32:47.010681] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:11:44.010601] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

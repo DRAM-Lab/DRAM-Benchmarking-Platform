@@ -77,8 +77,10 @@ def plot_ion_ioff_pareto(df: pd.DataFrame, output_path: Path) -> Path:
             color=model_color(model_id),
         )
 
-    ax.set_xscale("log")
-    ax.set_yscale("log")
+    if (df["ioff_a"] > 0).any():
+        ax.set_xscale("log")
+    if (df["ion_a"] > 0).any():
+        ax.set_yscale("log")
     ax.set_xlabel("Ioff (A)", fontsize=LABEL_SIZE, fontweight="bold")
     ax.set_ylabel("Ion (A)", fontsize=LABEL_SIZE, fontweight="bold")
     ax.set_title("DRAM Access Device: Ion vs Ioff", fontsize=TITLE_SIZE, fontweight="bold")

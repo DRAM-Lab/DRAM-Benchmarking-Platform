@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2727135
-Memory  available: 229.3053 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3290354
+Memory  available: 230.3066 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2860.6] ( 24 ),  1 [2860.5] ( 25 ),  2 [2860.6] ( 26 )
-                 3 [2860.5] ( 27 ),  4 [2860.5] ( 28 ),  5 [2860.4] ( 29 )
-                 6 [2860.5] ( 30 ),  7 [2860.6] ( 31 ),  8 [2860.4] ( 32 )
-                 9 [2860.6] ( 33 ), 10 [2860.5] ( 34 ), 11 [2860.5] ( 35 )
+        0:       0 [2831.9] ( 24 ),  1 [2832.4] ( 25 ),  2 [2832.5] ( 26 )
+                 3 [2832.3] ( 27 ),  4 [2832.5] ( 28 ),  5 [2819.6] ( 29 )
+                 6 [2855.9] ( 30 ),  7 [2855.8] ( 31 ),  8 [2855.7] ( 32 )
+                 9 [2801.4] ( 33 ), 10 [2855.8] ( 34 ), 11 [2855.8] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
                 15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
                 21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 151.0 %, 152.8 %, 171.1 %
+System load averages (1min, 5min, 15min) : 98.0 %, 96.9 %, 91.4 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_ff_idvg_vds_half.sp' on river at 4:32:48 PM, Tue Jun 23, 2026 (process id: 2727135).
+Simulating `3D_gaa_Si_ff_idvg_vds_half.sp' on river at 9:11:45 PM, Tue Jun 23, 2026 (process id: 3290354).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ff/decks/ff/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         3D_gaa_Si_ff_idvg_vds_half.sp
 
 Licensing Information:
-[16:32:48.010689] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:11:45.010609] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

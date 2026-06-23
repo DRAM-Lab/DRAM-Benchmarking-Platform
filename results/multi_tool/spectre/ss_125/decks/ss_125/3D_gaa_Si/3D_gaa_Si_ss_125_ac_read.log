@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2778012
-Memory  available: 228.7174 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3327846
+Memory  available: 231.2051 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2851.6] ( 24 ),  1 [2851.5] ( 25 ),  2 [2851.5] ( 26 )
-                 3 [2851.5] ( 27 ),  4 [2851.5] ( 28 ),  5 [2851.6] ( 29 )
-                 6 [2851.5] ( 30 ),  7 [2851.5] ( 31 ),  8 [2851.5] ( 32 )
-                 9 [2851.5] ( 33 ), 10 [2851.5] ( 34 ), 11 [2851.5] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.8] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+        0:       0 [2834.9] ( 24 ),  1 [2834.9] ( 25 ),  2 [2834.8] ( 26 )
+                 3 [2835.1] ( 27 ),  4 [2835.0] ( 28 ),  5 [2899.3] ( 29 )
+                 6 [2834.9] ( 30 ),  7 [2834.9] ( 31 ),  8 [2834.8] ( 32 )
+                 9 [2835.0] ( 33 ), 10 [2834.9] ( 34 ), 11 [2808.1] ( 35 )
+        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.9] ( 38 )
+                15 [2899.7] ( 39 ), 16 [3300.0] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [3300.0] ( 45 ), 22 [2899.8] ( 46 ), 23 [3300.0] ( 47 )
         
-System load averages (1min, 5min, 15min) : 145.8 %, 150.5 %, 159.6 %
+System load averages (1min, 5min, 15min) : 84.7 %, 90.6 %, 91.0 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_ss_125_ac_read.sp' on river at 4:47:14 PM, Tue Jun 23, 2026 (process id: 2778012).
+Simulating `3D_gaa_Si_ss_125_ac_read.sp' on river at 9:20:21 PM, Tue Jun 23, 2026 (process id: 3327846).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss_125/decks/ss_125/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         3D_gaa_Si_ss_125_ac_read.sp
 
 Licensing Information:
-[16:47:15.010689] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:20:21.010561] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

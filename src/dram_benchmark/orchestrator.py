@@ -9,7 +9,13 @@ import sys
 from pathlib import Path
 
 from dram_benchmark.paths import PROJECT_ROOT, resolve_engine_root, resolve_model_root
-from dram_benchmark.suites import BENCHMARK_SUITES, SUITE_CHOICES, SuiteSpec, suite_spec
+from dram_benchmark.suites import (
+    BENCHMARK_SUITES,
+    SUITE_CHOICES,
+    SuiteSpec,
+    resolve_bench_input_dir,
+    suite_spec,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -62,14 +68,15 @@ def _has_read_path_simulator() -> bool:
         return False
 
 
-def _resolve_full_bench_results(parent_results: Path | None) -> Path | None:
+def _resolve_full_bench_results(
+    parent_results: Path | None,
+    *,
+    reference_corner: str = "tt",
+) -> Path | None:
     """Prefer corner_sweep tree when a full multi-corner benchmark exists."""
     if parent_results is None:
         return None
-    corner_sweep = parent_results / "corner_sweep"
-    if (corner_sweep / "device_metrics_all_corners.csv").is_file():
-        return corner_sweep
-    return parent_results / "device"
+    return resolve_bench_input_dir(parent_results, reference_corner=reference_corner)
 
 
 def _run_golden_validation(device_results: Path, *, corner: str = "tt", rtol: float = 0.02) -> None:
@@ -188,7 +195,7 @@ def run_suite(
         return output_dir
 
     if suite == "ccell":
-        bench_dir = _resolve_full_bench_results(parent_results) or (
+        bench_dir = _resolve_full_bench_results(parent_results, reference_corner=corner) or (
             (parent_results or output_dir.parent) / "device"
         )
         pareto_dir = (parent_results or output_dir.parent) / "pareto"

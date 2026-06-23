@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2779284
-Memory  available: 228.5417 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3329140
+Memory  available: 231.1393 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2831.2] ( 24 ),  1 [2831.4] ( 25 ),  2 [2831.3] ( 26 )
-                 3 [2831.4] ( 27 ),  4 [2831.4] ( 28 ),  5 [2831.3] ( 29 )
-                 6 [2830.9] ( 30 ),  7 [2831.5] ( 31 ),  8 [2831.3] ( 32 )
-                 9 [2831.3] ( 33 ), 10 [2831.4] ( 34 ), 11 [2847.1] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+        0:       0 [2799.7] ( 24 ),  1 [2799.8] ( 25 ),  2 [2799.7] ( 26 )
+                 3 [2799.7] ( 27 ),  4 [2799.7] ( 28 ),  5 [2881.2] ( 29 )
+                 6 [2881.4] ( 30 ),  7 [2881.4] ( 31 ),  8 [2881.4] ( 32 )
+                 9 [2880.9] ( 33 ), 10 [2881.4] ( 34 ), 11 [2881.4] ( 35 )
+        1:      12 [2899.7] ( 36 ), 13 [2899.9] ( 37 ), 14 [2899.7] ( 38 )
+                15 [2899.7] ( 39 ), 16 [2899.2] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2900.1] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.8] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.5] ( 47 )
         
-System load averages (1min, 5min, 15min) : 144.4 %, 149.9 %, 159.2 %
+System load averages (1min, 5min, 15min) : 82.3 %, 89.6 %, 90.7 %
 Hyperthreading is enabled
 
 
-Simulating `BCAT_125_ss_125_mini_array.sp' on river at 4:47:36 PM, Tue Jun 23, 2026 (process id: 2779284).
+Simulating `BCAT_125_ss_125_mini_array.sp' on river at 9:20:41 PM, Tue Jun 23, 2026 (process id: 3329140).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss_125/decks/ss_125/BCAT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         BCAT_125_ss_125_mini_array.sp
 
 Licensing Information:
-[16:47:36.010713] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:20:41.010577] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

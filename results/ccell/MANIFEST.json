@@ -1,0 +1,91 @@
+{
+  "platform": "OpenDRAMBench",
+  "platform_version": "0.2.0",
+  "generated_at": "2026-06-23T13:24:45Z",
+  "status": "complete",
+  "suite": "ccell",
+  "corner": "tt",
+  "simulator": null,
+  "python": "3.12.12",
+  "host": "Linux-5.14.0-611.54.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "project_root": "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform",
+  "engine_root": "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform",
+  "model_root": "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx",
+  "model_bundle_revision": "e692790da857",
+  "model_cards": {
+    "3D_gaa_AOS.inc": "46e9cdac6afcb287cfdcc12acf8377ab5eb2d583b9989983e39b59e88c3c8aad",
+    "3D_gaa_Si.inc": "43e1c1d004a79fa30079824acaf6fdbf29921ab9456234494148a48a898998cf",
+    "BCAT_125.inc": "ddaf6b5572803f3167d9b675e464dc063778d0a0198be784e200305df8b36c4f",
+    "VCT_082.inc": "c9d00646315bbb3d33a6f32796767c03504a290420c093d943d6ebd4f9878e31",
+    "VCT_091.inc": "eb4e6209433d029b74e58673946401904256e141e00e595fc377440bbf7a9866",
+    "VCT_102.inc": "60f51e88584143b4791f0e4581af3e57dfe228430e15aab7024389e5ea8103d5",
+    "VCT_125.inc": "7461669b2dffee82020c3d97ebf6e0edb6e32494b844d76e3b2d40a7c215d316"
+  },
+  "tool_versions": {
+    "ngspice": "******",
+    "hspice": null,
+    "spectre": "@(#)$CDS: spectre  version 24.1.0 64bit 11/28/2024 21:35 (mmsimcm40c-2) $"
+  },
+  "artifacts": [
+    {
+      "path": "ccell_min.csv",
+      "bytes": 895,
+      "sha256": "ad073948c85394eabcf5039df328ef50b91fbc6bbf6159248ff3ca01b15ace84"
+    },
+    {
+      "path": "ccell_sweep.csv",
+      "bytes": 48383,
+      "sha256": "ff85c75f8355b8b0b889cfde87c5bd7b8d894a4acfb58dfe88ab3bcbe2264770"
+    },
+    {
+      "path": "device_whatif.csv",
+      "bytes": 759,
+      "sha256": "91359744017558d8b5dba91b89e1e4ee39f3f26ed94639ea5ec079f17fe934e1"
+    },
+    {
+      "path": "feasibility.csv",
+      "bytes": 2101,
+      "sha256": "fc4acb5dc0623895adc7df577aae9d325f402b69f51fb3c9dee7feca6882fc52"
+    },
+    {
+      "path": "three_d_boost.csv",
+      "bytes": 1177,
+      "sha256": "92ad049124a12e3d0d2210c75891fcf60995dbd3a9aeee52fee18430099a898e"
+    },
+    {
+      "path": "RESULTS.md",
+      "bytes": 4480,
+      "sha256": "98d7bfdb78352c187706520ff33df76e308f2dcc995150ac3b88c4391be8bfd5"
+    },
+    {
+      "path": "figures/ccell_min_roadmap.svg",
+      "bytes": 44055,
+      "sha256": "ae44df91c4827e1db45148fc805682087d43b52efb4e655aff687e013ff41419"
+    },
+    {
+      "path": "figures/dv_read_vs_ccell_tt.svg",
+      "bytes": 64683,
+      "sha256": "2d923db0091fd347cc311bae620b6f0dd960370eeea9ad4dc9acb3691dc223b1"
+    },
+    {
+      "path": "figures/feasibility_S-aggressive.svg",
+      "bytes": 40413,
+      "sha256": "f863366ba2a8deb126314ff65ea05f62bdbb52d685c376b40847a9951f13f031"
+    },
+    {
+      "path": "figures/feasibility_S-base.svg",
+      "bytes": 39948,
+      "sha256": "9ce6bf1a843cad09fedb5758fa8a5729046aa36d2096d16519fb7095bdc33998"
+    },
+    {
+      "path": "figures/feasibility_S-conservative.svg",
+      "bytes": 40926,
+      "sha256": "d6e9cbe4411ef3236543c55ae8f7dd83e27b6e3c96d9a54b93be41029650ec86"
+    },
+    {
+      "path": "figures/t_ret_vs_ccell_hot.svg",
+      "bytes": 74844,
+      "sha256": "bbbfeb62b9a325836866e6bdad2bcf5edf0e7dc99fcef5a6ad616fb470e942e4"
+    }
+  ]
+}

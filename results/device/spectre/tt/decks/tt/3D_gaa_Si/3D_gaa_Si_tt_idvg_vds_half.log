@@ -5,11 +5,11 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2718400
-Memory  available: 229.5366 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3282534
+Memory  available: 230.2656 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
-All processors running at 2875.7 MHz
+All processors running at 2899.7 MHz
         Socket: Processors (Hyperthreaded Processor)
         0:       0 ( 24 ),  1 ( 25 ),  2 ( 26 ),  3 ( 27 ),  4 ( 28 )
                  5 ( 29 ),  6 ( 30 ),  7 ( 31 ),  8 ( 32 ),  9 ( 33 )
@@ -18,11 +18,11 @@ All processors running at 2875.7 MHz
                 17 ( 41 ), 18 ( 42 ), 19 ( 43 ), 20 ( 44 ), 21 ( 45 )
                 22 ( 46 ), 23 ( 47 )
         
-System load averages (1min, 5min, 15min) : 148.1 %, 153.2 %, 174.8 %
+System load averages (1min, 5min, 15min) : 107.0 %, 96.6 %, 90.6 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_tt_idvg_vds_half.sp' on river at 4:29:59 PM, Tue Jun 23, 2026 (process id: 2718400).
+Simulating `3D_gaa_Si_tt_idvg_vds_half.sp' on river at 9:10:00 PM, Tue Jun 23, 2026 (process id: 3282534).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/device/spectre/tt/decks/tt/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -30,7 +30,7 @@ Command line:
         3D_gaa_Si_tt_idvg_vds_half.sp
 
 Licensing Information:
-[16:29:59.010753] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:10:00.010529] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

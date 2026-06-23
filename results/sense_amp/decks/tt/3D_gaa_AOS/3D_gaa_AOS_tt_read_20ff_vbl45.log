@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2782221
-Memory  available: 229.2947 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3330487
+Memory  available: 231.1476 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2839.2] ( 24 ),  1 [2839.2] ( 25 ),  2 [2839.1] ( 26 )
-                 3 [2839.3] ( 27 ),  4 [2839.1] ( 28 ),  5 [2839.2] ( 29 )
-                 6 [2839.1] ( 30 ),  7 [2839.2] ( 31 ),  8 [2839.1] ( 32 )
-                 9 [2839.3] ( 33 ), 10 [2839.0] ( 34 ), 11 [2839.2] ( 35 )
+        0:       0 [2810.7] ( 24 ),  1 [2877.4] ( 25 ),  2 [2877.5] ( 26 )
+                 3 [2826.9] ( 27 ),  4 [2877.5] ( 28 ),  5 [2877.5] ( 29 )
+                 6 [2877.5] ( 30 ),  7 [2877.5] ( 31 ),  8 [3300.0] ( 32 )
+                 9 [2877.4] ( 33 ), 10 [2877.4] ( 34 ), 11 [2877.5] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                15 [2899.7] ( 39 ), 16 [2899.5] ( 40 ), 17 [3300.0] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                21 [2898.6] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 149.1 %, 150.4 %, 159.0 %
+System load averages (1min, 5min, 15min) : 78.4 %, 88.2 %, 90.2 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_AOS_tt_read_20ff_vbl45.sp' on river at 4:48:16 PM, Tue Jun 23, 2026 (process id: 2782221).
+Simulating `3D_gaa_AOS_tt_read_20ff_vbl45.sp' on river at 9:20:58 PM, Tue Jun 23, 2026 (process id: 3330487).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/sense_amp/decks/tt/3D_gaa_AOS
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         3D_gaa_AOS_tt_read_20ff_vbl45.sp
 
 Licensing Information:
-[16:48:16.010705] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:20:58.010641] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

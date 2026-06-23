@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2723463
-Memory  available: 229.5482 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3287435
+Memory  available: 230.3363 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2818.0] ( 24 ),  1 [2815.9] ( 25 ),  2 [2815.8] ( 26 )
-                 3 [2815.8] ( 27 ),  4 [2815.9] ( 28 ),  5 [2824.8] ( 29 )
-                 6 [2815.9] ( 30 ),  7 [2815.8] ( 31 ),  8 [2809.4] ( 32 )
-                 9 [2815.9] ( 33 ), 10 [2815.9] ( 34 ), 11 [2815.9] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.8] ( 38 )
+        0:       0 [2899.7] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
+                 6 [2899.7] ( 30 ),  7 [3300.0] ( 31 ),  8 [2899.8] ( 32 )
+                 9 [2899.7] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
+        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
                 15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.6] ( 46 ), 23 [2899.7] ( 47 )
+                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 150.5 %, 153.0 %, 172.6 %
+System load averages (1min, 5min, 15min) : 100.9 %, 97.1 %, 91.3 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_125_tt_1t1c_30ff.sp' on river at 4:31:36 PM, Tue Jun 23, 2026 (process id: 2723463).
+Simulating `VCT_125_tt_1t1c_30ff.sp' on river at 9:11:07 PM, Tue Jun 23, 2026 (process id: 3287435).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/tt/decks/tt/VCT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         VCT_125_tt_1t1c_30ff.sp
 
 Licensing Information:
-[16:31:36.010657] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:11:07.010593] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

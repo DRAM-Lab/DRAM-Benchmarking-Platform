@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2774344
-Memory  available: 228.0020 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3324906
+Memory  available: 230.5609 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2806.1] ( 24 ),  1 [2806.2] ( 25 ),  2 [2806.2] ( 26 )
-                 3 [2806.2] ( 27 ),  4 [2806.2] ( 28 ),  5 [2806.2] ( 29 )
-                 6 [2806.2] ( 30 ),  7 [2806.3] ( 31 ),  8 [2806.1] ( 32 )
-                 9 [2806.1] ( 33 ), 10 [2806.0] ( 34 ), 11 [2806.0] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+        0:       0 [2899.7] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [3300.0] ( 28 ),  5 [2899.7] ( 29 )
+                 6 [2899.7] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [2899.5] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
+        1:      12 [2899.9] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
+                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.8] ( 41 )
+                18 [2879.7] ( 42 ), 19 [2899.8] ( 43 ), 20 [2899.6] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.9] ( 47 )
         
-System load averages (1min, 5min, 15min) : 149.8 %, 152.1 %, 160.8 %
+System load averages (1min, 5min, 15min) : 86.1 %, 91.6 %, 91.4 %
 Hyperthreading is enabled
 
 
-Simulating `BCAT_125_hot_1t1c_20ff.sp' on river at 4:46:05 PM, Tue Jun 23, 2026 (process id: 2774344).
+Simulating `BCAT_125_hot_1t1c_20ff.sp' on river at 9:19:40 PM, Tue Jun 23, 2026 (process id: 3324906).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/BCAT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         BCAT_125_hot_1t1c_20ff.sp
 
 Licensing Information:
-[16:46:05.010673] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:19:40.010633] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

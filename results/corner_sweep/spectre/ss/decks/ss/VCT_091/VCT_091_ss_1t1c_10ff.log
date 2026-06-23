@@ -5,8 +5,8 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2731970
-Memory  available: 230.0762 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3294366
+Memory  available: 230.3730 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
 All processors running at 2899.7 MHz
@@ -18,11 +18,11 @@ All processors running at 2899.7 MHz
                 17 ( 41 ), 18 ( 42 ), 19 ( 43 ), 20 ( 44 ), 21 ( 45 )
                 22 ( 46 ), 23 ( 47 )
         
-System load averages (1min, 5min, 15min) : 153.1 %, 153.1 %, 169.4 %
+System load averages (1min, 5min, 15min) : 96.7 %, 97.0 %, 91.8 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_091_ss_1t1c_10ff.sp' on river at 4:34:26 PM, Tue Jun 23, 2026 (process id: 2731970).
+Simulating `VCT_091_ss_1t1c_10ff.sp' on river at 9:12:44 PM, Tue Jun 23, 2026 (process id: 3294366).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ss/decks/ss/VCT_091
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -30,7 +30,7 @@ Command line:
         VCT_091_ss_1t1c_10ff.sp
 
 Licensing Information:
-[16:34:27.010681] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:12:44.010609] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

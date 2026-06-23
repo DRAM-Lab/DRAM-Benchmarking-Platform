@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 2782960
-Memory  available: 229.2242 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3331115
+Memory  available: 231.0665 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2850.9] ( 24 ),  1 [2850.7] ( 25 ),  2 [2850.9] ( 26 )
-                 3 [2850.9] ( 27 ),  4 [2850.9] ( 28 ),  5 [2850.9] ( 29 )
-                 6 [2850.9] ( 30 ),  7 [2850.8] ( 31 ),  8 [2850.8] ( 32 )
-                 9 [2850.9] ( 33 ), 10 [2850.7] ( 34 ), 11 [2850.9] ( 35 )
+        0:       0 [2889.9] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.9] ( 27 ),  4 [3300.0] ( 28 ),  5 [2899.8] ( 29 )
+                 6 [2899.8] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [2899.7] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                15 [2899.7] ( 39 ), 16 [2899.2] ( 40 ), 17 [2899.7] ( 41 )
                 18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
                 21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 147.6 %, 150.1 %, 158.8 %
+System load averages (1min, 5min, 15min) : 77.4 %, 87.7 %, 90.0 %
 Hyperthreading is enabled
 
 
-Simulating `BCAT_125_tt_read_10ff_vbl45.sp' on river at 4:48:27 PM, Tue Jun 23, 2026 (process id: 2782960).
+Simulating `BCAT_125_tt_read_10ff_vbl45.sp' on river at 9:21:07 PM, Tue Jun 23, 2026 (process id: 3331115).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/sense_amp/decks/tt/BCAT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,7 +31,7 @@ Command line:
         BCAT_125_tt_read_10ff_vbl45.sp
 
 Licensing Information:
-[16:48:27.010721] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[21:21:07.010601] Configured Lic search path (24.01-s002): /usr/license/license.dat
 
 
 Fatal error found by spectre.

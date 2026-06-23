@@ -10,6 +10,7 @@ import pytest
 from dram_benchmark.suites import (
     expected_corner_sweep_rows,
     load_corner_names,
+    resolve_bench_input_dir,
     suite_spec,
 )
 from dram_benchmark.validation import (
@@ -58,6 +59,38 @@ def test_suite_spec_corner_sweep_paths(tmp_path: Path, corner_sweep_csv: Path) -
     spec = suite_spec("corner_sweep", tmp_path)
     assert spec.metrics_csv == corner_sweep_csv
     assert spec.report_corner_label_resolved == "all"
+
+
+def test_suite_spec_corner_sweep_multi_sim_paths(tmp_path: Path) -> None:
+    backend = tmp_path / "spectre"
+    backend.mkdir(parents=True)
+    metrics = backend / "device_metrics_all_corners.csv"
+    pd.DataFrame({"model_id": ["VCT_082"], "corner": ["tt"]}).to_csv(metrics, index=False)
+    spec = suite_spec("corner_sweep", tmp_path)
+    assert spec.metrics_csv == metrics
+
+
+def test_resolve_bench_input_dir_prefers_corner_sweep_backend(tmp_path: Path) -> None:
+    sweep = tmp_path / "corner_sweep" / "spectre"
+    sweep.mkdir(parents=True)
+    pd.DataFrame({"model_id": ["VCT_082"]}).to_csv(
+        sweep / "device_metrics_all_corners.csv", index=False
+    )
+    device = tmp_path / "device" / "spectre" / "tt"
+    device.mkdir(parents=True)
+    pd.DataFrame({"model_id": ["VCT_082"]}).to_csv(device / "device_metrics.csv", index=False)
+
+    resolved = resolve_bench_input_dir(tmp_path)
+    assert resolved == sweep
+
+
+def test_resolve_bench_input_dir_device_multi_sim_single_corner(tmp_path: Path) -> None:
+    device = tmp_path / "device" / "spectre" / "tt"
+    device.mkdir(parents=True)
+    pd.DataFrame({"model_id": ["VCT_082"]}).to_csv(device / "device_metrics.csv", index=False)
+
+    resolved = resolve_bench_input_dir(tmp_path)
+    assert resolved == device
 
 
 def test_suite_spec_multi_tool_paths(tmp_path: Path) -> None:
