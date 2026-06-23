@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards (Paper A1). This pla
 | Suite | `device` |
 | Corner | `tt` |
 | Simulator | ngspice |
-| Generated | 2026-06-23 06:26 UTC |
+| Generated | 2026-06-23 06:40 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -33,11 +33,11 @@ Reproducible benchmark automation for Open DRAM model cards (Paper A1). This pla
 ---
 ## Device benchmark
 
-**Generated:** 2026-06-23 06:26 UTC  
+**Generated:** 2026-06-23 06:40 UTC  
 **Corners:** tt (reference: **tt** for tables/plots)  
 **Simulator:** ngspice  
 **Models:** 7 access devices  
-**OpenDRAMmodelV1 revision:** `caffc74`
+**OpenDRAMmodelV1 revision:** `b664e26`
 
 Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
 
