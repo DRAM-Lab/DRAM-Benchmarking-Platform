@@ -1,0 +1,12 @@
+reference: spectre
+corner: tt
+backends:
+- spectre
+- hspice
+- ngspice
+source: /data1/yongfu/proj/dram-lab/experiments/OpenDRAM-device-benchmark/results
+notes: 'Post-fix pin: HSPICE -inc, ngspice parser/measures'
+backend_status:
+  spectre: reference
+  hspice: compared
+  ngspice: compared

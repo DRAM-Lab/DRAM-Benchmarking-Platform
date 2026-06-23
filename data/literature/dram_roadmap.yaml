@@ -1,0 +1,51 @@
+# Public DRAM roadmap reference points (ISSCC / IRPS / VLSI summaries, 2018–2026).
+# Bands are intentionally loose — used for directional/magnitude correlation only.
+
+points:
+  - year: 2018
+    node_nm: 18
+    pitch_nm: 76
+    vdd_v: 1.2
+    retention_class: "64ms"
+    source: "Industry 1x nm DDR4 class summaries"
+    notes: "Pre-D1β mainstream DRAM"
+
+  - year: 2020
+    node_nm: 15
+    pitch_nm: 60
+    vdd_v: 1.1
+    retention_class: "64ms"
+    source: "IRPS retention scaling reviews"
+    notes: "D1α-class pitch band"
+
+  - year: 2022
+    node_nm: 14
+    pitch_nm: 52
+    vdd_v: 1.0
+    retention_class: "32ms"
+    source: "ISSCC low-power DRAM sessions"
+    notes: "Vdd reduction trend"
+
+  - year: 2024
+    node_nm: 12
+    pitch_nm: 44
+    vdd_v: 0.9
+    retention_class: "32ms"
+    source: "VLSI embedded DRAM / LP-class"
+    notes: "Approaching MATRIX VCT nominal Vdd"
+
+  - year: 2026
+    node_nm: 10
+    pitch_nm: 38
+    vdd_v: 0.85
+    retention_class: "32ms"
+    source: "Open DRAM Model Part I/II projection envelope"
+    notes: "D1β–D0 transition literature band"
+
+bands:
+  pitch_nm:
+    description: "Metal pitch shrink trend for mainstream DRAM"
+    direction: decreasing
+  vdd_v:
+    description: "Core/array Vdd reduction with node scaling"
+    direction: decreasing

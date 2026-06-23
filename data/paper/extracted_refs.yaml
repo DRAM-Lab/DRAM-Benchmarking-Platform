@@ -1,0 +1,332 @@
+# Auto-generated via scripts/extract_paper_refs.py
+# Re-run after paper PDF updates.
+meta:
+  extracted_at: '2026-06-23T01:48:37Z'
+  docs_root: /home/yongfu/proj/dram-lab/docs
+  documents:
+    part1:
+      file: Open_DRAM_Model_Part_I_Cross-Layer_Device_Array_and_Circuit_Analysis_with_BL-to-BL_Coupling_Mitigation_for_4F_VCT_DRAM.pdf
+      doi: 10.1109/JXCDC.2026.3704358
+    part2:
+      file: Open_DRAM_Model_Part_II_Enabling_Processing-in-Memory_in_3D_DRAM.pdf
+      doi: 10.1109/JXCDC.2026.3704508
+    supplement:
+      file: supp1-3704358.docx
+      note: null
+  extraction_warnings:
+  - python-docx not installed; supplement not parsed
+metric_bridge:
+  Ion:
+    spice_column: ion_a
+    note: Paper Ion is TCAD access-device on-current (µA in tables). Benchmark Ion
+      is |Ids| @ Vgs=Vdd on the BSIM card (A).
+  Ioff:
+    spice_column: ioff_a
+    note: Paper Ioff in fA; benchmark uses SPICE extraction at off bias.
+  fpitch:
+    spice_column: fpitch_m
+    note: Card fpitch parameter (m); paper tables use D/R or feature size (nm).
+  nominal_vdd:
+    spice_column: vdd
+    note: Nominal array/core Vdd from card header vs paper corner VDD.
+configs:
+  bcat_6f2_d1b:
+    description: 6F² D1b BCAT baseline (Part I §III-A; Part II Table 2)
+    architecture: BCAT
+    corner:
+      temp_c: 27
+      vdd_v: 1.1
+    design_rule_nm: 12.5
+    feature_size_nm: 12.54
+    channel_lg_nm: 120
+    metrics:
+      Ion:
+        value: 2.44e-06
+        unit: A
+        display: 2.44 µA @ Vd=VDD
+        source:
+          part: 1
+          section: III-A
+          table: null
+        confidence: high
+      Ioff:
+        max: 2.0e-16
+        unit: A
+        display: <0.2 fA @ Vd=VDD
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      Cs:
+        value: 4.0e-15
+        unit: F
+        display: 4.0 fF
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      CBL:
+        value: 2.5e-14
+        unit: F
+        display: 25.0 fF (1280 cells/BL)
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      RBL:
+        value: 49600.0
+        unit: ohm
+        display: 49.6 kΩ
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      CWL:
+        value: 3.0e-14
+        unit: F
+        display: 30.0 fF
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      RWL:
+        value: 81200.0
+        unit: ohm
+        display: 81.2 kΩ
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      delta_vbl_mv:
+        value: 75.8
+        unit: mV
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      sense_margin_mv:
+        value: 60.4
+        unit: mV
+        source:
+          part: 1
+          section: III-A
+        confidence: high
+      tRC_ns:
+        value: 21.5
+        unit: ns
+        source:
+          part: 1
+          table: timing
+          figure: 14
+        confidence: high
+  vct_4f2_d1b_dr12p5_case3:
+    description: 4F² VCT D/R 12.5 nm, junction-underlap Case 3 (Part I Table III)
+    architecture: VCT
+    corner:
+      temp_c: 27
+      vdd_v: 0.9
+    design_rule_nm: 12.5
+    metrics:
+      Ion:
+        value: 8.62e-06
+        unit: A
+        display: 8.62 µA @ Vd=VDD (TCAD)
+        source:
+          part: 1
+          table: III
+          case: 3
+        confidence: high
+      Ioff:
+        max: 5.43e-18
+        unit: A
+        display: 0.00543 fA @ Vd=VDD
+        source:
+          part: 1
+          table: III
+          case: 3
+        confidence: high
+      Cs:
+        value: 4.0e-15
+        unit: F
+        display: 4.0 fF
+        source:
+          part: 1
+          table: III
+          case: 3
+        confidence: high
+      CBL:
+        value: 5.8e-15
+        unit: F
+        display: 5.80 fF
+        source:
+          part: 1
+          table: III
+          case: 3
+        confidence: high
+      delta_vbl_mv:
+        value: 204.1
+        unit: mV
+        source:
+          part: 1
+          table: III
+          case: 3
+        confidence: high
+      sense_margin_mv:
+        value: 93.9
+        unit: mV
+        source:
+          part: 1
+          table: III
+          case: 3
+        confidence: high
+      tRC_ns:
+        value: 12.0
+        unit: ns
+        display: Half-shield + folded-twist BLSA (Part I Fig. 14)
+        source:
+          part: 1
+          figure: 14
+        confidence: medium
+  vct_4f2_d1b_plus3_dr10p2:
+    description: 4F² VCT D1b+3 generation, D/R 10.2 nm (Part II Table 4)
+    architecture: VCT
+    corner:
+      temp_c: 27
+      vdd_v: 0.9
+    design_rule_nm: 10.2
+    metrics:
+      CBL:
+        value: 1.3e-14
+        unit: F
+        display: 13.0 fF conventional sensing
+        source:
+          part: 2
+          table: IV
+        confidence: high
+      RBL:
+        value: 53200.0
+        unit: ohm
+        display: 53.2 kΩ
+        source:
+          part: 2
+          table: IV
+        confidence: high
+      CWL:
+        value: 2.87e-14
+        unit: F
+        source:
+          part: 2
+          table: IV
+        confidence: high
+      RWL:
+        value: 32000.0
+        unit: ohm
+        source:
+          part: 2
+          table: IV
+        confidence: high
+      delta_vbl_mv:
+        value: 117.4
+        unit: mV
+        display: Conventional data '0'
+        source:
+          part: 2
+          table: IV
+        confidence: high
+      sense_margin_mv:
+        value: 79.4
+        unit: mV
+        display: TRA data '0''0''1'
+        source:
+          part: 2
+          table: IV
+        confidence: medium
+  dram_3d_si:
+    description: 3D DRAM Si channel (Part II Table 2)
+    architecture: 3D_GAA
+    corner:
+      temp_c: 27
+      vdd_v: 0.75
+    channel_lg_nm: 100
+    channel_w_nm: 70
+    metrics:
+      Ion:
+        value: 9.03e-06
+        unit: A
+        display: 9.03 µA
+        source:
+          part: 2
+          table: II
+        confidence: high
+      Ioff:
+        max: 2.0e-17
+        unit: A
+        display: 0.02 fA
+        source:
+          part: 2
+          table: II
+        confidence: high
+      CBL_per_layer:
+        value: 8.15e-17
+        unit: F
+        display: 0.0815 fF per layer
+        source:
+          part: 2
+          table: II
+        confidence: high
+      RBL_per_layer:
+        value: 292.0
+        unit: ohm
+        display: 0.292 kΩ per layer
+        source:
+          part: 2
+          table: II
+        confidence: medium
+  dram_3d_aos:
+    description: 3D DRAM AOS (IWO) channel (Part II Table 2)
+    architecture: 3D_GAA
+    corner:
+      temp_c: 27
+      vdd_v: 0.75
+    channel_lg_nm: 40
+    channel_w_nm: 70
+    metrics:
+      Ion:
+        value: 1.04e-05
+        unit: A
+        display: 10.4 µA
+        source:
+          part: 2
+          table: II
+        confidence: high
+      Ioff:
+        max: 2.0e-17
+        unit: A
+        display: <0.02 fA
+        source:
+          part: 2
+          table: II
+        confidence: high
+      CBL_per_layer:
+        value: 1.28e-16
+        unit: F
+        display: 0.128 fF per layer
+        source:
+          part: 2
+          table: II
+        confidence: high
+  hv_peri_28_32:
+    description: HV periphery 28–32 nm class (Part II §Open DRAM Model Information)
+    architecture: HV_PERI
+    corner:
+      temp_c: 27
+      vdd_v: 1.0
+    metrics:
+      nominal_vdd:
+        value: 1.0
+        unit: V
+        source:
+          part: 2
+          section: Open DRAM Model Information
+        confidence: medium
+        note: PTM 32 nm LP metal-gate card basis; see supplement appendix

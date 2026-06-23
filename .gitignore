@@ -1,0 +1,12 @@
+# Generated benchmark outputs
+results/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Local ngspice OSDI build cache (rebuilt by dram-device)
+build/ngspice_osdi/
+
+# Validation run logs
+validation.log

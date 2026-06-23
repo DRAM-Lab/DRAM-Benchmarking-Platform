@@ -1,0 +1,114 @@
+# Cell-capacitance roadmap configuration
+corners:
+  tt:
+    temp_c: 27
+    vdd_scale: 1.0
+  hot:
+    temp_c: 85
+    vdd_scale: 1.0
+
+# Phase A: full Ccell sweep (fF); 60–80 fF extend read-path extrapolation
+ccell_values_ff: [5, 8, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80]
+
+# Analytic-only Ccell values used when upstream sims stop at 50 fF (read @ tt)
+read_extrapolate_ccell_ff: [60, 70, 80]
+
+# Retention extracted @ hot; read signal @ tt
+retention_corner: hot
+read_corner: tt
+
+# Dual constraint targets (Phase B)
+constraints:
+  min_t_ret_s: 0.064
+  min_dv_read_v: 0.100
+  t_en_ns: 10.0
+
+# Read pass criterion for Ccell_min_read extraction.
+# sa_yield: input-referred |ΔV_BL| vs sense-amp analytic SA yield (matches sense-amp SPICE).
+# bl_swing: single-ended BL development target (performance deck / analytic fallback).
+read_constraint:
+  mode: sa_yield
+  target_yield: 0.999
+  default_gain: 10.0
+  sigma_os_mv: 10.0
+  m_min_mv: 50.0
+  vbl_pre_fraction: 0.50
+  use_sa_spec: true
+
+retention:
+  delta_v_v: 0.05
+  v_cell0_v: null
+  hold_start_s: 25.0e-9
+  hold_end_s: 35.0e-9
+  max_hold_s: 0.080
+  tran_step_hold_s: 5.0e-9
+  extrapolate: true
+  direct_crossing: true
+
+performance:
+  bl_signal_v: 0.100
+  write_tol_v: 0.005
+  wl_read_rise_s: 12.0e-9
+  wl_read_fall_s: 22.0e-9
+  write_start_s: 2.0e-9
+  write_end_s: 7.0e-9
+
+# Lumped bitline RC (sense-amp scaling from 60 nm reference)
+bitline:
+  ref_fpitch_m: 6.0e-8
+  rbl_ohm_at_60nm: 50
+  cbl_ff_at_60nm: 200
+  vbl_pre_fraction: 0.50
+
+# Geometric capacitor model (Phase C)
+# Ccell = k · ε₀ · α · fpitch² · structure_factor / t_EOT · β
+# structure_factor captures cylinder/MIM sidewall area beyond planar 4F² plate.
+# Calibrated so VCT_125 @ S-base (k=25) ≈ 20 fF planar (β=1).
+capacitor_geometry:
+  epsilon0_f_per_m: 8.854187817e-12
+  t_dielectric_nm: 1.5
+  area_alpha:
+    BCAT: 1.50
+    VCT: 1.00
+    3D_GAA: 1.00
+  structure_factor:
+    BCAT: 45
+    VCT: 40
+    3D_GAA: 50
+
+# Dielectric k roadmap scenarios @ roadmap labels (082, 091, 102, 125, Si, AOS)
+dielectric_scenarios:
+  S-conservative:
+    k_by_node:
+      "082": 15
+      "091": 16
+      "102": 17
+      "125": 18
+      Si: 18
+      AOS: 18
+  S-base:
+    k_by_node:
+      "082": 18
+      "091": 20
+      "102": 22
+      "125": 25
+      Si: 25
+      AOS: 25
+  S-aggressive:
+    k_by_node:
+      "082": 22
+      "091": 28
+      "102": 34
+      "125": 40
+      Si: 40
+      AOS: 40
+
+# 3D vertical capacitor boost (Phase D)
+three_d_boost:
+  beta_values: [1.0, 1.5, 2.0, 2.5]
+  reference_planar_model: VCT_125
+  compare_models: [3D_gaa_Si, 3D_gaa_AOS]
+
+# Parametric device leakage what-if (Phase D)
+device_whatif:
+  ioff_scale_factors: [1.0, 0.5]

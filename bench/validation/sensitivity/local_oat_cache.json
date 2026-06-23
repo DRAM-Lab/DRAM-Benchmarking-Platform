@@ -1,0 +1,11 @@
+[
+  {"model_id": "VCT_125", "param": "agidl", "nominal": 0.0002, "delta_frac": 0.05, "metric": "i_hold_a", "base_value": 5.76e-11, "perturbed_value": 6.61e-11, "relative_change": 0.148},
+  {"model_id": "VCT_125", "param": "phig", "nominal": 4.7968, "delta_frac": 0.05, "metric": "ion_a", "base_value": 1.406e-6, "perturbed_value": 1.323e-6, "relative_change": -0.059},
+  {"model_id": "VCT_125", "param": "dvt0", "nominal": 0.01, "delta_frac": 0.05, "metric": "ron_ohm", "base_value": 640264.0, "perturbed_value": 672277.0, "relative_change": 0.050},
+  {"model_id": "VCT_125", "param": "u0", "nominal": 0.02, "delta_frac": 0.05, "metric": "ion_a", "base_value": 1.406e-6, "perturbed_value": 1.477e-6, "relative_change": 0.050},
+  {"model_id": "VCT_125", "param": "vsat", "nominal": 28720.0, "delta_frac": 0.05, "metric": "ion_a", "base_value": 1.406e-6, "perturbed_value": 1.350e-6, "relative_change": -0.040},
+  {"model_id": "VCT_125", "param": "rdsw", "nominal": 100.0, "delta_frac": 0.05, "metric": "ron_ohm", "base_value": 640264.0, "perturbed_value": 691485.0, "relative_change": 0.080},
+  {"model_id": "VCT_125", "param": "agidl", "nominal": 0.0002, "delta_frac": 0.05, "metric": "t_read_s", "base_value": 2.293e-8, "perturbed_value": 2.340e-8, "relative_change": 0.020},
+  {"model_id": "BCAT_125", "param": "agidl", "nominal": 0.0001, "delta_frac": 0.05, "metric": "i_hold_a", "base_value": 8.38e-14, "perturbed_value": 9.10e-14, "relative_change": 0.086},
+  {"model_id": "3D_gaa_AOS", "param": "agidl", "nominal": 0.001, "delta_frac": 0.05, "metric": "i_hold_a", "base_value": 3.46e-10, "perturbed_value": 3.98e-10, "relative_change": 0.150}
+]

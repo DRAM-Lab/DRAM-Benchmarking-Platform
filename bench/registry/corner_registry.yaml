@@ -1,0 +1,111 @@
+# Canonical OpenDRAM corner registry (IDEA153 MVP v1.0.0)
+# Consolidates OpenDRAM-device-benchmark and OpenDRAM-jedec-extract corner YAML.
+registry_version: "1.0.0"
+model_repo: OpenDRAMmodelV1
+model_sha: unpinned
+confidence_policy: research_open
+
+corners:
+  tt:
+    temp_c: 27
+    vdd_scale: 1.0
+    process: typical
+    confidence: high
+  ff:
+    temp_c: 27
+    vdd_scale: 1.10
+    process: fast
+    confidence: research_proxy
+    param_deltas:
+      phig: -0.05
+      u0_factor: 1.12
+      vsat_factor: 1.05
+  ss:
+    temp_c: 27
+    vdd_scale: 0.90
+    process: slow
+    confidence: research_proxy
+    param_deltas:
+      phig: 0.05
+      u0_factor: 0.88
+      vsat_factor: 0.95
+  cold:
+    temp_c: -40
+    vdd_scale: 1.0
+    process: typical
+    confidence: high
+  hot:
+    temp_c: 85
+    vdd_scale: 1.0
+    process: typical
+    confidence: high
+  ss_125:
+    temp_c: 125
+    vdd_scale: 0.90
+    process: slow
+    extrapolate_from: ss
+    timing_scale: 1.25
+    leakage_scale: 3.5
+    confidence: sweep_derived
+    param_deltas:
+      phig: 0.05
+      u0_factor: 0.88
+      vsat_factor: 0.95
+
+bundles:
+  typical:
+    label: "TT @ 85 °C (IDEA12 default)"
+    corner: hot
+    guard_band: 0.0
+    confidence: high
+  minimum:
+    label: "SS @ 125 °C (IDEA41 WCET)"
+    corner: ss_125
+    guard_band: 0.05
+    confidence: sweep_derived
+  maximum_perf:
+    label: "FF @ 85 °C (overdrive studies)"
+    corner: ff
+    guard_band: 0.0
+    confidence: research_proxy
+
+default_output_corner: hot
+
+mismatch_tiers:
+  typical:
+    dvt_sigma_mv: 25
+    u0_sigma_pct: 3.0
+    source: literature_finFET_proxy
+    confidence: research_proxy
+  conservative:
+    dvt_sigma_mv: 40
+    u0_sigma_pct: 5.0
+    source: 1.5x_typical
+    confidence: research_proxy
+
+temp_grid_idea34:
+  - {id: cryo_77k, temp_k: 77, note: "IDEA34 cryogenic probe"}
+  - {id: tt_300k, temp_k: 300, note: "27 °C nominal"}
+  - {id: hot_358k, temp_k: 358, note: "85 °C JEDEC hot"}
+  - {id: auto_398k, temp_k: 398, note: "125 °C automotive probe"}
+
+bench_defaults:
+  ccell_values_ff: [10, 20, 30]
+  ac_freq_hz: 1.0e6
+  mini_array:
+    n_cells: 8
+    topology: layout
+    ref_fpitch_m: 6.0e-8
+    rbl_ohm_at_60nm: 50
+    cbl_ff_at_60nm: 200
+    layout:
+      r_metal_ohm_per_pitch_at_60nm: 5.0
+      r_contact_ohm_at_60nm: 2.0
+      c_metal_ff_per_pitch_at_60nm: 20.0
+      c_wl_coupling_ff_at_60nm: 2.0
+      c_sa_ff_at_60nm: 30.0
+      c_far_end_ff_at_60nm: 10.0
+
+process_corner_names:
+  FF: ff
+  SS: ss

@@ -1,0 +1,16 @@
+[
+  "tests/test_platform.py::test_list_models_cli",
+  "tests/test_platform.py::test_manifest_lists_model_cards",
+  "tests/test_platform.py::test_model_root_has_seven_cards",
+  "tests/test_platform.py::test_validate_device_metrics_csv",
+  "tests/test_platform.py::test_validate_model_provenance_passes",
+  "tests/test_read_path_report.py::test_deck_only_report_has_scope_section",
+  "tests/test_read_path_report.py::test_signal_report_executive_summary",
+  "tests/test_suites.py::test_pareto_derive_flat_device_layout",
+  "tests/test_suites.py::test_suite_spec_corner_sweep_paths",
+  "tests/test_suites.py::test_suite_spec_multi_tool_paths",
+  "tests/test_suites.py::test_validate_corner_sweep_csv",
+  "tests/test_suites.py::test_validate_multi_tool_single_backend_warns",
+  "tests/test_suites.py::test_validate_results_tree_ccell_lane",
+  "tests/test_suites.py::test_validate_results_tree_validation_lane"
+]

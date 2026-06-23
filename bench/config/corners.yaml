@@ -1,0 +1,31 @@
+# Generated for OpenDRAMBench — mirrors OpenDRAM-corner-pipeline registry
+corners:
+  tt:
+    temp_c: 27.0
+    vdd_scale: 1.0
+  ff:
+    temp_c: 27.0
+    vdd_scale: 1.1
+  ss:
+    temp_c: 27.0
+    vdd_scale: 0.9
+  cold:
+    temp_c: -40.0
+    vdd_scale: 1.0
+  hot:
+    temp_c: 85.0
+    vdd_scale: 1.0
+  ss_125:
+    temp_c: 125.0
+    vdd_scale: 0.9
+ccell_values_ff:
+  - 10
+  - 20
+  - 30
+ac_freq_hz: 1.0e6
+mini_array:
+  n_cells: 8
+  topology: layout
+  ref_fpitch_m: 6.0e-08
+  rbl_ohm_at_60nm: 50
+  cbl_ff_at_60nm: 200

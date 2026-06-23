@@ -1,0 +1,50 @@
+# Default corner and read-path sweep configuration
+corners:
+  tt:
+    temp_c: 27
+    vdd_scale: 1.0
+  ff:
+    temp_c: 27
+    vdd_scale: 1.10
+  ss:
+    temp_c: 27
+    vdd_scale: 0.90
+
+# Primary VCT nodes + 6F² baseline + 3D GAA (full model matrix)
+read_models:
+  [VCT_082, VCT_091, VCT_102, VCT_125, BCAT_125, 3D_gaa_Si, 3D_gaa_AOS]
+
+# Cell capacitance sweep (fF)
+ccell_values_ff: [10, 15, 20, 30]
+
+# Lumped bitline RC scaled from 60 nm reference pitch
+bitline:
+  ref_fpitch_m: 6.0e-8
+  rbl_ohm_at_60nm: 50
+  cbl_ff_at_60nm: 200
+
+# Read transient timing (ns)
+read_timing:
+  wl_rise_ns: 2.0
+  wl_fall_ns: 20.0
+  t_stop_ns: 30.0
+  sample_times_ns: [5, 8, 10, 12, 15]
+
+# BL precharge as fraction of Vdd
+vbl_pre_fractions: [0.40, 0.45, 0.50]
+
+# Behavioral sense amplifier tiers
+sense_amp:
+  default_gain: 10.0
+  gain_sweep: [5.0, 10.0, 20.0]
+  sigma_os_mv: [5, 10, 15, 20]
+  m_min_mv: 50.0
+  t_en_candidates_ns: [5, 8, 10, 12, 15]
+  target_yield: 0.999
+  mc_samples: 4096
+
+# BL–BL coupling (optional multi-BL deck)
+coupling:
+  n_columns: 3
+  k_couple_values: [0.0, 0.05, 0.10, 0.15]
+  aggressor_swing_fraction: 0.5

@@ -1,0 +1,32 @@
+# Model card → paper configuration mapping
+meta:
+  generated_at: '2026-06-23T01:48:37Z'
+  maps: OpenDRAMmodelV1 card id → paper config in extracted_refs.yaml
+models:
+  BCAT_125:
+    primary_config: bcat_6f2_d1b
+    notes: Card targets D1β-class 6F² BCAT (Nominal VDD=0.85 V, fpitch=42 nm). Paper
+      anchor is D1b baseline @ 1.1 V (Part I §III-A).
+  VCT_082:
+    primary_config: vct_4f2_d1b_dr12p5_case3
+    notes: MATRIX D1α node; paper anchor VCT Case 3 @ D/R 12.5 nm.
+  VCT_091:
+    primary_config: vct_4f2_d1b_dr12p5_case3
+    notes: Interpolated VCT roadmap node between D1α and D1β.
+  VCT_102:
+    primary_config: vct_4f2_d1b_dr12p5_case3
+    notes: Interpolated VCT roadmap node approaching D1β.
+  VCT_125:
+    primary_config: vct_4f2_d1b_plus3_dr10p2
+    secondary_config: vct_4f2_d1b_dr12p5_case3
+    notes: MATRIX D1β node; closest published array table is D1b+3 @ D/R 10.2 nm.
+  3D_gaa_Si:
+    primary_config: dram_3d_si
+    notes: Card fpitch=22 nm is aggressive vs Part II Table 2 W=70 nm design window.
+  3D_gaa_AOS:
+    primary_config: dram_3d_aos
+    notes: AOS channel calibrated to IWO dual-gate literature (Part II §Open DRAM
+      Model).
+  hv_peri_28_32:
+    primary_config: hv_peri_28_32
+    notes: HV periphery calibration detailed in supplement appendix.

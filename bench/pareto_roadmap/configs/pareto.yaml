@@ -1,0 +1,58 @@
+# Retention–performance Pareto roadmap configuration
+corners:
+  tt:
+    temp_c: 27
+    vdd_scale: 1.0
+  hot:
+    temp_c: 85
+    vdd_scale: 1.0
+
+# Ccell sweep (default comparison at 20 fF)
+# 15 fF and 50 fF are interpolated when absent from device-benchmark CSVs.
+ccell_values_ff: [10, 15, 20, 30, 50]
+
+# Corners included in Pareto atlas (O3: TT + 85 °C hot)
+pareto_corners: [tt, hot]
+
+reference_corner: tt
+reference_ccell_ff: 20
+
+retention:
+  delta_v_v: 0.05
+  v_cell0_v: null  # null → use model Vdd at corner
+  hold_start_s: 25.0e-9
+  hold_end_s: 35.0e-9
+  max_hold_s: 0.080
+  tran_step_hold_s: 5.0e-9
+  extrapolate: true
+  direct_crossing: true
+
+performance:
+  bl_signal_v: 0.100
+  write_tol_v: 0.005
+  wl_read_rise_s: 12.0e-9
+  wl_read_fall_s: 22.0e-9
+  write_start_s: 2.0e-9
+  write_end_s: 7.0e-9
+
+# Application anchors: min_t_ret_s is the open-model qualification gate;
+# target_t_ret_s is the product-class aspiration (JEDEC-style) for gap reporting.
+applications:
+  datacenter:
+    min_t_ret_s: 0.064
+    target_t_ret_s: 0.064
+    corner: hot
+    optimize: [t_rcd_s, e_read_j]
+    weight_energy: 0.0
+  mobile:
+    min_t_ret_s: 0.032
+    target_t_ret_s: 0.032
+    corner: tt
+    optimize: [t_rcd_s, e_read_j, i_leak_a]
+    weight_energy: 0.5
+  edge_iot:
+    min_t_ret_s: 0.128
+    target_t_ret_s: 0.128
+    corner: hot
+    optimize: [i_leak_a, e_read_j, t_ret_s]
+    weight_energy: 0.8
