@@ -14,6 +14,7 @@ from pareto.extract.retention import t_ret_from_leakage
 from ccell.config import CcellConfig, load_ccell_config
 from ccell.metrics import CcellSweepPoint
 from ccell.paths import (
+    load_all_sense_amp_signals,
     resolve_bench_results,
     resolve_pareto_results,
     resolve_sense_amp_csv,
@@ -113,6 +114,18 @@ def _expand_ccell_from_leakage(
     return points
 
 
+def _sense_amp_for_corner(
+    sense_amp_df: pd.DataFrame | None,
+    corner: str,
+) -> pd.DataFrame | None:
+    if sense_amp_df is None or sense_amp_df.empty:
+        return None
+    if "corner" not in sense_amp_df.columns:
+        return sense_amp_df
+    subset = sense_amp_df[sense_amp_df["corner"].astype(str) == corner]
+    return subset if not subset.empty else None
+
+
 def _attach_dv_read(
     points: list[CcellSweepPoint],
     cfg: CcellConfig,
@@ -123,7 +136,11 @@ def _attach_dv_read(
     for pt in points:
         dv = pt.dv_read_v
         source = pt.source
-        if pt.corner == cfg.read_corner and dv is None:
+        corner_sense = _sense_amp_for_corner(sense_amp_df, pt.corner)
+        if dv is None and corner_sense is not None:
+            model = load_access_model(pt.model_id)
+            dv, source = resolve_dv_read(model, pt.ccell_ff, cfg, corner_sense)
+        elif dv is None and pt.corner == cfg.read_corner:
             model = load_access_model(pt.model_id)
             dv, source = resolve_dv_read(model, pt.ccell_ff, cfg, sense_amp_df)
         updated.append(
@@ -139,11 +156,20 @@ def _attach_dv_read(
                 dv_read_v=dv,
                 e_read_j=pt.e_read_j,
                 i_leak_a=pt.i_leak_a,
-                source=source if pt.corner == cfg.read_corner else pt.source,
+                source=source if dv is not None and source != pt.source else pt.source,
                 simulator=pt.simulator,
             )
         )
     return updated
+
+
+def _sweep_corners(cfg: CcellConfig, bench: Path) -> list[str]:
+    """Return all PVT corners when multi-corner bench exports exist."""
+    if (bench / "device_metrics_all_corners.csv").is_file():
+        from bench.conditions import load_corners
+
+        return list(load_corners())
+    return [cfg.retention_corner, cfg.read_corner]
 
 
 def _extend_read_extrapolation(
@@ -169,7 +195,8 @@ def _extend_read_extrapolation(
             key = (model_id, cfg.read_corner, ccell)
             if key in existing:
                 continue
-            dv, source = resolve_dv_read(model, ccell, cfg, sense_amp_df)
+            corner_sense = _sense_amp_for_corner(sense_amp_df, cfg.read_corner)
+            dv, source = resolve_dv_read(model, ccell, cfg, corner_sense or sense_amp_df)
             extras.append(
                 CcellSweepPoint(
                     model_id=model_id,
@@ -184,6 +211,40 @@ def _extend_read_extrapolation(
                 )
             )
     return points + extras
+
+
+def _dual_corner_binding(points: list[CcellSweepPoint], cfg: CcellConfig) -> list[CcellSweepPoint]:
+    """Legacy hot-retention + tt-read binding when only dual corners are available."""
+    read_points: list[CcellSweepPoint] = []
+    for model_id in ACCESS_MODEL_IDS:
+        model = load_access_model(model_id)
+        existing = [p for p in points if p.model_id == model_id and p.corner == cfg.read_corner]
+        if existing:
+            read_points.extend(existing)
+            continue
+        for ccell in cfg.ccell_values_ff:
+            read_points.append(
+                CcellSweepPoint(
+                    model_id=model_id,
+                    architecture=model.architecture,
+                    corner=cfg.read_corner,
+                    ccell_ff=ccell,
+                    temp_c=27.0,
+                    vdd=model.nominal_vdd,
+                    fpitch_m=model.fpitch_m,
+                    source="analytic_read_only",
+                )
+            )
+    ret_points = [p for p in points if p.corner == cfg.retention_corner]
+    return dedupe_sweep_points(
+        ret_points
+        + [
+            p
+            for p in read_points
+            if (p.model_id, p.corner, p.ccell_ff)
+            not in {(x.model_id, x.corner, x.ccell_ff) for x in ret_points}
+        ]
+    )
 
 
 def _interpolate_ccell_sweep(
@@ -240,12 +301,16 @@ def derive_ccell_sweep(
     bench = bench_root or resolve_bench_results()
     pareto_root = pareto_root if pareto_root is not None else resolve_pareto_results()
     pareto_df = _load_pareto_dataframe(pareto_root)
+    sweep_corners = _sweep_corners(cfg, bench)
+    full_corner_sweep = len(sweep_corners) > 2
 
     points: list[CcellSweepPoint] = []
-    sense_amp_df = load_sense_amp_dataframe(resolve_sense_amp_csv(cfg.read_corner))
+    sense_amp_df = load_all_sense_amp_signals()
+    if sense_amp_df is None:
+        sense_amp_df = load_sense_amp_dataframe(resolve_sense_amp_csv(cfg.read_corner))
 
     if not pareto_df.empty:
-        for corner in (cfg.retention_corner, cfg.read_corner):
+        for corner in sweep_corners:
             subset = pareto_df[pareto_df["corner"] == corner]
             for _, row in subset.iterrows():
                 ccell = float(row["ccell_ff"])
@@ -269,7 +334,7 @@ def derive_ccell_sweep(
                 )
 
     pareto_cfg = load_pareto_config()
-    for corner in (cfg.retention_corner, cfg.read_corner):
+    for corner in sweep_corners:
         derived = derive_pareto_points(bench_root=bench, config=pareto_cfg, corners=[corner])
         for pt in derived:
             if pt.ccell_ff not in cfg.ccell_values_ff:
@@ -290,8 +355,8 @@ def derive_ccell_sweep(
                     temp_c=pt.temp_c,
                     vdd=pt.vdd,
                     fpitch_m=pt.fpitch_m,
-                    t_ret_s=pt.t_ret_s if corner == cfg.retention_corner else None,
-                    e_read_j=pt.e_read_j if corner == cfg.read_corner else None,
+                    t_ret_s=pt.t_ret_s,
+                    e_read_j=pt.e_read_j,
                     i_leak_a=pt.i_leak_a,
                     source=pt.source,
                 )
@@ -303,11 +368,11 @@ def derive_ccell_sweep(
     sim_retention = {
         (p.model_id, p.corner)
         for p in points
-        if p.corner == cfg.retention_corner and p.source == "simulation" and p.t_ret_s is not None
+        if p.source == "simulation" and p.t_ret_s is not None
     }
     for pt in points:
         expanded.append(pt)
-        if pt.corner != cfg.retention_corner or pt.i_leak_a is None or pt.i_leak_a <= 0:
+        if pt.i_leak_a is None or pt.i_leak_a <= 0:
             continue
         key = (pt.model_id, pt.corner)
         if key in seen_leakage or key in sim_retention:
@@ -334,38 +399,11 @@ def derive_ccell_sweep(
 
     points = dedupe_sweep_points(_interpolate_ccell_sweep(expanded, cfg))
 
-    # Ensure all models have read-corner rows with dv_read.
-    read_points: list[CcellSweepPoint] = []
-    for model_id in ACCESS_MODEL_IDS:
-        model = load_access_model(model_id)
-        existing = [p for p in points if p.model_id == model_id and p.corner == cfg.read_corner]
-        if existing:
-            read_points.extend(existing)
-            continue
-        for ccell in cfg.ccell_values_ff:
-            read_points.append(
-                CcellSweepPoint(
-                    model_id=model_id,
-                    architecture=model.architecture,
-                    corner=cfg.read_corner,
-                    ccell_ff=ccell,
-                    temp_c=27.0,
-                    vdd=model.nominal_vdd,
-                    fpitch_m=model.fpitch_m,
-                    source="analytic_read_only",
-                )
-            )
-    ret_points = [p for p in points if p.corner == cfg.retention_corner]
-    merged = dedupe_sweep_points(
-        ret_points
-        + [
-            p
-            for p in read_points
-            if (p.model_id, p.corner, p.ccell_ff)
-            not in {(x.model_id, x.corner, x.ccell_ff) for x in ret_points}
-        ]
-    )
-    merged = _attach_dv_read(merged, cfg, sense_amp_df)
+    if full_corner_sweep:
+        merged = _attach_dv_read(points, cfg, sense_amp_df)
+    else:
+        merged = _dual_corner_binding(points, cfg)
+        merged = _attach_dv_read(merged, cfg, sense_amp_df)
     return dedupe_sweep_points(_extend_read_extrapolation(merged, cfg, sense_amp_df))
 
 

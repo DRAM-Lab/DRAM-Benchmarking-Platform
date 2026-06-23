@@ -1,6 +1,6 @@
 # OpenDRAMBench Specification
 
-Benchmark automation for Open DRAM Model cards aligned with **Paper A1** in `papers.md`.
+Benchmark automation for Open DRAM Model cards (see `papers.md` for research context).
 
 ## Relationship to Open DRAM Model Part I/II
 
@@ -28,13 +28,13 @@ Cards ship under `models/OpenDRAMmodelV1/models/access_tx/`.
 
 | Suite | Command | Description |
 |-------|---------|-------------|
-| `device` | default | TT device + 1T1C + mini-array for all models |
-| `corner_sweep` | `SUITE=corner_sweep` | Device metrics across six PVT corners |
-| `multi_tool` | `SUITE=multi_tool` | Per-simulator trees + cross-check report |
+| `device` | `SUITE=device` | TT device + 1T1C + mini-array for all models |
+| `corner_sweep` | `SUITE=corner_sweep` | Device + 1T1C + mini-array across six PVT corners |
+| `multi_tool` | `SUITE=multi_tool` | All corners × all simulators + cross-check reports |
 | `sense_amp` | `SUITE=sense_amp` | Read-path ΔV_BL (SPICE) + behavioral SA requirement sweep |
 | `ccell` | `SUITE=ccell` | Ccell retention sweep vs read binding |
 | `validation` | `SUITE=validation` | Golden YAML, literature, paper correlation |
-| `all` | `SUITE=all` | Runs all six Paper A1 suites in order |
+| `all` | default (`./run_experiments.sh`) | Runs all six benchmark suites in order |
 
 `SUITE=all` writes:
 

@@ -316,19 +316,23 @@ def resolve_dv_read(
 
 
 def overlay_sense_amp_read(df: pd.DataFrame, cfg: CcellConfig) -> pd.DataFrame:
-    """Replace tt-corner ΔV_read with measured sense-amp values when available."""
-    from ccell.paths import resolve_sense_amp_csv
+    """Replace analytic ΔV_read with measured sense-amp values when available."""
+    from ccell.paths import load_all_sense_amp_signals
 
-    sense_df = load_sense_amp_dataframe(resolve_sense_amp_csv(cfg.read_corner))
+    sense_df = load_all_sense_amp_signals()
     if sense_df is None or df.empty:
         return df
 
     out = df.copy()
     for idx, row in out.iterrows():
-        if row.get("corner") != cfg.read_corner:
-            continue
+        corner = str(row.get("corner", cfg.read_corner))
+        corner_sense = sense_df
+        if "corner" in sense_df.columns:
+            corner_sense = sense_df[sense_df["corner"].astype(str) == corner]
+            if corner_sense.empty:
+                continue
         dv = resolve_dv_from_sense_amp_dataframe(
-            sense_df,
+            corner_sense,
             str(row["model_id"]),
             float(row["ccell_ff"]),
             cfg.constraints.t_en_ns,

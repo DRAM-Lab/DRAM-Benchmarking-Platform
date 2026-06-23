@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# OpenDRAMBench — Paper A1 full benchmark verification pipeline (self-contained)
+# OpenDRAMBench — full benchmark verification pipeline (self-contained)
 #
 # Usage:
-#   ./run_experiments.sh                     # device suite @ tt (full: device+1T1C+mini-array)
-#   SUITE=all ./run_experiments.sh           # full Paper A1 evidence bundle
+#   ./run_experiments.sh                     # full benchmark bundle (default)
+#   SUITE=device ./run_experiments.sh        # device @ tt only (faster smoke test)
 #   SUITE=validation ./run_experiments.sh    # golden/literature/paper audit only
 #   DEVICE_ONLY=1 ./run_experiments.sh       # skip 1T1C + mini-array
 #   GENERATE_ONLY=1 ./run_experiments.sh     # deck generation only
@@ -18,7 +18,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
 PYTHON="${PYTHON:-}"
-SUITE="${SUITE:-device}"
+SUITE="${SUITE:-all}"
 CORNER="${CORNER:-tt}"
 RESULTS_DIR="${RESULTS_DIR:-results}"
 GENERATE_ONLY="${GENERATE_ONLY:-0}"
@@ -51,10 +51,29 @@ export OPEN_DRAM_MODEL_ROOT="$REPO_ROOT/models/OpenDRAMmodelV1/models/access_tx"
 export OPEN_DRAM_CORNER_SOURCE="${OPEN_DRAM_CORNER_SOURCE:-local}"
 export OPEN_DRAM_CORNER_REGISTRY="${OPEN_DRAM_CORNER_REGISTRY:-$REPO_ROOT/bench/registry/corner_registry.yaml}"
 
-echo "=== OpenDRAMBench (Paper A1) ==="
+_CORNER_LIST="$("$PYTHON" -c "
+import yaml
+from pathlib import Path
+raw = yaml.safe_load(Path('bench/config/corners.yaml').read_text(encoding='utf-8'))
+print(', '.join(raw['corners']))
+")"
+
+case "$SUITE" in
+  all|corner_sweep|multi_tool|sense_amp)
+    _CORNERS_DISPLAY="all (${_CORNER_LIST})"
+    ;;
+  *)
+    _CORNERS_DISPLAY="$CORNER"
+    ;;
+esac
+
+echo "=== OpenDRAMBench ==="
 echo "Python:     $("$PYTHON" --version)"
 echo "Suite:      $SUITE"
-echo "Corner:     $CORNER"
+echo "Corners:    $_CORNERS_DISPLAY"
+if [[ "$SUITE" == "all" ]]; then
+  echo "Reference:  tt (device lane + primary report tables)"
+fi
 echo "Models:     $OPEN_DRAM_MODEL_ROOT"
 echo "Engine:     $REPO_ROOT (bundled)"
 echo "Results:    $RESULTS_DIR"

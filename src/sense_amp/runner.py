@@ -262,3 +262,55 @@ def run_full_read_path(
         artifacts["coupling_signal"] = coupling_path
 
     return artifacts
+
+
+def run_all_corners_read_path(
+    output_dir: Path,
+    *,
+    model_ids: list[str] | None = None,
+    include_coupling: bool = True,
+    backend: str | None = None,
+    generate_only: bool = False,
+    config: dict | None = None,
+) -> dict[str, Path]:
+    """Generate decks, simulate, and export read-path CSVs for every PVT corner."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    cfg = config or load_read_path_config()
+    corner_names = list(load_corners(cfg))
+    logger.info("Read-path sweep: %d corners", len(corner_names))
+
+    signal_frames: list[pd.DataFrame] = []
+    coupling_frames: list[pd.DataFrame] = []
+    artifacts: dict[str, Path] = {}
+
+    for idx, corner_name in enumerate(corner_names, start=1):
+        logger.info("--- Read-path corner %d/%d: %s ---", idx, len(corner_names), corner_name)
+        corner_artifacts = run_full_read_path(
+            output_dir,
+            corner_name=corner_name,
+            model_ids=model_ids,
+            include_coupling=include_coupling,
+            backend=backend,
+            generate_only=generate_only,
+            config=cfg,
+        )
+        artifacts.update(corner_artifacts)
+        signal_path = output_dir / f"read_signal_{corner_name}.csv"
+        if signal_path.is_file():
+            signal_frames.append(pd.read_csv(signal_path))
+        coupling_path = output_dir / f"coupling_signal_{corner_name}.csv"
+        if coupling_path.is_file():
+            coupling_frames.append(pd.read_csv(coupling_path))
+
+    if signal_frames:
+        combined_signal = pd.concat(signal_frames, ignore_index=True)
+        combined_path = output_dir / "read_signal_all_corners.csv"
+        combined_signal.to_csv(combined_path, index=False)
+        artifacts["read_signal_all_corners"] = combined_path
+    if coupling_frames:
+        combined_coupling = pd.concat(coupling_frames, ignore_index=True)
+        combined_path = output_dir / "coupling_signal_all_corners.csv"
+        combined_coupling.to_csv(combined_path, index=False)
+        artifacts["coupling_signal_all_corners"] = combined_path
+
+    return artifacts

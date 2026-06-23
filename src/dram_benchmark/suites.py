@@ -1,4 +1,4 @@
-"""Paper A1 benchmark suite definitions and artifact path resolution."""
+"""Benchmark suite definitions and artifact path resolution."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ import yaml
 from dram_benchmark.paths import BENCH_CONFIG, STANDARD_ACCESS_MODEL_IDS
 
 # Ordered execution for SUITE=all (pareto is a ccell dependency, not a top-level suite)
-PAPER_A1_SUITES: tuple[str, ...] = (
+BENCHMARK_SUITES: tuple[str, ...] = (
     "device",
     "corner_sweep",
     "multi_tool",
@@ -18,7 +18,7 @@ PAPER_A1_SUITES: tuple[str, ...] = (
     "ccell",
     "validation",
 )
-SUITE_CHOICES: tuple[str, ...] = (*PAPER_A1_SUITES, "all")
+SUITE_CHOICES: tuple[str, ...] = (*BENCHMARK_SUITES, "all")
 
 SIMULATOR_BACKENDS: tuple[str, ...] = ("spectre", "hspice", "ngspice")
 
@@ -39,7 +39,11 @@ class SuiteSpec:
         if self.name == "ccell":
             return self.results_dir / "ccell_sweep.csv"
         if self.name == "sense_amp":
-            for name in ("read_signal_tt.csv", f"read_signal_{self.reference_corner}.csv"):
+            for name in (
+                "read_signal_tt.csv",
+                "read_signal_all_corners.csv",
+                f"read_signal_{self.reference_corner}.csv",
+            ):
                 path = self.results_dir / name
                 if path.is_file():
                     return path
@@ -128,7 +132,7 @@ def discover_simulator_backends(results_dir: Path, corner: str = "tt") -> list[s
 
 
 def expected_corner_sweep_rows(corner_count: int | None = None) -> int:
-    """Return expected row count for a full device-only corner sweep."""
+    """Return expected row count for a full corner sweep device matrix."""
     corners = corner_count or len(load_corner_names())
     return len(STANDARD_ACCESS_MODEL_IDS) * corners
 

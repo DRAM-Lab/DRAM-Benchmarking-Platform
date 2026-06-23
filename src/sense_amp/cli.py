@@ -12,7 +12,7 @@ import pandas as pd
 from sense_amp.codesign import export_codesign_artifacts
 from sense_amp.models import READ_MODEL_IDS
 from sense_amp.report import generate_report
-from sense_amp.runner import generate_decks, run_full_read_path
+from sense_amp.runner import generate_decks, run_all_corners_read_path, run_full_read_path
 
 logger = logging.getLogger(__name__)
 
@@ -73,6 +73,25 @@ def _cmd_list_models(_args: argparse.Namespace) -> int:
 
 def _cmd_generate(args: argparse.Namespace) -> int:
     model_ids = list(READ_MODEL_IDS) if args.all or not args.models else args.models
+    if args.corner == "all":
+        from sense_amp.conditions import load_corners
+        from sense_amp.paths import load_read_path_config
+
+        cfg = load_read_path_config()
+        paths: list[Path] = []
+        for corner_name in load_corners(cfg):
+            paths.extend(
+                generate_decks(
+                    args.output,
+                    corner_name=corner_name,
+                    model_ids=model_ids,
+                    include_coupling=args.coupling,
+                    backend=args.simulator,
+                    config=cfg,
+                )
+            )
+        print(f"Generated {len(paths)} decks under {args.output / 'decks'}")
+        return 0
     paths = generate_decks(
         args.output,
         corner_name=args.corner,
@@ -116,32 +135,63 @@ def _write_report_bundle(
 def _cmd_run(args: argparse.Namespace) -> int:
     model_ids = list(READ_MODEL_IDS) if args.all or not args.models else args.models
     include_coupling = args.coupling and not args.no_coupling
-    run_full_read_path(
-        args.output,
-        corner_name=args.corner,
-        model_ids=model_ids,
-        include_coupling=include_coupling,
-        backend=args.simulator,
-        generate_only=args.generate_only,
-    )
+    report_corner = "tt" if args.corner == "all" else args.corner
+    if args.corner == "all":
+        run_all_corners_read_path(
+            args.output,
+            model_ids=model_ids,
+            include_coupling=include_coupling,
+            backend=args.simulator,
+            generate_only=args.generate_only,
+        )
+    else:
+        run_full_read_path(
+            args.output,
+            corner_name=args.corner,
+            model_ids=model_ids,
+            include_coupling=include_coupling,
+            backend=args.simulator,
+            generate_only=args.generate_only,
+        )
     if args.generate_only:
-        print(f"Decks written under {args.output / 'decks' / args.corner}")
+        if args.corner == "all":
+            print(f"Decks written under {args.output / 'decks'}")
+        else:
+            print(f"Decks written under {args.output / 'decks' / args.corner}")
         return 0
 
-    signal_path = args.output / f"read_signal_{args.corner}.csv"
+    signal_path = args.output / (
+        "read_signal_all_corners.csv" if args.corner == "all" else f"read_signal_{args.corner}.csv"
+    )
+    if not signal_path.is_file():
+        signal_path = args.output / f"read_signal_{report_corner}.csv"
     if not signal_path.is_file():
         logger.error("Missing signal CSV: %s", signal_path)
         return 1
     signal_df = pd.read_csv(signal_path)
+    if args.corner == "all" and "corner" in signal_df.columns:
+        ref = signal_df[signal_df["corner"] == report_corner]
+        if not ref.empty:
+            signal_df = ref
     coupling_df = None
-    coupling_path = args.output / f"coupling_signal_{args.corner}.csv"
+    coupling_path = args.output / (
+        "coupling_signal_all_corners.csv"
+        if args.corner == "all"
+        else f"coupling_signal_{args.corner}.csv"
+    )
+    if not coupling_path.is_file():
+        coupling_path = args.output / f"coupling_signal_{report_corner}.csv"
     if coupling_path.is_file():
         coupling_df = pd.read_csv(coupling_path)
+        if args.corner == "all" and coupling_df is not None and "corner" in coupling_df.columns:
+            ref = coupling_df[coupling_df["corner"] == report_corner]
+            if not ref.empty:
+                coupling_df = ref
 
     report_path = _write_report_bundle(
         args.output,
         signal_df=signal_df,
-        corner=args.corner,
+        corner=report_corner,
         coupling_df=coupling_df,
     )
     print(f"Wrote {signal_path}")

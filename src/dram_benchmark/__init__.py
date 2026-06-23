@@ -1,3 +1,3 @@
-"""OpenDRAMBench — reproducible SPICE model benchmarking (Paper A1)."""
+"""OpenDRAMBench — reproducible SPICE model benchmarking."""
 
 __version__ = "0.2.0"

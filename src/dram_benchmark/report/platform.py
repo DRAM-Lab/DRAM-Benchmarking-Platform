@@ -9,10 +9,10 @@ from pathlib import Path
 from typing import Any
 
 from dram_benchmark.paths import model_bundle_revision, resolve_model_root
-from dram_benchmark.suites import PAPER_A1_SUITES
+from dram_benchmark.suites import BENCHMARK_SUITES
 
 _PLATFORM_TITLE = "# OpenDRAMBench — Results"
-_AGGREGATE_TITLE = "# OpenDRAMBench — Paper A1 Aggregate"
+_AGGREGATE_TITLE = "# OpenDRAMBench — Aggregate Results"
 
 
 def _demote_h1(markdown: str) -> str:
@@ -87,7 +87,8 @@ def _artifact_rows(results_dir: Path, *, suite: str) -> list[tuple[str, str]]:
         ("mini_array_metrics_all_corners.csv", "Mini-array metrics across all corners"),
         ("ccell_sweep.csv", "Ccell retention vs read binding sweep"),
         ("pareto_roadmap.csv", "Pareto roadmap points (ccell dependency)"),
-        ("read_signal_tt.csv", "Read-path ΔV_BL samples"),
+        ("read_signal_tt.csv", "Read-path ΔV_BL samples @ TT"),
+        ("read_signal_all_corners.csv", "Read-path ΔV_BL across all PVT corners"),
         ("sa_spec_per_node.csv", "Derived SA requirements per access node"),
     ]
     rows: list[tuple[str, str]] = []
@@ -133,26 +134,26 @@ def _artifacts_section(results_dir: Path, *, suite: str) -> str:
 
 
 def _suite_layout_section(results_dir: Path) -> str:
-    if not any((results_dir / name).is_dir() for name in PAPER_A1_SUITES):
+    if not any((results_dir / name).is_dir() for name in BENCHMARK_SUITES):
         return ""
 
     lines = [
         "## Suite layout",
         "",
-        "Paper A1 aggregate run (`SUITE=all`). Each lane has its own report:",
+        "Full benchmark run (`SUITE=all`). Each lane has its own report:",
         "",
         "| Suite | Report | Role |",
         "|-------|--------|------|",
     ]
     roles = {
         "device": "Access device + 1T1C + mini-array @ TT",
-        "corner_sweep": "Six-corner PVT device matrix",
+        "corner_sweep": "Six-corner PVT matrix (device + 1T1C + mini-array)",
         "multi_tool": "Cross-simulator agreement",
         "sense_amp": "Read-path ΔV_BL + SA requirements",
         "ccell": "Ccell retention vs read binding",
         "validation": "Golden + literature + paper audit",
     }
-    for name in PAPER_A1_SUITES:
+    for name in BENCHMARK_SUITES:
         report = f"{name}/RESULTS.md"
         status = "ready" if (results_dir / name / "RESULTS.md").is_file() else "pending"
         lines.append(f"| `{name}` | [{report}]({report}) [{status}] | {roles.get(name, '')} |")
@@ -161,13 +162,18 @@ def _suite_layout_section(results_dir: Path) -> str:
 
 
 def _reproduce_section(*, suite: str, corner: str, results_dir: Path) -> str:
+    replay_line = (
+        f"SUITE=device ./scripts/run_experiments.sh  # device lane only (faster)"
+        if suite == "all"
+        else f"SUITE={suite} ./scripts/run_experiments.sh     # replay this suite"
+    )
     return "\n".join(
         [
             "## Reproduce",
             "",
             "```bash",
-            f"./scripts/run_experiments.sh                    # default: device @ {corner}",
-            f"SUITE={suite} ./scripts/run_experiments.sh     # replay this suite",
+            "./scripts/run_experiments.sh                    # default: full benchmark bundle",
+            replay_line,
             f"dram-bench run --suite {suite} --corner {corner} --output {results_dir.name}",
             "```",
             "",
@@ -255,14 +261,14 @@ def finalize_results_markdown(
         title = _AGGREGATE_TITLE
         intro = (
             "Self-contained benchmark automation for Open DRAM Model cards. "
-            "This page indexes each Paper A1 lane; open a suite report for detailed tables."
+            "This page indexes each benchmark lane; open a suite report for detailed tables."
         )
     else:
         lane_body = _demote_h1(body)
         title = _PLATFORM_TITLE
         models = ", ".join(sorted(p.stem for p in resolve_model_root().glob("*.inc")))
         intro = (
-            "Reproducible benchmark automation for Open DRAM model cards (Paper A1). "
+            "Reproducible benchmark automation for Open DRAM model cards. "
             "This platform extends the Open DRAM Model Part I/II artifacts with push-button reruns, "
             "multi-tool comparison, validation, and provenance manifests."
         )

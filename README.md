@@ -112,16 +112,16 @@ Model cards are included under `models/OpenDRAMmodelV1/` — no submodules or ex
 
 ## Quick start
 
-**One-shot pipeline** (install, device suite @ TT, offline tests):
+**One-shot pipeline** (install, full benchmark bundle, offline tests):
 
 ```bash
 ./scripts/run_experiments.sh
 ```
 
-**Full evidence bundle** (all six suites):
+**Faster smoke test** (device lane @ TT only — skips corner sweep, multi-tool, sense-amp, ccell, validation):
 
 ```bash
-SUITE=all ./scripts/run_experiments.sh
+SUITE=device ./scripts/run_experiments.sh
 ```
 
 **Regenerate paper-derived golden YAML** (after updating PDFs or pinned metrics):
@@ -140,8 +140,8 @@ Use via `dram-bench run --suite <name>` or `SUITE=<name> ./scripts/run_experimen
 | Suite | Role | Primary artifact |
 |-------|------|------------------|
 | `device` | Access device + 1T1C + mini-array @ TT | `device/device_metrics.csv` |
-| `corner_sweep` | PVT device matrix (all corners) | `corner_sweep/device_metrics_all_corners.csv` |
-| `multi_tool` | Cross-simulator agreement | `multi_tool/simulator_compare/` |
+| `corner_sweep` | PVT device + 1T1C + mini-array matrix | `corner_sweep/device_metrics_all_corners.csv` |
+| `multi_tool` | Cross-simulator agreement (all corners) | `multi_tool/simulator_compare/` |
 | `sense_amp` | Read-path ΔV_BL + SA co-design | `sense_amp/read_signal_tt.csv` |
 | `ccell` | Ccell retention vs read binding | `ccell/ccell_sweep.csv` |
 | `validation` | Golden + literature + paper audit | `validation/RESULTS.md` |
@@ -159,7 +159,7 @@ Use via `dram-bench run --suite <name>` or `SUITE=<name> ./scripts/run_experimen
 | `OPEN_DRAM_PARETO_RESULTS` | — | Pareto results dir (ccell dependency) |
 | `OPEN_DRAM_SENSE_AMP_RESULTS` | — | Sense-amp results dir (ccell overlay) |
 | `PAPER_DOCS_ROOT` | `data/paper/docs` | Part I/II PDF directory for `extract_paper_refs.py` |
-| `SUITE` | `device` | Suite for `run_experiments.sh` |
+| `SUITE` | `all` | Suite for `run_experiments.sh` |
 | `RESULTS_DIR` | `results` | Output root for `run_experiments.sh` |
 | `DEVICE_ONLY` | `0` | Skip 1T1C + mini-array |
 | `GENERATE_ONLY` | `0` | Deck generation only |

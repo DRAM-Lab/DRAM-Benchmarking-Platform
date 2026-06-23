@@ -9,7 +9,7 @@ import pandas as pd
 
 from dram_benchmark.paths import STANDARD_ACCESS_MODEL_IDS, list_access_model_ids, resolve_model_root
 from dram_benchmark.suites import (
-    PAPER_A1_SUITES,
+    BENCHMARK_SUITES,
     discover_simulator_backends,
     expected_corner_sweep_rows,
     load_corner_names,
@@ -142,6 +142,13 @@ def validate_corner_sweep_csv(path: Path) -> ValidationResult:
         else:
             result.add(f"corner_dir_{corner}", "WARN", "per-corner tree missing")
 
+    for rel_name in ("cell_1t1c_metrics_all_corners.csv", "mini_array_metrics_all_corners.csv"):
+        aggregate = path.parent / rel_name
+        if aggregate.is_file():
+            result.add(rel_name, "PASS", rel_name)
+        else:
+            result.add(rel_name, "WARN", f"missing {rel_name}")
+
     return result
 
 
@@ -211,7 +218,9 @@ def validate_results_tree(results_dir: Path, *, suite: str = "device", corner: s
             combined.add("ccell_sweep_csv", "FAIL", f"missing {sweep}")
     elif suite == "sense_amp":
         decks = list(results_dir.glob("decks/**/*.sp"))
-        signal = results_dir / "read_signal_tt.csv"
+        signal = results_dir / "read_signal_all_corners.csv"
+        if not signal.is_file():
+            signal = results_dir / "read_signal_tt.csv"
         if signal.is_file():
             combined.add("sense_amp_signal", "PASS", signal.name)
         elif decks:
@@ -225,7 +234,7 @@ def validate_results_tree(results_dir: Path, *, suite: str = "device", corner: s
         else:
             combined.add("validation_data", "WARN", "validation data exports missing")
     elif suite == "all":
-        for child in PAPER_A1_SUITES:
+        for child in BENCHMARK_SUITES:
             child_dir = results_dir / child
             if child_dir.is_dir():
                 combined.merge(validate_results_tree(child_dir, suite=child, corner=corner))

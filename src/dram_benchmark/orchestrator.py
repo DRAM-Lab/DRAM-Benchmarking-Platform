@@ -1,4 +1,4 @@
-"""Orchestrate bundled OpenDRAM benchmark lanes for Paper A1."""
+"""Orchestrate bundled OpenDRAM benchmark lanes."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 from dram_benchmark.paths import PROJECT_ROOT, resolve_engine_root, resolve_model_root
-from dram_benchmark.suites import PAPER_A1_SUITES, SUITE_CHOICES, SuiteSpec, suite_spec
+from dram_benchmark.suites import BENCHMARK_SUITES, SUITE_CHOICES, SuiteSpec, suite_spec
 
 logger = logging.getLogger(__name__)
 
@@ -62,6 +62,16 @@ def _has_read_path_simulator() -> bool:
         return False
 
 
+def _resolve_full_bench_results(parent_results: Path | None) -> Path | None:
+    """Prefer corner_sweep tree when a full multi-corner benchmark exists."""
+    if parent_results is None:
+        return None
+    corner_sweep = parent_results / "corner_sweep"
+    if (corner_sweep / "device_metrics_all_corners.csv").is_file():
+        return corner_sweep
+    return parent_results / "device"
+
+
 def _run_golden_validation(device_results: Path, *, corner: str = "tt", rtol: float = 0.02) -> None:
     """Validate device metrics against bundled golden CSVs."""
     _run_module(
@@ -83,7 +93,7 @@ def _run_pareto_derive(pareto_dir: Path, device_dir: Path) -> None:
 def run_suite(
     output_dir: Path,
     *,
-    suite: str = "device",
+    suite: str = "all",
     corner: str = "tt",
     generate_only: bool = False,
     device_only: bool = False,
@@ -136,7 +146,7 @@ def run_suite(
             "run",
             *model_args,
             "--corner",
-            corner,
+            "all",
             "--output",
             str(output_dir),
             "--all-simulators",
@@ -147,17 +157,18 @@ def run_suite(
             args.append("--generate-only")
         _run_module("bench.cli", args)
         if not generate_only:
-            _ensure_simulator_comparison(output_dir, corner=corner)
+            _ensure_simulator_comparison(output_dir, all_corners=True)
         return output_dir
 
     if suite == "sense_amp":
         device_dir = (parent_results or output_dir.parent) / "device"
+        sense_corner = "all"
         if _has_read_path_simulator() and not generate_only:
             args = [
                 "run",
                 "--all",
                 "--corner",
-                corner,
+                sense_corner,
                 "--output",
                 str(output_dir),
             ]
@@ -171,19 +182,21 @@ def run_suite(
             )
             _run_module(
                 "sense_amp.cli",
-                ["generate", "--all", "--corner", corner, "--output", str(output_dir)],
+                ["generate", "--all", "--corner", sense_corner, "--output", str(output_dir)],
                 env=_bench_env(bench_results=device_dir),
             )
         return output_dir
 
     if suite == "ccell":
-        device_dir = (parent_results or output_dir.parent) / "device"
+        bench_dir = _resolve_full_bench_results(parent_results) or (
+            (parent_results or output_dir.parent) / "device"
+        )
         pareto_dir = (parent_results or output_dir.parent) / "pareto"
         sense_dir = (parent_results or output_dir.parent) / "sense_amp"
         if not pareto_dir.is_dir() or not (pareto_dir / "pareto_roadmap.csv").is_file():
-            _run_pareto_derive(pareto_dir, device_dir)
+            _run_pareto_derive(pareto_dir, bench_dir)
         env = _bench_env(
-            bench_results=device_dir,
+            bench_results=bench_dir,
             pareto_results=pareto_dir,
             sense_amp_results=sense_dir,
         )
@@ -232,6 +245,14 @@ def run_suite(
     if suite == "all":
         parent = output_dir.resolve()
         parent.mkdir(parents=True, exist_ok=True)
+        from bench.conditions import load_corners
+
+        corner_names = ", ".join(load_corners())
+        logger.info(
+            "Full benchmark bundle: device@%s + all corners (%s) on sweep lanes",
+            corner,
+            corner_names,
+        )
         device_dir = parent / "device"
         run_suite(
             device_dir,
@@ -246,13 +267,13 @@ def run_suite(
         )
         for child_suite in ("corner_sweep", "multi_tool", "sense_amp", "ccell", "validation"):
             child_dir = parent / child_suite
-            logger.info("=== Paper A1 suite: %s → %s ===", child_suite, child_dir)
+            logger.info("=== Benchmark suite: %s → %s ===", child_suite, child_dir)
             run_suite(
                 child_dir,
                 suite=child_suite,
                 corner=corner,
                 generate_only=generate_only,
-                device_only=True if child_suite in {"corner_sweep", "multi_tool"} else device_only,
+                device_only=device_only,
                 simulator=simulator,
                 models=models,
                 validate_golden=False,
@@ -263,7 +284,29 @@ def run_suite(
     raise ValueError(f"Unknown suite: {suite}. Choose from {SUITE_CHOICES}")
 
 
-def _ensure_simulator_comparison(results_dir: Path, *, corner: str) -> None:
+def _ensure_simulator_comparison(
+    results_dir: Path,
+    *,
+    corner: str = "tt",
+    all_corners: bool = False,
+) -> None:
+    if all_corners:
+        compare_root = results_dir / "simulator_compare"
+        if compare_root.is_dir() and any(compare_root.glob("*/SIMULATOR_COMPARE.md")):
+            return
+        _run_module(
+            "bench.cli",
+            [
+                "compare-simulators",
+                "--input",
+                str(results_dir),
+                "--all-corners",
+                "--output",
+                str(compare_root),
+            ],
+        )
+        return
+
     compare_md = results_dir / "simulator_compare" / corner / "SIMULATOR_COMPARE.md"
     if compare_md.is_file():
         return

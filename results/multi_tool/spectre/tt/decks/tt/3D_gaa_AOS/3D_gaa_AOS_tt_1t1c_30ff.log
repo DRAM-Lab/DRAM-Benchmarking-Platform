@@ -1,0 +1,38 @@
+
+Spectre (R) Circuit Simulator
+Version 24.1.0.167.isr2 64bit -- 28 Nov 2024
+Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+User: yongfu   Host: river   HostID: 7F0100   PID: 2753033
+Memory  available: 230.2417 GB  physical: 405.0724 GB
+Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
+CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
+        Socket: Processors [Frequency] (Hyperthreaded Processor)
+        0:       0 [2884.4] ( 24 ),  1 [2884.3] ( 25 ),  2 [2884.3] ( 26 )
+                 3 [2884.2] ( 27 ),  4 [2884.3] ( 28 ),  5 [2882.8] ( 29 )
+                 6 [2886.3] ( 30 ),  7 [2884.2] ( 31 ),  8 [2884.2] ( 32 )
+                 9 [2884.3] ( 33 ), 10 [2884.3] ( 34 ), 11 [2884.4] ( 35 )
+        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
+                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+        
+System load averages (1min, 5min, 15min) : 155.0 %, 155.4 %, 164.9 %
+Hyperthreading is enabled
+
+
+Simulating `3D_gaa_AOS_tt_1t1c_30ff.sp' on river at 4:40:57 PM, Tue Jun 23, 2026 (process id: 2753033).
+Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/tt/decks/tt/3D_gaa_AOS
+Command line:
+    /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
+        -I/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform  \
+        3D_gaa_AOS_tt_1t1c_30ff.sp
+
+Licensing Information:
+[16:40:57.010681] Configured Lic search path (24.01-s002): /usr/license/license.dat
+
+
+Fatal error found by spectre.
+    FATAL (SPECTRE-209): Cannot run the simulation because the required license could not be checked out. Check the license usage in the license server or use the license queuing feature (+lqtimeout <timeout_value> in the command line) to wait until the required license is available. For more information about +lqtimeout, type 'spectre -h'.

@@ -1,4 +1,4 @@
-"""Tests for Paper A1 suite path resolution and validation."""
+"""Tests for benchmark suite path resolution and validation."""
 
 from __future__ import annotations
 

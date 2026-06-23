@@ -49,3 +49,24 @@ def resolve_sense_amp_csv(corner: str = "tt") -> Path | None:
         if path.is_file():
             return path
     return None
+
+
+def load_all_sense_amp_signals() -> "pd.DataFrame | None":
+    """Load per-corner or combined read-path signal tables when available."""
+    import pandas as pd
+
+    env = os.environ.get("OPEN_DRAM_SENSE_AMP_RESULTS")
+    base = Path(env) if env else DEFAULT_SENSE_AMP_RESULTS
+    combined = base / "read_signal_all_corners.csv"
+    if combined.is_file():
+        return pd.read_csv(combined)
+
+    frames = []
+    for path in sorted(base.glob("read_signal_*.csv")):
+        if path.name == "read_signal_all_corners.csv":
+            continue
+        frames.append(pd.read_csv(path))
+    if frames:
+        return pd.concat(frames, ignore_index=True)
+    single = resolve_sense_amp_csv("tt")
+    return pd.read_csv(single) if single is not None else None

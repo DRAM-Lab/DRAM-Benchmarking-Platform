@@ -1,0 +1,49 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: * capacitance (transient step)
+
+Warning: Model issue on line 7 :
+  .model nfet bsimcmg_va type=1 bulkmod=0 bulkmod=0 igcmod=0 igbmod=0 gidl ...
+unrecognized parameter (sasatcv) - ignored
+
+Doing analysis at TEMP = 125.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+d                                       0.3375
+g                                        0.675
+s                                            0
+vd#branch                         -3.54064e-06
+vg#branch                                    0
+vs#branch                          3.54064e-06
+
+
+No. of Data Rows : 5014
+
+  Measurements for Transient Analysis
+
+qg                  =   -3.88858e-21 from=  1.01000e-09 to=  3.00000e-09
+qd                  =   -7.07332e-15 from=  1.01000e-09 to=  3.00000e-09
+
+
+Total analysis time (seconds) = 3.94825
+
+Total elapsed time (seconds) = 3.957 
+
+Total DRAM available = 386307.215 MB.
+DRAM currently available = 20405.598 MB.
+Maximum ngspice program size =  529.836 MB.
+Current ngspice program size =   14.352 MB.
+
+Shared ngspice pages =   12.336 MB.
+Text (code) pages =    6.266 MB.
+Stack = 0 bytes.
+Library pages =   59.254 MB.
+

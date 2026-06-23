@@ -13,7 +13,7 @@ from dram_benchmark.orchestrator import generate_platform_report, run_suite
 from dram_benchmark.paths import RESULTS_ROOT, list_access_model_ids, resolve_model_root
 from dram_benchmark.report.platform import finalize_results_markdown
 from dram_benchmark.report.summary import write_aggregate_summary
-from dram_benchmark.suites import PAPER_A1_SUITES, SUITE_CHOICES, suite_spec
+from dram_benchmark.suites import BENCHMARK_SUITES, SUITE_CHOICES, suite_spec
 from dram_benchmark.validation import validate_results_tree
 
 logger = logging.getLogger(__name__)
@@ -39,10 +39,14 @@ def _build_parser() -> argparse.ArgumentParser:
     run.add_argument(
         "--suite",
         choices=SUITE_CHOICES,
-        default="device",
-        help="Benchmark suite (use all for full Paper A1)",
+        default="all",
+        help="Benchmark suite (use device for a faster TT-only smoke test)",
     )
-    run.add_argument("--corner", default="tt", help="Corner for single-corner suites")
+    run.add_argument(
+        "--corner",
+        default="tt",
+        help="Reference corner for device lane and reports (corner_sweep/multi_tool/sense_amp use all corners)",
+    )
     run.add_argument("--output", type=Path, default=RESULTS_ROOT, help="Results directory")
     run.add_argument("--generate-only", action="store_true", help="Generate decks only")
     run.add_argument(
@@ -140,7 +144,7 @@ def main(argv: list[str] | None = None) -> int:
 
         if args.suite == "all":
             exit_code = 0
-            for child_suite in PAPER_A1_SUITES:
+            for child_suite in BENCHMARK_SUITES:
                 child_dir = args.output / child_suite
                 code = _postprocess_suite(
                     child_dir,

@@ -1,11 +1,11 @@
-"""Aggregate reporting across Paper A1 benchmark suites."""
+"""Aggregate reporting across OpenDRAMBench benchmark suites."""
 
 from __future__ import annotations
 
 from datetime import datetime, timezone
 from pathlib import Path
 
-from dram_benchmark.suites import PAPER_A1_SUITES, SuiteSpec, discover_simulator_backends, suite_spec
+from dram_benchmark.suites import BENCHMARK_SUITES, SuiteSpec, discover_simulator_backends, suite_spec
 
 
 def write_aggregate_summary(parent_dir: Path, *, corner: str = "tt", simulator: str | None = None) -> Path:
@@ -13,18 +13,18 @@ def write_aggregate_summary(parent_dir: Path, *, corner: str = "tt", simulator: 
     parent_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines = [
-        "# OpenDRAMBench — Paper A1 Aggregate",
+        "# OpenDRAMBench — Aggregate Results",
         "",
         f"**Generated:** {timestamp}",
         f"**Reference corner:** {corner}",
         "",
         "Self-contained benchmark automation for Open DRAM Model cards. "
-        "This aggregate indexes each Paper A1 lane; open a suite report for detailed tables.",
+        "This aggregate indexes each benchmark lane; open a suite report for detailed tables.",
         "",
         "| Suite | Role | Primary artifact |",
         "|-------|------|------------------|",
         "| `device` | Full access-device + 1T1C + mini-array @ TT | `device/device_metrics.csv` |",
-        "| `corner_sweep` | Six-corner PVT device matrix | `corner_sweep/device_metrics_all_corners.csv` |",
+        "| `corner_sweep` | Six-corner PVT matrix (device + 1T1C + mini-array) | `corner_sweep/device_metrics_all_corners.csv` |",
         "| `multi_tool` | Cross-simulator agreement | `multi_tool/simulator_compare/` |",
         "| `sense_amp` | Read-path ΔV_BL + derived SA requirements | `sense_amp/sa_spec_per_node.csv` |",
         "| `ccell` | Ccell retention vs read binding | `ccell/ccell_sweep.csv` |",
@@ -34,7 +34,7 @@ def write_aggregate_summary(parent_dir: Path, *, corner: str = "tt", simulator: 
         "",
     ]
 
-    for suite_name in PAPER_A1_SUITES:
+    for suite_name in BENCHMARK_SUITES:
         spec = suite_spec(suite_name, parent_dir / suite_name, corner=corner)
         rel = f"{suite_name}/RESULTS.md"
         if suite_name == "corner_sweep":
