@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 | Suite | `sense_amp` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 13:24 UTC |
+| Generated | 2026-06-23 16:05 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -33,7 +33,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 ---
 ## Read-Path Signal & SA Requirement Sweep
 
-**Generated:** 2026-06-23 13:24 UTC  
+**Generated:** 2026-06-23 16:05 UTC  
 **Corner:** tt  
 **Simulator:** spectre  
 **Signal rows:** 84  
@@ -52,9 +52,10 @@ The lane benchmarks **bitline signal development** and maps it to **SA specifica
 
 ## Executive summary
 
-- **SA closure @ 20 fF:** 0 / 7 access models meet the behavioral yield proxy at the reference point.
-- **No closure under swept tiers:** 3D_gaa_AOS, 3D_gaa_Si, BCAT_125, VCT_082, VCT_091, VCT_102, VCT_125 (see SA spec table — may need stronger G, lower σ_os, or later t_en).
-- **Co-design pass rate:** 0.0% of G×σ_os×t_en points exceed 99.9% yield proxy.
+- **SA closure @ 20 fF:** 7 / 7 access models meet the behavioral yield proxy at the reference point.
+- **Tightest read budget:** `3D_gaa_AOS` needs ≥ 3.3 mV input-referred |ΔV_BL|.
+- **Most margin:** `3D_gaa_AOS` closes with ≥ 3.3 mV input-referred |ΔV_BL|.
+- **Co-design pass rate:** 81.9% of G×σ_os×t_en points exceed 99.9% yield proxy.
 - **Downstream:** `ccell` consumes `read_signal_*.csv` when present; otherwise analytic read fallback.
 
 ## Behavioral SA assumptions
@@ -73,15 +74,15 @@ Reference: **Ccell = 20 fF**, **VBL_pre = 50% × Vdd** (compare access nodes at 
 
 |ΔV_BL| is the absolute differential BL voltage sampled from SPICE (access device + lumped BL RC + cell cap).
 
-| model_id |
-| --- |
-| 3D_gaa_AOS |
-| 3D_gaa_Si |
-| BCAT_125 |
-| VCT_082 |
-| VCT_091 |
-| VCT_102 |
-| VCT_125 |
+| model_id | |ΔV|@5ns_mV | |ΔV|@8ns_mV | |ΔV|@10ns_mV | |ΔV|@12ns_mV | |ΔV|@15ns_mV |
+| --- | --- | --- | --- | --- | --- |
+| 3D_gaa_Si | 29.06 | 46.37 | 54.28 | 60.35 | 67.16 |
+| 3D_gaa_AOS | 15.95 | 23.42 | 26.44 | 28.54 | 30.61 |
+| VCT_125 | 12.63 | 19.42 | 22.39 | 24.64 | 27.16 |
+| VCT_102 | 9.35 | 14.76 | 17.25 | 19.19 | 21.43 |
+| VCT_091 | 8.959 | 14.29 | 16.78 | 18.73 | 20.99 |
+| VCT_082 | 8.66 | 13.92 | 16.4 | 18.35 | 20.63 |
+| BCAT_125 | 5.407 | 10.09 | 12.85 | 15.37 | 18.74 |
 
 ## Per-node SA requirements (derived, not sized)
 
@@ -89,31 +90,56 @@ These rows answer: *what behavioral SA spec closes read at the reference point?*
 
 | model_id | status | read_guidance |
 | --- | --- | --- |
-| 3D_gaa_AOS | FAIL | No tier in sweep meets target — weaker signal or tighter SA needed |
-| 3D_gaa_Si | FAIL | No tier in sweep meets target — weaker signal or tighter SA needed |
-| BCAT_125 | FAIL | No tier in sweep meets target — weaker signal or tighter SA needed |
-| VCT_082 | FAIL | No tier in sweep meets target — weaker signal or tighter SA needed |
-| VCT_091 | FAIL | No tier in sweep meets target — weaker signal or tighter SA needed |
-| VCT_102 | FAIL | No tier in sweep meets target — weaker signal or tighter SA needed |
-| VCT_125 | FAIL | No tier in sweep meets target — weaker signal or tighter SA needed |
+| 3D_gaa_AOS | PASS | Sense by **5 ns** with G ≥ **10**, σ_os ≤ **20 mV** |
+| 3D_gaa_Si | PASS | Sense by **5 ns** with G ≥ **5**, σ_os ≤ **20 mV** |
+| BCAT_125 | PASS | Sense by **5 ns** with G ≥ **20**, σ_os ≤ **15 mV** |
+| VCT_082 | PASS | Sense by **5 ns** with G ≥ **20**, σ_os ≤ **20 mV** |
+| VCT_091 | PASS | Sense by **5 ns** with G ≥ **20**, σ_os ≤ **20 mV** |
+| VCT_102 | PASS | Sense by **5 ns** with G ≥ **20**, σ_os ≤ **20 mV** |
+| VCT_125 | PASS | Sense by **5 ns** with G ≥ **10**, σ_os ≤ **20 mV** |
 
 | model_id | ccell_ff | max_sigma_os_mv | min_gain | earliest_t_en_ns | recommended_vbl_pre_fraction | min_delta_v_bl_mv | status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 3D_gaa_AOS | 20 | — | — | — | — | — | FAIL |
-| 3D_gaa_Si | 20 | — | — | — | — | — | FAIL |
-| BCAT_125 | 20 | — | — | — | — | — | FAIL |
-| VCT_082 | 20 | — | — | — | — | — | FAIL |
-| VCT_091 | 20 | — | — | — | — | — | FAIL |
-| VCT_102 | 20 | — | — | — | — | — | FAIL |
-| VCT_125 | 20 | — | — | — | — | — | FAIL |
+| 3D_gaa_AOS | 20 | 20 | 10 | 5 | 0.5 | 3.323 | PASS |
+| 3D_gaa_Si | 20 | 20 | 5 | 5 | 0.5 | 3.323 | PASS |
+| BCAT_125 | 20 | 15 | 20 | 5 | 0.5 | 3.323 | PASS |
+| VCT_082 | 20 | 20 | 20 | 5 | 0.5 | 3.323 | PASS |
+| VCT_091 | 20 | 20 | 20 | 5 | 0.5 | 3.323 | PASS |
+| VCT_102 | 20 | 20 | 20 | 5 | 0.5 | 3.323 | PASS |
+| VCT_125 | 20 | 20 | 10 | 5 | 0.5 | 3.323 | PASS |
 
 ## Co-design sweep (yield proxy)
 
-Points meeting 99.9% analytic yield: **0 / 420** across G × σ_os × t_en × model.
+Points meeting 99.9% analytic yield: **344 / 420** across G × σ_os × t_en × model.
 
 Sample of passing combinations (earliest t_en per model preferred):
 
-_No data._
+| model_id | ccell_ff | vbl_pre_fraction | gain | sigma_os_mv | t_en_ns | delta_v_bl_v | delta_v_bl_mv | yield_fraction | passes_target | t_en_min_ns | min_delta_v_mv |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 3D_gaa_AOS | 20 | 0.5 | 5 | 5 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 13.29 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 5 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 6.645 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 5 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 3.323 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 10 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 8.291 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 10 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 4.145 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 15 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 9.936 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 15 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 4.968 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 20 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 11.58 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 20 | 5 | 0.01595 | 15.95 | 1 | True | 5 | 5.791 |
+| 3D_gaa_AOS | 20 | 0.5 | 5 | 5 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 13.29 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 5 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 6.645 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 5 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 3.323 |
+| 3D_gaa_AOS | 20 | 0.5 | 5 | 10 | 8 | 0.02342 | 23.42 | 1 | True | 8 | 16.58 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 10 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 8.291 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 10 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 4.145 |
+| 3D_gaa_AOS | 20 | 0.5 | 5 | 15 | 8 | 0.02342 | 23.42 | 1 | True | 8 | 19.87 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 15 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 9.936 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 15 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 4.968 |
+| 3D_gaa_AOS | 20 | 0.5 | 5 | 20 | 8 | 0.02342 | 23.42 | 0.9992 | True | 8 | 23.16 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 20 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 11.58 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 20 | 8 | 0.02342 | 23.42 | 1 | True | 5 | 5.791 |
+| 3D_gaa_AOS | 20 | 0.5 | 5 | 5 | 10 | 0.02644 | 26.44 | 1 | True | 5 | 13.29 |
+| 3D_gaa_AOS | 20 | 0.5 | 10 | 5 | 10 | 0.02644 | 26.44 | 1 | True | 5 | 6.645 |
+| 3D_gaa_AOS | 20 | 0.5 | 20 | 5 | 10 | 0.02644 | 26.44 | 1 | True | 5 | 3.323 |
 
 ## How to analyze the CSVs
 

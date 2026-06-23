@@ -26,6 +26,21 @@ def _demote_h1(markdown: str) -> str:
     return "\n".join(out)
 
 
+def _demote_headings(markdown: str, levels: int = 1) -> str:
+    """Increase heading level by ``levels`` (# -> ##, ## -> ###, …)."""
+    if levels <= 0:
+        return markdown
+    out: list[str] = []
+    for line in markdown.splitlines():
+        if line.startswith("#"):
+            hashes = len(line) - len(line.lstrip("#"))
+            if 0 < hashes < 6:
+                out.append("#" * (hashes + levels) + line[hashes:])
+                continue
+        out.append(line)
+    return "\n".join(out)
+
+
 def _extract_toc(markdown: str) -> str:
     """Build a shallow table of contents from ## headings."""
     headings: list[tuple[str, str]] = []
@@ -220,7 +235,56 @@ def _strip_lane_footer(body: str) -> str:
         body,
         flags=re.DOTALL,
     )
+    body = re.sub(r"\n## Artifacts\n.*?(?=\n## [^#]|\Z)", "\n", body, flags=re.DOTALL)
+    body = re.sub(r"\n## Reproduce\n.*", "\n", body, flags=re.DOTALL)
     return body.rstrip() + "\n"
+
+
+def extract_lane_body(markdown: str) -> str:
+    """Return report body from a finalized lane RESULTS.md (strip platform wrapper)."""
+    text = markdown.strip()
+    if text.startswith(_PLATFORM_TITLE) or text.startswith(_AGGREGATE_TITLE):
+        parts = text.split("\n---\n", 1)
+        body = parts[1] if len(parts) == 2 else text
+    else:
+        body = _demote_h1(text)
+    return _strip_lane_footer(body.strip())
+
+
+def prefix_suite_asset_paths(markdown: str, suite_prefix: str) -> str:
+    """Rewrite relative asset paths when a lane report is embedded in the aggregate."""
+
+    def fix_path(path: str) -> str:
+        if path.startswith(("http://", "https://", "/")) or "://" in path:
+            return path
+        if path.startswith("../"):
+            return path
+        if path.startswith(f"{suite_prefix}/"):
+            return path
+        return f"{suite_prefix}/{path}"
+
+    def repl_link(match: re.Match[str]) -> str:
+        label, path = match.group(1), match.group(2)
+        return f"[{label}]({fix_path(path)})"
+
+    return re.sub(r"\[([^\]]*)\]\(([^)]+)\)", repl_link, markdown)
+
+
+def embed_suite_report(suite_name: str, suite_dir: Path) -> str:
+    """Format one suite lane for inclusion in the aggregate RESULTS.md."""
+    report = suite_dir / "RESULTS.md"
+    if not report.is_file():
+        return f"## Suite: {suite_name}\n\n_Report not generated yet._\n"
+
+    body = extract_lane_body(report.read_text(encoding="utf-8"))
+    body = _demote_headings(body, levels=1)
+    body = prefix_suite_asset_paths(body, suite_name)
+    detail_link = f"{suite_name}/RESULTS.md"
+    return (
+        f"## Suite: {suite_name}\n\n"
+        f"Detail report: [{detail_link}]({detail_link})\n\n"
+        f"{body.rstrip()}\n"
+    )
 
 
 def finalize_results_markdown(
@@ -236,9 +300,9 @@ def finalize_results_markdown(
         return
 
     raw = results_md.read_text(encoding="utf-8")
-    is_aggregate = raw.startswith(_AGGREGATE_TITLE)
+    is_aggregate = suite == "all"
     if raw.startswith(_PLATFORM_TITLE) or (
-        is_aggregate and "## Reproduce" in raw
+        is_aggregate and "## Reproduce" in raw and raw.startswith(_AGGREGATE_TITLE)
     ):
         return
 
@@ -261,7 +325,8 @@ def finalize_results_markdown(
         title = _AGGREGATE_TITLE
         intro = (
             "Self-contained benchmark automation for Open DRAM Model cards. "
-            "This page indexes each benchmark lane; open a suite report for detailed tables."
+            "Full per-suite reports are inlined below; each lane also keeps its own "
+            "suite-level `RESULTS.md` for direct linking."
         )
     else:
         lane_body = _demote_h1(body)
@@ -274,15 +339,16 @@ def finalize_results_markdown(
         )
         intro += f"\n\n**Models:** {models}"
 
-    footer = "\n".join(
-        part.rstrip()
-        for part in (
-            _artifacts_section(results_dir, suite=suite),
-            _suite_layout_section(results_dir),
-            _reproduce_section(suite=suite, corner=corner, results_dir=results_dir),
-        )
-        if part
-    )
+    footer_parts: list[str] = []
+    if not (is_aggregate and "## Suite:" in lane_body):
+        layout = _suite_layout_section(results_dir)
+        if layout:
+            footer_parts.append(layout)
+    artifacts = _artifacts_section(results_dir, suite=suite)
+    if artifacts:
+        footer_parts.append(artifacts)
+    footer_parts.append(_reproduce_section(suite=suite, corner=corner, results_dir=results_dir))
+    footer = "\n".join(part.rstrip() for part in footer_parts if part)
     full_body = lane_body.rstrip() + "\n\n" + footer
     toc = _extract_toc(full_body)
 

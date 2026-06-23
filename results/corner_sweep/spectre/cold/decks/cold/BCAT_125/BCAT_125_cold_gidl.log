@@ -5,8 +5,8 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3296053
-Memory  available: 230.7032 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3578283
+Memory  available: 229.7378 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
 All processors running at 2899.7 MHz
@@ -18,11 +18,11 @@ All processors running at 2899.7 MHz
                 17 ( 41 ), 18 ( 42 ), 19 ( 43 ), 20 ( 44 ), 21 ( 45 )
                 22 ( 46 ), 23 ( 47 )
         
-System load averages (1min, 5min, 15min) : 95.7 %, 96.7 %, 91.9 %
+System load averages (1min, 5min, 15min) : 73.2 %, 71.9 %, 77.6 %
 Hyperthreading is enabled
 
 
-Simulating `BCAT_125_cold_gidl.sp' on river at 9:13:07 PM, Tue Jun 23, 2026 (process id: 3296053).
+Simulating `BCAT_125_cold_gidl.sp' on river at 11:48:21 PM, Tue Jun 23, 2026 (process id: 3578283).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/cold/decks/cold/BCAT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -30,8 +30,321 @@ Command line:
         BCAT_125_cold_gidl.sp
 
 Licensing Information:
-[21:13:07.010609] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[23:48:21.080289] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+
+Licensing Information:
+[23:48:21.492754] Periodic Lic check successful
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/cold/decks/cold/BCAT_125/BCAT_125_cold_gidl.sp
+Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/BCAT_125.inc
+Time for NDB Parsing: CPU = 314.225 ms, elapsed = 517.114 ms.
+Time accumulated: CPU = 482.388 ms, elapsed = 517.117 ms.
+Peak resident memory used = 190 Mbytes.
 
 
-Fatal error found by spectre.
-    FATAL (SPECTRE-209): Cannot run the simulation because the required license could not be checked out. Check the license usage in the license server or use the license queuing feature (+lqtimeout <timeout_value> in the command line) to wait until the required license is available. For more information about +lqtimeout, type 'spectre -h'.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-1994): "BCAT_125_cold_gidl.sp" 3: .options: parameter `post': `2' is invalid value of parameter `post' (possible values are 0, 1). Ignored.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/BCAT_125.inc" 7: Duplicate specification for parameter `bulkmod' (using last value specified).
+
+Time for Elaboration: CPU = 62.919 ms, elapsed = 31.2591 ms.
+Time accumulated: CPU = 545.508 ms, elapsed = 548.576 ms.
+Peak resident memory used = 199 Mbytes.
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
+
+Time for EDB Visiting: CPU = 12.201 ms, elapsed = 6.26087 ms.
+Time accumulated: CPU = 557.901 ms, elapsed = 555.027 ms.
+Peak resident memory used = 205 Mbytes.
+
+
+Warning from spectre during initial setup.
+    WARNING (CMI-9000): Mn1: Warning: VSAT(233.150000) = 896.492 is less than 1K, setting it to 1K.
+    WARNING (CMI-9000): Mn1: Warning: VSAT1(233.150000) = 896.492 is less than 1K, setting it to 1K.
+
+
+Netlist title:
+        * GIDL / retention leakage
+
+
+Global user options:
+               temp = -40
+               gmin = 1e-20
+            measdgt = 8
+             gmindc = 1e-20
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 4
+            bsimcmg 1     
+            vsource 4     
+
+Analysis and control statement inventory:
+                 dc 1     
+
+Output statements:
+             .probe 1     
+           .measure 1     
+               save 0     
+
+
+Warning from spectre during initial setup.
+    WARNING (CMI-9000): Mn1: Warning: VSAT(233.150000) = 896.492 is less than 1K, setting it to 1K.
+    WARNING (CMI-9000): Mn1: Warning: VSAT1(233.150000) = 896.492 is less than 1K, setting it to 1K.
+
+Time for parsing: CPU = 16.008 ms, elapsed = 12.625 ms.
+Time accumulated: CPU = 574.112 ms, elapsed = 567.855 ms.
+Peak resident memory used = 209 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+*********************
+DC Analysis `opBegin'
+*********************
+
+Opening the PSF file ./BCAT_125_cold_gidl.raw/opBegin.dc ...
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = -40 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 10e-21 S
+
+Notice from spectre during DC analysis `opBegin'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+
+Maximum value achieved for any signal of each quantity: 
+V: V(d) = 850 mV
+I: I(Vd:p) = 2.091 fA
+
+Notice from spectre during info, during DC analysis `opBegin'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+**************************************
+Operating-Point information `opBegin':
+**************************************
+Operating point computed in DC analysis `opBegin' at T = -40 C.
+
+    V(b) = 0 V
+    V(d) = 850 mV
+    V(g) = 0 V
+    V(s) = 0 V
+    I(Vb:p) = 8.5e-21 A
+    I(Vd:p) = -2.09069 fA
+    I(Vg:p) = 0 A
+    I(Vs:p) = 2.09068 fA
+
+
+Most positive signals:
+    V(d) = 850 mV
+    I(Vs:p) = 2.09068 fA
+
+Most negative signals:
+    I(Vd:p) = -2.09069 fA
+
+Smallest signals:
+    V(b) = 0 V
+    I(Vg:p) = 0 A
+
+
+Instance: Mn1
+Model: nfet
+Primitive: bsimcmg
+          d : V(d) = 850 mV
+          g : V(g) = 0 V
+          s : V(s) = 0 V
+          e : V(b) = 0 V
+     region = off
+         id = 2.09068 fA
+        ids = 2.09068 fA
+         gm = 69.1654 fS
+        gds = 328.478 aS
+       gmbs = 0 S
+       rout = 3.04435e+15 Ohm
+        ron = 406.566 TOhm
+        vgs = -85.6966 pV
+        vgd = -850 mV
+        vds = 850 mV
+        ves = 0 V
+        vth = 518.568 mV
+        vgt = -518.568 mV
+        vfb = -447.373 mV
+       beta = 258.836 uA/V^2
+     vdssat = 22.593 mV
+      vdsat = 22.593 mV
+     vdseff = 0 V
+        pwr = 1.77708 fW
+      ideff = 2.09068 fA
+      iseff = -2.09068 fA
+      igtot = 0 A
+       isub = -0 A
+     idsgen = 0 A
+        iii = 0 A
+      igidl = 0 A
+      igisl = 0 A
+       ijsb = -0 A
+       ijdb = -0 A
+        igs = 0 A
+        igd = 0 A
+       igcs = 0 A
+       igcd = 0 A
+       igbs = 0 A
+       igbd = 0 A
+     igbacc = 0 A
+     igbinv = 0 A
+        qgi = 69.8883e-21 Coul
+        qdi = -116.526e-27 Coul
+        qsi = -148.03e-27 Coul
+        qbi = -69.888e-21 Coul
+         qg = -2.58042 aCoul
+         qd = 2.65031 aCoul
+         qs = -69.8881e-21 Coul
+         qb = -0 Coul
+       cggi = 8.75225e-24 F
+       cgsi = 8.74839e-24 F
+       cgdi = 3.85608e-27 F
+       cgei = -0 F
+       cdgi = 3.85502e-24 F
+       cddi = 1.69877e-27 F
+       cdsi = -3.85332e-24 F
+       cdei = 0 F
+       csgi = 4.89723e-24 F
+       csdi = -2.15731e-27 F
+       cssi = 4.89507e-24 F
+       csei = -0 F
+       cegi = -0 F
+       cedi = -0 F
+       cesi = 0 F
+       ceei = 0 F
+        cgg = 6.23603 aF
+        cgs = 3.11802 aF
+        cgd = 3.11801 aF
+        cge = 0 F
+        cdg = 3.11801 aF
+        cdd = 3.11801 aF
+        cds = -3.85332e-24 F
+        cde = 0 F
+        csg = 3.11802 aF
+        csd = -2.15731e-27 F
+        css = 3.11802 aF
+        cse = -0 F
+        ceg = -0 F
+        ced = 0 F
+        ces = 0 F
+        cee = 0 F
+     cgsext = 3.11801 aF
+     cgdext = 3.11801 aF
+      cgbov = -0 F
+       cjst = 0 F
+       cjdt = 0 F
+    para_rs = 40.9898 kOhm
+    para_rd = 40.9898 kOhm
+    para_rg = 0 Ohm
+ para_csbox = 0 F
+ para_cdbox = 0 F
+ para_cgbox = 0 F
+para_qgs_ov = 1.26178 aF
+para_qgd_ov = 1.26178 aF
+para_qgs_fr = 1.85623 aF
+para_qgd_fr = 1.85623 aF
+para_qds_fr = 0 F
+        ith = 1.77708 fA
+      lpoly = 122 nm
+   reversed = no
+       vgst = 0 V
+       vgdt = -850 mV
+       vdet = 850 mV
+       vget = 0 V
+       vdst = 850 mV
+       vest = 0 V
+        sft = -40 C
+    temp_sh = -40 C
+    tdevice = 233.15 K
+  t_total_k = 233.15 K
+  t_total_c = -40 C
+ t_delta_sh = 0 C
+
+
+Instance: Vb
+Model: vsource
+Primitive: vsource
+          p : V(b) = 0 V
+          n : val(0) = 0 
+          v = 0 V
+          i = 8.5e-21 A
+        pwr = 0 W
+
+Instance: Vd
+Model: vsource
+Primitive: vsource
+          p : V(d) = 850 mV
+          n : val(0) = 0 
+          v = 850 mV
+          i = -2.09069 fA
+        pwr = -1.77708 fW
+
+Instance: Vg
+Model: vsource
+Primitive: vsource
+          p : V(g) = 0 V
+          n : val(0) = 0 
+          v = 0 V
+          i = 0 A
+        pwr = 0 W
+
+Instance: Vs
+Model: vsource
+Primitive: vsource
+          p : V(s) = 0 V
+          n : val(0) = 0 
+          v = 0 V
+          i = 2.09068 fA
+        pwr = 0 W
+
+Maximum and minimum parameter values for vsource: 
+            max v = 850 mV on Vd
+            min v = 0 V on Vb
+            max i = 2.09068 fA on Vs
+            min i = -2.09069 fA on Vd
+          min |i| = 0 A on Vg
+          max pwr = 0 W on Vb
+          min pwr = -1.77708 fW on Vd
+
+
+Total Power Dissipation = 1.77708 fW.
+
+
+Convergence achieved in 2 iterations.
+Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/cold/decks/cold/BCAT_125/BCAT_125_cold_gidl.measure
+Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/cold/decks/cold/BCAT_125/BCAT_125_cold_gidl.mt0
+DC simulation time: CPU = 16.046 ms, elapsed = 8.63409 ms.
+Total time required for dc analysis `opBegin': CPU = 16.143 ms, elapsed = 8.72612 ms, util. = 185%.
+Time accumulated: CPU = 638.765 ms, elapsed = 601.331 ms.
+Peak resident memory used = 215 Mbytes.
+
+Licensing Information:
+Lic Summary:
+[23:48:21.152136] Cdslmd servers:/eda/cadence/license.dat
+[23:48:21.676478] Feature usage summary:
+[23:48:21.676479] Virtuoso_Spectre
+
+
+Aggregate audit (11:48:21 PM, Tue Jun 23, 2026):
+Time used: CPU = 647 ms, elapsed = 647 ms, util. = 100%.
+Time spent in licensing: elapsed = 297 ms, percentage of total = 45.9%.
+Peak memory used = 216 Mbytes.
+Simulation started at: 11:48:21 PM, Tue Jun 23, 2026, ended at: 11:48:21 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 647 ms.
+spectre completes with 0 errors, 6 warnings, and 3 notices.

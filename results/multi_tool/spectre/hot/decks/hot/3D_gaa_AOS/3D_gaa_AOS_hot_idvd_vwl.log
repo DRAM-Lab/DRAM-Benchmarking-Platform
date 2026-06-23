@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3324663
-Memory  available: 230.4996 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3611907
+Memory  available: 229.5857 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2899.8] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
-                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
-                 6 [2899.7] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.7] ( 32 )
-                 9 [3300.0] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.6] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.6] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.9] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+        0:       0 [2899.7] ( 24 ),  1 [2899.8] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.8] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.6] ( 29 )
+                 6 [2899.8] ( 30 ),  7 [2898.8] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [2899.8] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.5] ( 35 )
+        1:      12 [2902.9] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
+                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.9] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2897.1] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 86.7 %, 91.8 %, 91.4 %
+System load averages (1min, 5min, 15min) : 71.0 %, 72.4 %, 75.8 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_AOS_hot_idvd_vwl.sp' on river at 9:19:36 PM, Tue Jun 23, 2026 (process id: 3324663).
+Simulating `3D_gaa_AOS_hot_idvd_vwl.sp' on river at 11:57:35 PM, Tue Jun 23, 2026 (process id: 3611907).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/3D_gaa_AOS
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,8 +31,121 @@ Command line:
         3D_gaa_AOS_hot_idvd_vwl.sp
 
 Licensing Information:
-[21:19:36.010673] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[23:57:35.080329] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+
+Licensing Information:
+[23:57:35.487257] Periodic Lic check successful
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/3D_gaa_AOS/3D_gaa_AOS_hot_idvd_vwl.sp
+Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc
+Time for NDB Parsing: CPU = 312.117 ms, elapsed = 512.207 ms.
+Time accumulated: CPU = 473.166 ms, elapsed = 512.209 ms.
+Peak resident memory used = 172 Mbytes.
 
 
-Fatal error found by spectre.
-    FATAL (SPECTRE-209): Cannot run the simulation because the required license could not be checked out. Check the license usage in the license server or use the license queuing feature (+lqtimeout <timeout_value> in the command line) to wait until the required license is available. For more information about +lqtimeout, type 'spectre -h'.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-1994): "3D_gaa_AOS_hot_idvd_vwl.sp" 3: .options: parameter `post': `2' is invalid value of parameter `post' (possible values are 0, 1). Ignored.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
+    WARNING (SFE-101): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Parameter 'sasatcv' has been ignored because it has been assigned to instance nfet of master 'bsimcmg'; however, it has not been defined for 'bsimcmg'. Specify a valid parameter and rerun the simulation.
+
+Time for Elaboration: CPU = 61.45 ms, elapsed = 30.7701 ms.
+Time accumulated: CPU = 534.827 ms, elapsed = 543.188 ms.
+Peak resident memory used = 181 Mbytes.
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
+
+Time for EDB Visiting: CPU = 13.377 ms, elapsed = 6.4652 ms.
+Time accumulated: CPU = 548.387 ms, elapsed = 549.835 ms.
+Peak resident memory used = 186 Mbytes.
+
+
+Netlist title:
+        * Id-Vd sweep Vgs=0.7500V
+
+
+Global user options:
+               temp = 85
+               gmin = 1e-20
+            measdgt = 8
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 3
+            bsimcmg 1     
+            vsource 3     
+
+Analysis and control statement inventory:
+                 dc 1     
+
+Output statements:
+             .probe 1     
+           .measure 1     
+               save 0     
+
+Time for parsing: CPU = 17.918 ms, elapsed = 15.002 ms.
+Time accumulated: CPU = 566.544 ms, elapsed = 565.073 ms.
+Peak resident memory used = 190 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+*********************************************
+DC Analysis `dcrun1': Vd:dc = (0 V -> 750 mV)
+*********************************************
+
+Opening the PSF file ./3D_gaa_AOS_hot_idvd_vwl.raw/dcrun1.dc ...
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 85 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 10e-21 S
+
+Notice from spectre during DC analysis `dcrun1'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+......9......8......7......6......5......4......3......2......1......0
+
+Maximum value achieved for any signal of each quantity: 
+V: V(g) = 750 mV
+I: I(Vs:p) = 2.039 uA
+
+Warning from spectre at dc = 750 mV during DC analysis `dcrun1'.
+    WARNING (MDL-2016): "3D_gaa_AOS_hot_idvd_vwl.sp" 15: / - Division By Zero 
+
+Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/3D_gaa_AOS/3D_gaa_AOS_hot_idvd_vwl.measure
+Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/3D_gaa_AOS/3D_gaa_AOS_hot_idvd_vwl.mt0
+DC simulation time: CPU = 41.815 ms, elapsed = 21.693 ms.
+
+Notice from spectre at dc = 750 mV during DC analysis `dcrun1'.
+    The value of parameter 'dc' has been reset to the original value 0.
+
+Total time required for dc analysis `dcrun1': CPU = 41.915 ms, elapsed = 21.7912 ms, util. = 192%.
+Time accumulated: CPU = 657.826 ms, elapsed = 611.48 ms.
+Peak resident memory used = 195 Mbytes.
+
+Licensing Information:
+Lic Summary:
+[23:57:35.161355] Cdslmd servers:/eda/cadence/license.dat
+[23:57:35.685695] Feature usage summary:
+[23:57:35.685695] Virtuoso_Spectre
+
+
+Aggregate audit (11:57:35 PM, Tue Jun 23, 2026):
+Time used: CPU = 664 ms, elapsed = 664 ms, util. = 100%.
+Time spent in licensing: elapsed = 295 ms, percentage of total = 44.4%.
+Peak memory used = 197 Mbytes.
+Simulation started at: 11:57:35 PM, Tue Jun 23, 2026, ended at: 11:57:35 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 664 ms.
+spectre completes with 0 errors, 4 warnings, and 3 notices.

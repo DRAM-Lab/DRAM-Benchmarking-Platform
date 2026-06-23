@@ -1,0 +1,36 @@
+HEADER
+"PSFversion" "1.00"
+"Log Generator" "drlLog rev. 1.0"
+"Log Time Stamp" "Tue Jun 23 23:44:54 2026"
+"psfversion" "1.4.0"
+"simulator" "spectre"
+"version" "24.1.0.167.isr2"
+"date" "11:44:54 PM, Tue Jun 23, 2026"
+"design" "* GIDL / retention leakage"
+"signalNameType" "spectre"
+"simMode" "Spectre"
+"measdgt" 8
+"ingold" 2
+"sst2usecolon" 0
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING *
+)
+VALUE
+"opBegin-dc" "analysisInst" (
+"dc"
+"opBegin.dc"
+"PSF"
+""
+()
+"DC Analysis `opBegin'"
+) PROP(
+"data_type" "scalar"
+)
+
+END

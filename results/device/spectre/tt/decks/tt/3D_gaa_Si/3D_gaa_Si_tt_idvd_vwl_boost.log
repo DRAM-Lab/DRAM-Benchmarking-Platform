@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3282460
-Memory  available: 230.2894 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3562922
+Memory  available: 229.9501 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2854.4] ( 24 ),  1 [2854.3] ( 25 ),  2 [2854.3] ( 26 )
-                 3 [2854.3] ( 27 ),  4 [2854.3] ( 28 ),  5 [2884.1] ( 29 )
-                 6 [2854.3] ( 30 ),  7 [2854.4] ( 31 ),  8 [2880.3] ( 32 )
-                 9 [2854.4] ( 33 ), 10 [2854.4] ( 34 ), 11 [2854.4] ( 35 )
+        0:       0 [2899.7] ( 24 ),  1 [2899.8] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
+                 6 [2899.7] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [2899.7] ( 33 ), 10 [2899.8] ( 34 ), 11 [2899.7] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
                 15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.8] ( 46 ), 23 [2899.7] ( 47 )
+                18 [2899.8] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 107.0 %, 96.6 %, 90.6 %
+System load averages (1min, 5min, 15min) : 70.8 %, 72.1 %, 79.6 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_Si_tt_idvd_vwl_boost.sp' on river at 9:09:59 PM, Tue Jun 23, 2026 (process id: 3282460).
+Simulating `3D_gaa_Si_tt_idvd_vwl_boost.sp' on river at 11:43:57 PM, Tue Jun 23, 2026 (process id: 3562922).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/device/spectre/tt/decks/tt/3D_gaa_Si
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,8 +31,131 @@ Command line:
         3D_gaa_Si_tt_idvd_vwl_boost.sp
 
 Licensing Information:
-[21:09:59.010705] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[23:43:57.080321] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+
+Licensing Information:
+[23:43:58.129200] Periodic Lic check successful
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/device/spectre/tt/decks/tt/3D_gaa_Si/3D_gaa_Si_tt_idvd_vwl_boost.sp
+Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/build/spectre_compat/3D_gaa_Si_spectre_43e1c1d004a7.inc
+Time for NDB Parsing: CPU = 317.694 ms, elapsed = 517.101 ms.
+Time accumulated: CPU = 495.765 ms, elapsed = 517.104 ms.
+Peak resident memory used = 190 Mbytes.
 
 
-Fatal error found by spectre.
-    FATAL (SPECTRE-209): Cannot run the simulation because the required license could not be checked out. Check the license usage in the license server or use the license queuing feature (+lqtimeout <timeout_value> in the command line) to wait until the required license is available. For more information about +lqtimeout, type 'spectre -h'.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-1994): "3D_gaa_Si_tt_idvd_vwl_boost.sp" 3: .options: parameter `post': `2' is invalid value of parameter `post' (possible values are 0, 1). Ignored.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//build/spectre_compat/3D_gaa_Si_spectre_43e1c1d004a7.inc" 7: Duplicate specification for parameter `bulkmod' (using last value specified).
+
+Time for Elaboration: CPU = 59.107 ms, elapsed = 29.6111 ms.
+Time accumulated: CPU = 555.076 ms, elapsed = 546.916 ms.
+Peak resident memory used = 199 Mbytes.
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
+
+Time for EDB Visiting: CPU = 12.411 ms, elapsed = 6.48308 ms.
+Time accumulated: CPU = 567.668 ms, elapsed = 553.577 ms.
+Peak resident memory used = 204 Mbytes.
+
+
+Warning from spectre during initial setup.
+    WARNING (CMI-9000): Mn1: Warning: VSAT(300.150000) = 918.219 is less than 1K, setting it to 1K.
+    WARNING (CMI-9000): Mn1: Warning: VSAT1(300.150000) = 918.219 is less than 1K, setting it to 1K.
+
+
+Netlist title:
+        * Id-Vd sweep Vgs=0.8625V
+
+
+Global user options:
+               temp = 27
+               gmin = 1e-20
+            measdgt = 8
+             gmindc = 1e-20
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 3
+            bsimcmg 1     
+            vsource 3     
+
+Analysis and control statement inventory:
+                 dc 1     
+
+Output statements:
+             .probe 1     
+           .measure 1     
+               save 0     
+
+
+Warning from spectre during initial setup.
+    WARNING (CMI-9000): Mn1: Warning: VSAT(300.150000) = 918.219 is less than 1K, setting it to 1K.
+    WARNING (CMI-9000): Mn1: Warning: VSAT1(300.150000) = 918.219 is less than 1K, setting it to 1K.
+
+Time for parsing: CPU = 9.036 ms, elapsed = 5.92899 ms.
+Time accumulated: CPU = 576.922 ms, elapsed = 559.722 ms.
+Peak resident memory used = 208 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+*********************************************
+DC Analysis `dcrun1': Vd:dc = (0 V -> 750 mV)
+*********************************************
+
+Opening the PSF file ./3D_gaa_Si_tt_idvd_vwl_boost.raw/dcrun1.dc ...
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 10e-21 S
+
+Notice from spectre during DC analysis `dcrun1'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+......9......8......7......6......5......4......3......2......1......0
+
+Maximum value achieved for any signal of each quantity: 
+V: V(g) = 862.5 mV
+I: I(Vs:p) = 1.518 uA
+
+Warning from spectre at dc = 750 mV during DC analysis `dcrun1'.
+    WARNING (MDL-2016): "3D_gaa_Si_tt_idvd_vwl_boost.sp" 15: / - Division By Zero 
+
+Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/device/spectre/tt/decks/tt/3D_gaa_Si/3D_gaa_Si_tt_idvd_vwl_boost.measure
+Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/device/spectre/tt/decks/tt/3D_gaa_Si/3D_gaa_Si_tt_idvd_vwl_boost.mt0
+DC simulation time: CPU = 39.523 ms, elapsed = 20.8211 ms.
+
+Notice from spectre at dc = 750 mV during DC analysis `dcrun1'.
+    The value of parameter 'dc' has been reset to the original value 0.
+
+Total time required for dc analysis `dcrun1': CPU = 39.62 ms, elapsed = 20.9148 ms, util. = 189%.
+Time accumulated: CPU = 668.107 ms, elapsed = 606.245 ms.
+Peak resident memory used = 213 Mbytes.
+
+Licensing Information:
+Lic Summary:
+[23:43:58.320898] Cdslmd servers:/eda/cadence/license.dat
+[23:43:58.320942] Feature usage summary:
+[23:43:58.320943] Virtuoso_Spectre
+
+
+Aggregate audit (11:43:58 PM, Tue Jun 23, 2026):
+Time used: CPU = 675 ms, elapsed = 675 ms, util. = 100%.
+Time spent in licensing: elapsed = 295 ms, percentage of total = 43.8%.
+Peak memory used = 215 Mbytes.
+Simulation started at: 11:43:57 PM, Tue Jun 23, 2026, ended at: 11:43:58 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 675 ms.
+spectre completes with 0 errors, 7 warnings, and 3 notices.

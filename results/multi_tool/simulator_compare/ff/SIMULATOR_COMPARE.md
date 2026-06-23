@@ -18,6 +18,20 @@ Full guide: [docs/simulator_cross_check.md](../docs/simulator_cross_check.md)
 
 | metric | max |rel diff| |
 |--------|-------------|
+| rel_diff_vt_v_ngspice_vs_spectre | 1.346e-16 |
+| rel_diff_ss_mv_dec_ngspice_vs_spectre | 0.2571 |
+| rel_diff_ion_a_ngspice_vs_spectre | 1.27 |
+| rel_diff_ioff_a_ngspice_vs_spectre | 1.876 |
+| rel_diff_dibl_mv_v_ngspice_vs_spectre | 0.4536 |
+| rel_diff_ron_ohm_ngspice_vs_spectre | 0.5595 |
+| rel_diff_ron_boost_ohm_ngspice_vs_spectre | 0.5264 |
+| rel_diff_cgg_f_ngspice_vs_spectre | 0.9925 |
+| rel_diff_cgd_f_ngspice_vs_spectre | 1.368 |
+| rel_diff_igidl_a_ngspice_vs_spectre | 1.876 |
+| rel_diff_esw_j_ngspice_vs_spectre | 0.2025 |
+| rel_diff_ion_per_cgg_ngspice_vs_spectre | 231.5 |
+| rel_diff_ron_x_cload_ngspice_vs_spectre | 0.5595 |
+| rel_diff_ioff_density_a_m2_ngspice_vs_spectre | 1.876 |
 
 ## cell
 - Wide: `cell_1t1c_metrics_wide.csv`
@@ -25,6 +39,10 @@ Full guide: [docs/simulator_cross_check.md](../docs/simulator_cross_check.md)
 
 | metric | max |rel diff| |
 |--------|-------------|
+| rel_diff_t_write_s_ngspice_vs_spectre | 0.0001365 |
+| rel_diff_t_read_s_ngspice_vs_spectre | 0.006713 |
+| rel_diff_i_hold_a_ngspice_vs_spectre | 93.61 |
+| rel_diff_q_read_c_ngspice_vs_spectre | 0.7278 |
 
 ## mini_array
 - Wide: `mini_array_metrics_wide.csv`
@@ -32,7 +50,25 @@ Full guide: [docs/simulator_cross_check.md](../docs/simulator_cross_check.md)
 
 | metric | max |rel diff| |
 |--------|-------------|
+| rel_diff_t_bl_settle_s_ngspice_vs_spectre | 0.3674 |
+| rel_diff_i_bl_leak_a_ngspice_vs_spectre | 0.6598 |
 
 ## Known / flagged outliers
 
-No rows exceeded |rel diff| ≥ 0.35 @ ff.
+Rows with |rel diff| ≥ 0.35 or documented known patterns @ **ff**.
+See [docs/simulator_cross_check.md](../docs/simulator_cross_check.md) for full context.
+
+| suite | model | metric | backend | rel diff | known | note |
+| --- | --- | --- | --- | --- | --- | --- |
+| cell | VCT_125 | i_hold_a | ngspice | -0.4661 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_125 | cgd_f | ngspice | 0.8653 | yes | Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than... |
+| device | VCT_125 | cgg_f | ngspice | -0.9924 | yes | Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than... |
+| device | VCT_125 | igidl_a | ngspice | -0.9694 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_125 | ioff_a | ngspice | -0.9694 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_125 | ioff_density_a_m2 | ngspice | -0.9694 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_125 | ion_a | ngspice | 0.7737 | yes | ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only. |
+| device | VCT_125 | ion_per_cgg | ngspice | 231.5 | yes | Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than... |
+| device | VCT_125 | ron_boost_ohm | ngspice | -0.4333 | yes | ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only. |
+| device | VCT_125 | ron_ohm | ngspice | -0.4362 | yes | ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only. |
+| device | VCT_125 | ron_x_cload | ngspice | -0.4362 | auto | Exceeds automatic rel-diff threshold |
+| mini_array | VCT_125 | t_bl_settle_s | ngspice | -0.2739 | yes | Transient timestep and OSDI trajectory vs Spectre (~35–40% @ tt). |

@@ -1,0 +1,14 @@
+model_id,corner,suite,metric,backend,reference,rel_diff,flag_threshold,known_outlier,note,ccell_ff
+VCT_125,ss,device,ion_a,ngspice,spectre,0.7698282218883411,0.35,True,ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only.,
+VCT_125,ss,device,ioff_a,ngspice,spectre,-0.9691663978124055,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss,device,ron_ohm,ngspice,spectre,-0.4350004606837992,0.35,True,ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only.,
+VCT_125,ss,device,ron_boost_ohm,ngspice,spectre,-0.4454994829731926,0.35,True,ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only.,
+VCT_125,ss,device,cgg_f,ngspice,spectre,-0.9924776462031907,0.35,True,Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than Spectre.,
+VCT_125,ss,device,cgd_f,ngspice,spectre,0.8857877959905114,0.35,True,Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than Spectre.,
+VCT_125,ss,device,igidl_a,ngspice,spectre,-0.9691663978124055,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss,device,ion_per_cgg,ngspice,spectre,234.27585509724636,0.35,True,Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than Spectre.,
+VCT_125,ss,device,ron_x_cload,ngspice,spectre,-0.4350004606837994,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss,device,ioff_density_a_m2,ngspice,spectre,-0.9691663978124054,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss,cell,i_hold_a,ngspice,spectre,-0.4699876118147451,0.35,False,Exceeds automatic rel-diff threshold,30.0
+VCT_125,ss,cell,q_read_c,ngspice,spectre,0.3685498532137982,0.35,False,Exceeds automatic rel-diff threshold,30.0
+VCT_125,ss,mini_array,t_bl_settle_s,ngspice,spectre,-0.33183597866594183,0.35,True,Transient timestep and OSDI trajectory vs Spectre (~35–40% @ tt).,

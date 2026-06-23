@@ -207,6 +207,21 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if validation.passed else 1
 
     if args.command == "report":
+        if args.suite == "all":
+            write_aggregate_summary(
+                args.results,
+                corner=args.corner,
+                simulator=getattr(args, "simulator", None),
+            )
+            finalize_results_markdown(
+                args.results / "RESULTS.md",
+                args.results,
+                suite="all",
+                corner=args.corner,
+                simulator=getattr(args, "simulator", None),
+            )
+            print(f"Aggregate → {args.results / 'RESULTS.md'}")
+            return 0
         return _postprocess_suite(
             args.results,
             suite=args.suite,

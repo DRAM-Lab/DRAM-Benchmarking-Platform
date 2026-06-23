@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 | Suite | `ccell` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 13:24 UTC |
+| Generated | 2026-06-23 16:05 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -32,25 +32,25 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 ---
 ## OpenDRAM Cell Capacitance Roadmap
 
-_Generated: 2026-06-23 13:24 UTC · revision `14b3550`_
+_Generated: 2026-06-23 16:04 UTC · revision `416f124`_
 
 ## Executive summary
 
-- **Ccell sweep:** 420 rows across 7 models, Ccell ∈ {5, 8, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80} fF.
+- **Ccell sweep:** 504 rows across 7 models, Ccell ∈ {5, 8, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80} fF.
 - **Retention corner:** hot @ 64 ms target (ΔV = 50 mV loss).
-- **Read corner:** tt @ BL swing target (100 mV), t_en = 10 ns.
+- **Read corner:** tt @ SA input budget @ 99.9% yield (5.0–23.2 mV per model), t_en = 10 ns.
 
 ## Ccell_min table (dual constraint)
 
 | Model | Arch | Ccell_min ret (fF) | Ccell_min read (fF) | Ccell_min (fF) | Binding | Cap-limited |
 | --- | --- | --- | --- | --- | --- | --- |
-| 3D_gaa_AOS | 3D_GAA | — | 72.8 | 72.8 | read-limited | True |
-| 3D_gaa_Si | 3D_GAA | — | 26.7 | 26.7 | read-limited | True |
-| BCAT_125 | BCAT | 103.0 | 43.2 | 103.0 | retention-limited | True |
-| VCT_082 | VCT | — | 57.2 | 57.2 | read-limited | True |
-| VCT_091 | VCT | — | 57.2 | 57.2 | read-limited | True |
-| VCT_102 | VCT | — | 57.2 | 57.2 | read-limited | True |
-| VCT_125 | VCT | — | 57.2 | 57.2 | read-limited | True |
+| 3D_gaa_AOS | 3D_GAA | — | 5.9 | 5.9 | read-limited | False |
+| 3D_gaa_Si | 3D_GAA | — | 5.0 | 5.0 | read-limited | True |
+| BCAT_125 | BCAT | 103.3 | 5.0 | 103.3 | retention-limited | True |
+| VCT_082 | VCT | — | 5.0 | 5.0 | read-limited | False |
+| VCT_091 | VCT | — | 5.0 | 5.0 | read-limited | False |
+| VCT_102 | VCT | — | 5.0 | 5.0 | read-limited | False |
+| VCT_125 | VCT | — | 6.6 | 6.6 | read-limited | False |
 
 ## Binding classification
 
@@ -63,73 +63,73 @@ _Generated: 2026-06-23 13:24 UTC · revision `14b3550`_
 
 | Model | k | Achievable (fF) | Required (fF) | Cap-limited |
 | --- | --- | --- | --- | --- |
-| 3D_gaa_AOS | 40 | 42.5 | 72.8 | True |
-| 3D_gaa_Si | 40 | 5.7 | 26.7 | True |
-| BCAT_125 | 40 | 28.1 | 103.0 | True |
-| VCT_082 | 22 | 18.7 | 57.2 | True |
-| VCT_091 | 28 | 23.8 | 57.2 | True |
-| VCT_102 | 34 | 28.9 | 57.2 | True |
-| VCT_125 | 40 | 34.0 | 57.2 | True |
-_Cap-limited under S-aggressive: 3D_gaa_AOS, 3D_gaa_Si, BCAT_125, VCT_082, VCT_091, VCT_102, VCT_125_
+| 3D_gaa_AOS | 40 | 42.5 | 5.9 | False |
+| 3D_gaa_Si | 40 | 5.7 | 5.0 | False |
+| BCAT_125 | 40 | 28.1 | 103.3 | True |
+| VCT_082 | 22 | 18.7 | 5.0 | False |
+| VCT_091 | 28 | 23.8 | 5.0 | False |
+| VCT_102 | 34 | 28.9 | 5.0 | False |
+| VCT_125 | 40 | 34.0 | 6.6 | False |
+_Cap-limited under S-aggressive: BCAT_125_
 
 ### S-base
 
 | Model | k | Achievable (fF) | Required (fF) | Cap-limited |
 | --- | --- | --- | --- | --- |
-| 3D_gaa_AOS | 25 | 26.6 | 72.8 | True |
-| 3D_gaa_Si | 25 | 3.6 | 26.7 | True |
-| BCAT_125 | 25 | 17.6 | 103.0 | True |
-| VCT_082 | 18 | 15.3 | 57.2 | True |
-| VCT_091 | 20 | 17.0 | 57.2 | True |
-| VCT_102 | 22 | 18.7 | 57.2 | True |
-| VCT_125 | 25 | 21.3 | 57.2 | True |
-_Cap-limited under S-base: 3D_gaa_AOS, 3D_gaa_Si, BCAT_125, VCT_082, VCT_091, VCT_102, VCT_125_
+| 3D_gaa_AOS | 25 | 26.6 | 5.9 | False |
+| 3D_gaa_Si | 25 | 3.6 | 5.0 | True |
+| BCAT_125 | 25 | 17.6 | 103.3 | True |
+| VCT_082 | 18 | 15.3 | 5.0 | False |
+| VCT_091 | 20 | 17.0 | 5.0 | False |
+| VCT_102 | 22 | 18.7 | 5.0 | False |
+| VCT_125 | 25 | 21.3 | 6.6 | False |
+_Cap-limited under S-base: 3D_gaa_Si, BCAT_125_
 
 ### S-conservative
 
 | Model | k | Achievable (fF) | Required (fF) | Cap-limited |
 | --- | --- | --- | --- | --- |
-| 3D_gaa_AOS | 18 | 19.1 | 72.8 | True |
-| 3D_gaa_Si | 18 | 2.6 | 26.7 | True |
-| BCAT_125 | 18 | 12.7 | 103.0 | True |
-| VCT_082 | 15 | 12.8 | 57.2 | True |
-| VCT_091 | 16 | 13.6 | 57.2 | True |
-| VCT_102 | 17 | 14.5 | 57.2 | True |
-| VCT_125 | 18 | 15.3 | 57.2 | True |
-_Cap-limited under S-conservative: 3D_gaa_AOS, 3D_gaa_Si, BCAT_125, VCT_082, VCT_091, VCT_102, VCT_125_
+| 3D_gaa_AOS | 18 | 19.1 | 5.9 | False |
+| 3D_gaa_Si | 18 | 2.6 | 5.0 | True |
+| BCAT_125 | 18 | 12.7 | 103.3 | True |
+| VCT_082 | 15 | 12.8 | 5.0 | False |
+| VCT_091 | 16 | 13.6 | 5.0 | False |
+| VCT_102 | 17 | 14.5 | 5.0 | False |
+| VCT_125 | 18 | 15.3 | 6.6 | False |
+_Cap-limited under S-conservative: 3D_gaa_Si, BCAT_125_
 
 
 ## 3D vertical capacitor boost
 
 | Model | β | Effective Ccell (fF) | Required (fF) | Feasible |
 | --- | --- | --- | --- | --- |
-| 3D_gaa_Si | 1.0 | 3.6 | 26.7 | False |
-| 3D_gaa_Si | 1.5 | 5.4 | 26.7 | False |
-| 3D_gaa_Si | 2.0 | 7.1 | 26.7 | False |
-| 3D_gaa_Si | 2.5 | 8.9 | 26.7 | False |
-| 3D_gaa_AOS | 1.0 | 26.6 | 72.8 | False |
-| 3D_gaa_AOS | 1.5 | 39.8 | 72.8 | False |
-| 3D_gaa_AOS | 2.0 | 53.1 | 72.8 | False |
-| 3D_gaa_AOS | 2.5 | 66.4 | 72.8 | False |
+| 3D_gaa_Si | 1.0 | 3.6 | 5.0 | False |
+| 3D_gaa_Si | 1.5 | 5.4 | 5.0 | True |
+| 3D_gaa_Si | 2.0 | 7.1 | 5.0 | True |
+| 3D_gaa_Si | 2.5 | 8.9 | 5.0 | True |
+| 3D_gaa_AOS | 1.0 | 26.6 | 5.9 | True |
+| 3D_gaa_AOS | 1.5 | 39.8 | 5.9 | True |
+| 3D_gaa_AOS | 2.0 | 53.1 | 5.9 | True |
+| 3D_gaa_AOS | 2.5 | 66.4 | 5.9 | True |
 
 ## Device leakage what-if
 
 | Model | Ioff scale | Ccell_min (fF) | ΔCcell_min (fF) |
 | --- | --- | --- | --- |
-| 3D_gaa_AOS | 1.00 | 72.8 | 0.0 |
-| 3D_gaa_AOS | 0.50 | 72.8 | 0.0 |
-| 3D_gaa_Si | 1.00 | 26.7 | 0.0 |
-| 3D_gaa_Si | 0.50 | 26.7 | 0.0 |
-| BCAT_125 | 1.00 | 103.0 | 0.0 |
-| BCAT_125 | 0.50 | 51.5 | 51.5 |
-| VCT_082 | 1.00 | 57.2 | 0.0 |
-| VCT_082 | 0.50 | 57.2 | 0.0 |
-| VCT_091 | 1.00 | 57.2 | 0.0 |
-| VCT_091 | 0.50 | 57.2 | 0.0 |
-| VCT_102 | 1.00 | 57.2 | 0.0 |
-| VCT_102 | 0.50 | 57.2 | 0.0 |
-| VCT_125 | 1.00 | 57.2 | 0.0 |
-| VCT_125 | 0.50 | 57.2 | 0.0 |
+| 3D_gaa_AOS | 1.00 | 5.9 | 0.0 |
+| 3D_gaa_AOS | 0.50 | 5.9 | 0.0 |
+| 3D_gaa_Si | 1.00 | 5.0 | 0.0 |
+| 3D_gaa_Si | 0.50 | 5.0 | 0.0 |
+| BCAT_125 | 1.00 | 103.3 | 0.0 |
+| BCAT_125 | 0.50 | 51.6 | 51.7 |
+| VCT_082 | 1.00 | 5.0 | 0.0 |
+| VCT_082 | 0.50 | 5.0 | 0.0 |
+| VCT_091 | 1.00 | 5.0 | 0.0 |
+| VCT_091 | 0.50 | 5.0 | 0.0 |
+| VCT_102 | 1.00 | 5.0 | 0.0 |
+| VCT_102 | 0.50 | 5.0 | 0.0 |
+| VCT_125 | 1.00 | 6.6 | 0.0 |
+| VCT_125 | 0.50 | 6.6 | 0.0 |
 
 ## Figures
 

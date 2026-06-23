@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3317482
-Memory  available: 230.2894 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3603422
+Memory  available: 229.5832 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2900.0] ( 24 ),  1 [2899.5] ( 25 ),  2 [2899.7] ( 26 )
-                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
-                 6 [2899.7] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.7] ( 32 )
+        0:       0 [2899.6] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.9] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
+                 6 [2899.8] ( 30 ),  7 [3300.0] ( 31 ),  8 [2899.7] ( 32 )
                  9 [2899.7] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [3300.0] ( 44 )
+        1:      12 [2899.7] ( 36 ), 13 [2899.5] ( 37 ), 14 [2899.5] ( 38 )
+                15 [3300.0] ( 39 ), 16 [2899.8] ( 40 ), 17 [2899.6] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.6] ( 44 )
                 21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 91.4 %, 93.9 %, 91.9 %
+System load averages (1min, 5min, 15min) : 72.4 %, 73.6 %, 76.7 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_AOS_ss_gidl.sp' on river at 9:17:48 PM, Tue Jun 23, 2026 (process id: 3317482).
+Simulating `3D_gaa_AOS_ss_gidl.sp' on river at 11:55:06 PM, Tue Jun 23, 2026 (process id: 3603422).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss/decks/ss/3D_gaa_AOS
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,8 +31,300 @@ Command line:
         3D_gaa_AOS_ss_gidl.sp
 
 Licensing Information:
-[21:17:48.010681] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[23:55:06.080297] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+
+Licensing Information:
+[23:55:06.202081] Periodic Lic check successful
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss/decks/ss/3D_gaa_AOS/3D_gaa_AOS_ss_gidl.sp
+Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc
+Time for NDB Parsing: CPU = 287.171 ms, elapsed = 497.791 ms.
+Time accumulated: CPU = 442.752 ms, elapsed = 497.794 ms.
+Peak resident memory used = 173 Mbytes.
 
 
-Fatal error found by spectre.
-    FATAL (SPECTRE-209): Cannot run the simulation because the required license could not be checked out. Check the license usage in the license server or use the license queuing feature (+lqtimeout <timeout_value> in the command line) to wait until the required license is available. For more information about +lqtimeout, type 'spectre -h'.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-1994): "3D_gaa_AOS_ss_gidl.sp" 3: .options: parameter `post': `2' is invalid value of parameter `post' (possible values are 0, 1). Ignored.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
+    WARNING (SFE-101): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Parameter 'sasatcv' has been ignored because it has been assigned to instance nfet of master 'bsimcmg'; however, it has not been defined for 'bsimcmg'. Specify a valid parameter and rerun the simulation.
+
+Time for Elaboration: CPU = 57.247 ms, elapsed = 28.527 ms.
+Time accumulated: CPU = 500.188 ms, elapsed = 526.508 ms.
+Peak resident memory used = 181 Mbytes.
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
+
+Time for EDB Visiting: CPU = 11.922 ms, elapsed = 5.99313 ms.
+Time accumulated: CPU = 512.288 ms, elapsed = 532.677 ms.
+Peak resident memory used = 187 Mbytes.
+
+
+Netlist title:
+        * GIDL / retention leakage
+
+
+Global user options:
+               temp = 27
+               gmin = 1e-20
+            measdgt = 8
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 3
+            bsimcmg 1     
+            vsource 3     
+
+Analysis and control statement inventory:
+                 dc 1     
+
+Output statements:
+             .probe 1     
+           .measure 1     
+               save 0     
+
+Time for parsing: CPU = 17.718 ms, elapsed = 14.863 ms.
+Time accumulated: CPU = 530.227 ms, elapsed = 547.759 ms.
+Peak resident memory used = 191 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+*********************
+DC Analysis `opBegin'
+*********************
+
+Opening the PSF file ./3D_gaa_AOS_ss_gidl.raw/opBegin.dc ...
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 10e-21 S
+
+Notice from spectre during DC analysis `opBegin'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+
+Maximum value achieved for any signal of each quantity: 
+V: V(d) = 675 mV
+I: I(Vs:p) = 82.19 pA
+
+Notice from spectre during info, during DC analysis `opBegin'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+**************************************
+Operating-Point information `opBegin':
+**************************************
+Operating point computed in DC analysis `opBegin' at T = 27 C.
+
+    V(d) = 675 mV
+    V(g) = 0 V
+    V(s) = 0 V
+    I(Vd:p) = -82.1924 pA
+    I(Vg:p) = 0 A
+    I(Vs:p) = 82.1924 pA
+
+
+Most positive signals:
+    V(d) = 675 mV
+    I(Vs:p) = 82.1924 pA
+
+Most negative signals:
+    I(Vd:p) = -82.1924 pA
+
+Smallest signals:
+    V(g) = 0 V
+    I(Vg:p) = 0 A
+
+
+Instance: Mn1
+Model: nfet
+Primitive: bsimcmg
+          d : V(d) = 675 mV
+          g : V(g) = 0 V
+          s : V(s) = 0 V
+          e : V(s) = 0 V
+     region = off
+         id = 82.1924 pA
+        ids = 82.1924 pA
+         gm = 1.88952 nS
+        gds = 31.8307 pS
+       gmbs = 0 S
+       rout = 31.4162 GOhm
+        ron = 8.21243 GOhm
+        vgs = -530.152 nV
+        vgd = -674.999 mV
+        vds = 674.999 mV
+        ves = 0 V
+        vth = 390.152 mV
+        vgt = -390.153 mV
+        vfb = -564.331 mV
+       beta = 2.7767 mA/V^2
+     vdssat = 47.1859 mV
+      vdsat = 47.1859 mV
+     vdseff = 0 V
+        pwr = 55.4799 pW
+      ideff = 82.1924 pA
+      iseff = -82.1924 pA
+      igtot = 0 A
+       isub = -0 A
+     idsgen = 0 A
+        iii = 0 A
+      igidl = 0 A
+      igisl = 0 A
+       ijsb = 0 A
+       ijdb = 0 A
+        igs = 0 A
+        igd = 0 A
+       igcs = 0 A
+       igcd = 0 A
+       igbs = 0 A
+       igbd = 0 A
+     igbacc = 0 A
+     igbinv = 0 A
+        qgi = 1.34644 aCoul
+        qdi = -1.01957e-21 Coul
+        qsi = -1.4222e-21 Coul
+        qbi = -1.344 aCoul
+         qg = -12.7276 aCoul
+         qd = 14.073 aCoul
+         qs = -1.34541 aCoul
+         qb = -0 Coul
+       cggi = 56.1048e-21 F
+       cgsi = 56.3481e-21 F
+       cgdi = -243.251e-24 F
+       cgei = -0 F
+       cdgi = 23.4288e-21 F
+       cddi = -102.502e-24 F
+       cdsi = -23.5313e-21 F
+       cdei = 0 F
+       csgi = 32.676e-21 F
+       csdi = 140.749e-24 F
+       cssi = 32.8168e-21 F
+       csei = -0 F
+       cegi = -0 F
+       cedi = -0 F
+       cesi = 0 F
+       ceei = 0 F
+        cgg = 41.7571 aF
+        cgs = 20.9068 aF
+        cgd = 20.8502 aF
+        cge = 0 F
+        cdg = 20.8739 aF
+        cdd = 20.8504 aF
+        cds = -23.5313e-21 F
+        cde = 0 F
+        csg = 20.8832 aF
+        csd = 140.749e-24 F
+        css = 20.8833 aF
+        cse = -0 F
+        ceg = -0 F
+        ced = 0 F
+        ces = 0 F
+        cee = 0 F
+     cgsext = 20.8505 aF
+     cgdext = 20.8505 aF
+      cgbov = -0 F
+       cjst = 0 F
+       cjdt = 0 F
+    para_rs = 6.45013 kOhm
+    para_rd = 6.45013 kOhm
+    para_rg = 0 Ohm
+ para_csbox = 0 F
+ para_cdbox = 0 F
+ para_cgbox = 0 F
+para_qgs_ov = 10.0298 aF
+para_qgd_ov = 10.0298 aF
+para_qgs_fr = 10.8207 aF
+para_qgd_fr = 10.8207 aF
+para_qds_fr = 0 F
+        ith = 55.4798 pA
+      lpoly = 43 nm
+   reversed = no
+       vgst = 0 V
+       vgdt = -675 mV
+       vdet = 675 mV
+       vget = 0 V
+       vdst = 675 mV
+       vest = 0 V
+        sft = 27 C
+    temp_sh = 27 C
+    tdevice = 300.15 K
+  t_total_k = 300.15 K
+  t_total_c = 27 C
+ t_delta_sh = 0 C
+
+
+Instance: Vd
+Model: vsource
+Primitive: vsource
+          p : V(d) = 675 mV
+          n : val(0) = 0 
+          v = 675 mV
+          i = -82.1924 pA
+        pwr = -55.4799 pW
+
+Instance: Vg
+Model: vsource
+Primitive: vsource
+          p : V(g) = 0 V
+          n : val(0) = 0 
+          v = 0 V
+          i = 0 A
+        pwr = 0 W
+
+Instance: Vs
+Model: vsource
+Primitive: vsource
+          p : V(s) = 0 V
+          n : val(0) = 0 
+          v = 0 V
+          i = 82.1924 pA
+        pwr = 0 W
+
+Maximum and minimum parameter values for vsource: 
+            max v = 675 mV on Vd
+            min v = 0 V on Vg
+            max i = 82.1924 pA on Vs
+            min i = -82.1924 pA on Vd
+          min |i| = 0 A on Vg
+          max pwr = 0 W on Vg
+          min pwr = -55.4799 pW on Vd
+
+
+Total Power Dissipation = 55.4799 pW.
+
+
+Convergence achieved in 2 iterations.
+Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss/decks/ss/3D_gaa_AOS/3D_gaa_AOS_ss_gidl.measure
+Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ss/decks/ss/3D_gaa_AOS/3D_gaa_AOS_ss_gidl.mt0
+DC simulation time: CPU = 14.459 ms, elapsed = 8.09908 ms.
+Total time required for dc analysis `opBegin': CPU = 14.551 ms, elapsed = 8.18896 ms, util. = 178%.
+Time accumulated: CPU = 594.379 ms, elapsed = 580.801 ms.
+Peak resident memory used = 198 Mbytes.
+
+Licensing Information:
+Lic Summary:
+[23:55:06.376811] Cdslmd servers:/eda/cadence/license.dat
+[23:55:06.901148] Feature usage summary:
+[23:55:06.901150] Virtuoso_Spectre
+
+
+Aggregate audit (11:55:06 PM, Tue Jun 23, 2026):
+Time used: CPU = 601 ms, elapsed = 601 ms, util. = 100%.
+Time spent in licensing: elapsed = 290 ms, percentage of total = 48.3%.
+Peak memory used = 199 Mbytes.
+Simulation started at: 11:55:06 PM, Tue Jun 23, 2026, ended at: 11:55:06 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 601 ms.
+spectre completes with 0 errors, 3 warnings, and 3 notices.

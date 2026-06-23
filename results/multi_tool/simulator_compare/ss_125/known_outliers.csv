@@ -1,0 +1,13 @@
+model_id,corner,suite,metric,backend,reference,rel_diff,flag_threshold,known_outlier,note,ccell_ff
+VCT_125,ss_125,device,ion_a,ngspice,spectre,0.646785157474937,0.35,True,ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only.,
+VCT_125,ss_125,device,ioff_a,ngspice,spectre,-0.8417463907353907,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss_125,device,ron_ohm,ngspice,spectre,-0.39277543978979135,0.35,True,ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only.,
+VCT_125,ss_125,device,ron_boost_ohm,ngspice,spectre,-0.40187112233243966,0.35,True,ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only.,
+VCT_125,ss_125,device,cgg_f,ngspice,spectre,-0.9921196035371478,0.35,True,Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than Spectre.,
+VCT_125,ss_125,device,cgd_f,ngspice,spectre,0.7435831879195585,0.35,True,Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than Spectre.,
+VCT_125,ss_125,device,igidl_a,ngspice,spectre,-0.8417463907353907,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss_125,device,ion_per_cgg,ngspice,spectre,207.9723740725217,0.35,True,Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than Spectre.,
+VCT_125,ss_125,device,ron_x_cload,ngspice,spectre,-0.3927754397897916,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss_125,device,ioff_density_a_m2,ngspice,spectre,-0.8417463907353906,0.35,False,Exceeds automatic rel-diff threshold,
+VCT_125,ss_125,cell,i_hold_a,ngspice,spectre,-0.4510104970525557,0.35,False,Exceeds automatic rel-diff threshold,30.0
+VCT_125,ss_125,mini_array,t_bl_settle_s,ngspice,spectre,-0.24963312403260546,0.35,True,Transient timestep and OSDI trajectory vs Spectre (~35–40% @ tt).,

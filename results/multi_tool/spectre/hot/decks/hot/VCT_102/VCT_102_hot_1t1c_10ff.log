@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3325167
-Memory  available: 230.5459 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3612508
+Memory  available: 229.6305 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2821.4] ( 24 ),  1 [2822.3] ( 25 ),  2 [2821.3] ( 26 )
-                 3 [2821.4] ( 27 ),  4 [2822.5] ( 28 ),  5 [2821.5] ( 29 )
-                 6 [2821.5] ( 30 ),  7 [2821.5] ( 31 ),  8 [2800.0] ( 32 )
-                 9 [2803.9] ( 33 ), 10 [2800.1] ( 34 ), 11 [2800.0] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.2] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.8] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2900.3] ( 46 ), 23 [2899.7] ( 47 )
+        0:       0 [2900.1] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.5] ( 29 )
+                 6 [2899.9] ( 30 ),  7 [2899.3] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [2899.7] ( 33 ), 10 [2899.8] ( 34 ), 11 [2899.7] ( 35 )
+        1:      12 [3300.0] ( 36 ), 13 [2899.5] ( 37 ), 14 [2899.7] ( 38 )
+                15 [2899.5] ( 39 ), 16 [2899.8] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2896.6] ( 44 )
+                21 [3300.0] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 85.6 %, 91.4 %, 91.3 %
+System load averages (1min, 5min, 15min) : 71.0 %, 72.4 %, 75.7 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_102_hot_1t1c_10ff.sp' on river at 9:19:44 PM, Tue Jun 23, 2026 (process id: 3325167).
+Simulating `VCT_102_hot_1t1c_10ff.sp' on river at 11:57:47 PM, Tue Jun 23, 2026 (process id: 3612508).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/VCT_102
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,8 +31,203 @@ Command line:
         VCT_102_hot_1t1c_10ff.sp
 
 Licensing Information:
-[21:19:44.010665] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[23:57:47.080353] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+
+Licensing Information:
+[23:57:47.499209] Periodic Lic check successful
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/VCT_102/VCT_102_hot_1t1c_10ff.sp
+Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/VCT_102.inc
+Time for NDB Parsing: CPU = 314.845 ms, elapsed = 518.901 ms.
+Time accumulated: CPU = 490.782 ms, elapsed = 518.904 ms.
+Peak resident memory used = 190 Mbytes.
 
 
-Fatal error found by spectre.
-    FATAL (SPECTRE-209): Cannot run the simulation because the required license could not be checked out. Check the license usage in the license server or use the license queuing feature (+lqtimeout <timeout_value> in the command line) to wait until the required license is available. For more information about +lqtimeout, type 'spectre -h'.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-1994): "VCT_102_hot_1t1c_10ff.sp" 3: .options: parameter `post': `2' is invalid value of parameter `post' (possible values are 0, 1). Ignored.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/VCT_102.inc" 5: Duplicate specification for parameter `bulkmod' (using last value specified).
+
+Time for Elaboration: CPU = 61.359 ms, elapsed = 30.6849 ms.
+Time accumulated: CPU = 552.342 ms, elapsed = 549.79 ms.
+Peak resident memory used = 199 Mbytes.
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
+
+Time for EDB Visiting: CPU = 13.782 ms, elapsed = 6.85716 ms.
+Time accumulated: CPU = 566.311 ms, elapsed = 556.832 ms.
+Peak resident memory used = 205 Mbytes.
+
+
+Netlist title:
+        * 1T1C Ccell=10.0fF
+
+
+Global user options:
+               temp = 85
+               gmin = 1e-20
+            measdgt = 8
+             gmindc = 1e-30
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 6
+            bsimcmg 1     
+          capacitor 1     
+           resistor 1     
+            vsource 4     
+
+Analysis and control statement inventory:
+               tran 1     
+
+Output statements:
+             .probe 1     
+           .measure 4     
+               save 0     
+
+Time for parsing: CPU = 9.329 ms, elapsed = 5.8639 ms.
+Time accumulated: CPU = 575.859 ms, elapsed = 562.913 ms.
+Peak resident memory used = 209 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+*****************************************************
+Transient Analysis `timeSweep': time = (0 s -> 40 ns)
+*****************************************************
+
+Notice from spectre during IC analysis, during transient analysis `timeSweep'.
+    There are 2 IC nodes defined.
+
+DC simulation time: CPU = 756 us, elapsed = 757.933 us.
+
+Notice from spectre during transient analysis `timeSweep'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+
+Opening the PSFXL file ./VCT_102_hot_1t1c_10ff.raw/timeSweep.tran.tran ...
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 40 ns
+    step = 50 ps
+    maxstep = 800 ps
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 85 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 10e-21 S
+
+
+Output and IC/nodeset summary:
+                 save   4       (current)
+                 save   6       (voltage)
+                 ic     2       
+
+...
+
+Notice from spectre at time = 2 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl:p.
+
+.....
+
+Notice from spectre at time = 3.80751 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vpl:p.
+
+......9
+
+Notice from spectre at time = 4.60751 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl:p.
+
+......9.
+
+Notice from spectre at time = 5.40751 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vpl:p.
+
+......9..
+
+Notice from spectre at time = 6.20751 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl:p.
+        Further occurrences of this notice will be suppressed.
+
+......9......8......7......6......5......4......3......2......1......0
+Number of accepted tran steps =             127
+
+Notice from spectre during transient analysis `timeSweep'.
+    Trapezoidal ringing is detected during tran analysis.
+        Please use method=trap for better results and performance.
+
+
+Maximum value achieved for any signal of each quantity: 
+V: V(Mn1:int_di) = 935.7 mV
+I: I(Vpl:p) = 43.71 nA
+If your circuit contains signals of the same quantity that are vastly different in size (such as high voltage circuitry combined with low voltage control circuitry), you should consider specifying global option `bin_relref=yes'.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -   To further speed up simulation, consider
+          add ++aps on command line
+   -   Non-default settings that could significantly slow down simulation
+          gmin = 10e-21 S, default 1 pS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+During simulation, the CPU load for active processors is :
+         0 (10.9 %)      1 (100.0 %)     2 (100.0 %)     3 (16.7 %)
+         4 (100.0 %)     5 (7.4 %)       6 (100.0 %)     7 (3.6 %)
+         8 (100.0 %)     9 (55.6 %)     10 (100.0 %)    11 (12.7 %)
+        12 (39.6 %)     13 (100.0 %)    14 (43.4 %)     15 (18.9 %)
+        16 (100.0 %)    17 (100.0 %)    18 (26.9 %)     19 (100.0 %)
+        20 (52.8 %)     21 (11.1 %)     22 (74.1 %)     23 (100.0 %)
+        24 (100.0 %)    25 (100.0 %)    26 (100.0 %)    27 (100.0 %)
+        28 (16.1 %)     29 (100.0 %)    30 (5.6 %)      31 (100.0 %)
+        32 (100.0 %)    33 (100.0 %)    34 (34.5 %)     35 (100.0 %)
+        36 (100.0 %)    37 (62.3 %)     38 (90.9 %)     39 (100.0 %)
+        40 (36.0 %)     41 (71.7 %)     42 (100.0 %)    43 (42.6 %)
+        44 (7.7 %)      45 (100.0 %)    46 (35.8 %)     47 (80.8 %)
+        Total: 3257.7%
+Initial condition solution time: CPU = 1.83 ms, elapsed = 892.878 us.
+Intrinsic tran analysis time:    CPU = 43.945 ms, elapsed = 23.5109 ms.
+Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/VCT_102/VCT_102_hot_1t1c_10ff.measure
+Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/hot/decks/hot/VCT_102/VCT_102_hot_1t1c_10ff.mt0
+Total time required for tran analysis `timeSweep': CPU = 55.901 ms, elapsed = 29.5761 ms, util. = 189%.
+Time accumulated: CPU = 684.982 ms, elapsed = 620.382 ms.
+Peak resident memory used = 217 Mbytes.
+
+
+Notice from spectre.
+    30 notices suppressed.
+
+Licensing Information:
+Lic Summary:
+[23:57:47.176600] Cdslmd servers:/eda/cadence/license.dat
+[23:57:47.700941] Feature usage summary:
+[23:57:47.700942] Virtuoso_Spectre
+
+
+Aggregate audit (11:57:47 PM, Tue Jun 23, 2026):
+Time used: CPU = 692 ms, elapsed = 692 ms, util. = 100%.
+Time spent in licensing: elapsed = 296 ms, percentage of total = 42.7%.
+Peak memory used = 218 Mbytes.
+Simulation started at: 11:57:47 PM, Tue Jun 23, 2026, ended at: 11:57:47 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 692 ms.
+spectre completes with 0 errors, 2 warnings, and 10 notices.

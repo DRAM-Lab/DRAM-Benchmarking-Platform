@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3303426
-Memory  available: 230.2709 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3586544
+Memory  available: 229.3478 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2899.7] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
-                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2839.5] ( 29 )
+        0:       0 [2902.3] ( 24 ),  1 [2899.7] ( 25 ),  2 [2900.0] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [3300.0] ( 28 ),  5 [2900.0] ( 29 )
                  6 [2899.7] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.7] ( 32 )
-                 9 [2899.7] ( 33 ), 10 [2810.5] ( 34 ), 11 [2810.4] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.8] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.6] ( 39 ), 16 [2899.8] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.8] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+                 9 [2899.6] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.6] ( 35 )
+        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.5] ( 38 )
+                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.6] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 91.6 %, 95.1 %, 91.7 %
+System load averages (1min, 5min, 15min) : 80.5 %, 75.8 %, 78.3 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_AOS_hot_mini_array.sp' on river at 9:14:40 PM, Tue Jun 23, 2026 (process id: 3303426).
+Simulating `3D_gaa_AOS_hot_mini_array.sp' on river at 11:50:43 PM, Tue Jun 23, 2026 (process id: 3586544).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/hot/decks/hot/3D_gaa_AOS
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,8 +31,203 @@ Command line:
         3D_gaa_AOS_hot_mini_array.sp
 
 Licensing Information:
-[21:14:40.010593] Configured Lic search path (24.01-s002): /usr/license/license.dat
+[23:50:43.080265] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+
+Licensing Information:
+[23:50:43.307619] Periodic Lic check successful
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/hot/decks/hot/3D_gaa_AOS/3D_gaa_AOS_hot_mini_array.sp
+Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc
+Time for NDB Parsing: CPU = 309.384 ms, elapsed = 514.273 ms.
+Time accumulated: CPU = 477.95 ms, elapsed = 514.276 ms.
+Peak resident memory used = 169 Mbytes.
 
 
-Fatal error found by spectre.
-    FATAL (SPECTRE-209): Cannot run the simulation because the required license could not be checked out. Check the license usage in the license server or use the license queuing feature (+lqtimeout <timeout_value> in the command line) to wait until the required license is available. For more information about +lqtimeout, type 'spectre -h'.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-1994): "3D_gaa_AOS_hot_mini_array.sp" 3: .options: parameter `post': `2' is invalid value of parameter `post' (possible values are 0, 1). Ignored.
+Warning from spectre during hierarchy flattening.
+    WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
+    WARNING (SFE-101): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Parameter 'sasatcv' has been ignored because it has been assigned to instance nfet of master 'bsimcmg'; however, it has not been defined for 'bsimcmg'. Specify a valid parameter and rerun the simulation.
+
+Time for Elaboration: CPU = 63.104 ms, elapsed = 31.435 ms.
+Time accumulated: CPU = 541.264 ms, elapsed = 545.92 ms.
+Peak resident memory used = 178 Mbytes.
+
+Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
+
+Time for EDB Visiting: CPU = 14.335 ms, elapsed = 7.40695 ms.
+Time accumulated: CPU = 555.767 ms, elapsed = 553.494 ms.
+Peak resident memory used = 184 Mbytes.
+
+
+Netlist title:
+        * Mini-array N=8 layout
+
+
+Global user options:
+               temp = 85
+               gmin = 1e-20
+            measdgt = 8
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 42
+            bsimcmg 8     
+          capacitor 26    
+           resistor 16    
+            vsource 18    
+
+Analysis and control statement inventory:
+               tran 1     
+
+Output statements:
+             .probe 1     
+           .measure 2     
+               save 0     
+
+Time for parsing: CPU = 18.389 ms, elapsed = 15.444 ms.
+Time accumulated: CPU = 575.395 ms, elapsed = 569.185 ms.
+Peak resident memory used = 188 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+*****************************************************
+Transient Analysis `timeSweep': time = (0 s -> 25 ns)
+*****************************************************
+
+Notice from spectre during IC analysis, during transient analysis `timeSweep'.
+    There are 9 IC nodes defined.
+
+DC simulation time: CPU = 2.337 ms, elapsed = 1.40381 ms.
+
+Notice from spectre during transient analysis `timeSweep'.
+    No outputs were found. Loosening output filter criterion to `allpub'.
+
+
+Opening the PSFXL file ./3D_gaa_AOS_hot_mini_array.raw/timeSweep.tran.tran ...
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 25 ns
+    step = 50 ps
+    maxstep = 500 ps
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 85 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 10e-21 S
+
+
+Output and IC/nodeset summary:
+                 save   18      (current)
+                 save   42      (voltage)
+                 ic     9       
+
+......9......8......7.
+
+Notice from spectre at time = 8.47974 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl0:p.
+
+......9......8......7....
+
+Notice from spectre at time = 9.47974 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl0:p.
+
+......9......8......7......6
+
+Notice from spectre at time = 10.4797 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl0:p.
+
+......9......8......7......6.
+
+Notice from spectre at time = 10.9797 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl0:p.
+
+......9......8......7......6...
+
+Notice from spectre at time = 11.4797 ns during transient analysis `timeSweep'.
+    Found trapezoidal ringing on node Vwl0:p.
+        Further occurrences of this notice will be suppressed.
+
+......9......8......7......6......5......4......3......2......1......0
+Number of accepted tran steps =             70
+
+Notice from spectre during transient analysis `timeSweep'.
+    Trapezoidal ringing is detected during tran analysis.
+        Please use method=trap for better results and performance.
+
+
+Maximum value achieved for any signal of each quantity: 
+V: V(wl0) = 750 mV
+I: I(Vplate0:p) = 1.644 uA
+If your circuit contains signals of the same quantity that are vastly different in size (such as high voltage circuitry combined with low voltage control circuitry), you should consider specifying global option `bin_relref=yes'.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -   To further speed up simulation, consider
+          add ++aps on command line
+   -   Non-default settings that could significantly slow down simulation
+          gmin = 10e-21 S, default 1 pS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+During simulation, the CPU load for active processors is :
+         0 (19.6 %)      1 (100.0 %)     2 (100.0 %)     3 (100.0 %)
+         4 (1.8 %)       6 (100.0 %)     7 (100.0 %)     8 (100.0 %)
+         9 (28.1 %)     10 (100.0 %)    11 (21.8 %)     12 (98.2 %)
+        13 (100.0 %)    14 (100.0 %)    15 (98.2 %)     16 (100.0 %)
+        17 (85.5 %)     18 (98.2 %)     19 (100.0 %)    20 (98.2 %)
+        21 (3.6 %)      22 (5.3 %)      23 (37.5 %)     24 (100.0 %)
+        25 (100.0 %)    26 (42.9 %)     27 (100.0 %)    28 (100.0 %)
+        29 (100.0 %)    30 (9.1 %)      31 (54.4 %)     32 (100.0 %)
+        33 (100.0 %)    34 (3.6 %)      35 (100.0 %)    36 (100.0 %)
+        37 (7.3 %)      38 (5.4 %)      39 (100.0 %)    40 (16.1 %)
+        41 (100.0 %)    42 (98.2 %)     43 (5.5 %)      44 (98.2 %)
+        45 (100.0 %)    46 (100.0 %)    47 (100.0 %)    
+        Total: 3436.6%
+Initial condition solution time: CPU = 2.407 ms, elapsed = 1.47319 ms.
+Intrinsic tran analysis time:    CPU = 55.332 ms, elapsed = 30.122 ms.
+Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/hot/decks/hot/3D_gaa_AOS/3D_gaa_AOS_hot_mini_array.measure
+Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/hot/decks/hot/3D_gaa_AOS/3D_gaa_AOS_hot_mini_array.mt0
+Total time required for tran analysis `timeSweep': CPU = 68.365 ms, elapsed = 36.2799 ms, util. = 188%.
+Time accumulated: CPU = 699.717 ms, elapsed = 635.101 ms.
+Peak resident memory used = 196 Mbytes.
+
+
+Notice from spectre.
+    28 notices suppressed.
+
+Licensing Information:
+Lic Summary:
+[23:50:44.051459] Cdslmd servers:/eda/cadence/license.dat
+[23:50:44.051517] Feature usage summary:
+[23:50:44.051518] Virtuoso_Spectre
+
+
+Aggregate audit (11:50:44 PM, Tue Jun 23, 2026):
+Time used: CPU = 707 ms, elapsed = 707 ms, util. = 100%.
+Time spent in licensing: elapsed = 296 ms, percentage of total = 41.9%.
+Peak memory used = 197 Mbytes.
+Simulation started at: 11:50:43 PM, Tue Jun 23, 2026, ended at: 11:50:44 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 707 ms.
+spectre completes with 0 errors, 3 warnings, and 10 notices.
