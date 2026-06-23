@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from dram_benchmark.report.markdown_tables import join_md_row
 from ccell.binding import build_binding_summary
 from ccell.config import load_ccell_config
 from ccell.read_signal import read_threshold_summary
@@ -42,12 +43,12 @@ def _format_cell(value: object, fmt: str = "s", *, scale: float = 1.0) -> str:
 def _table(df: pd.DataFrame, columns: list[tuple[str, str, str, float]]) -> str:
     headers = [h for _, h, _, _ in columns]
     lines = [
-        "| " + " | ".join(headers) + " |",
-        "| " + " | ".join(["---"] * len(headers)) + " |",
+        join_md_row(headers),
+        join_md_row(["---"] * len(headers)),
     ]
     for _, row in df.iterrows():
         cells = [_format_cell(row.get(col), fmt, scale=scale) for col, _, fmt, scale in columns]
-        lines.append("| " + " | ".join(cells) + " |")
+        lines.append(join_md_row(cells))
     return "\n".join(lines)
 
 
@@ -128,6 +129,7 @@ def generate_report(
             lines.append(_table(subset, feas_cols))
             if not limited.empty:
                 names = ", ".join(limited["model_id"].astype(str))
+                lines.append("")
                 lines.append(f"_Cap-limited under {scenario}: {names}_")
             lines.append("")
 

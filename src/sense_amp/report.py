@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from dram_benchmark.report.markdown_tables import df_to_markdown
 from sense_amp.extract.transient import dv_key_for_time_ns
 from sense_amp.paths import load_read_path_config
 from sense_amp.plots import generate_figures
@@ -145,7 +146,7 @@ def generate_report(
                 "",
                 _spec_interpretation_table(spec_df),
                 "",
-                _df_to_markdown(spec_df),
+                df_to_markdown(spec_df),
                 "",
             ]
         )
@@ -162,7 +163,7 @@ def generate_report(
                 "",
                 "Sample of passing combinations (earliest t_en per model preferred):",
                 "",
-                _df_to_markdown(
+                df_to_markdown(
                     passing.sort_values(["model_id", "t_en_ns", "sigma_os_mv"]).head(24)
                 ),
                 "",
@@ -176,7 +177,7 @@ def generate_report(
                 "",
                 "Victim read with adjacent aggressor BL activity vs isolated column.",
                 "",
-                _df_to_markdown(coupling_margin_df),
+                df_to_markdown(coupling_margin_df),
                 "",
             ]
         )
@@ -276,7 +277,7 @@ def _build_signal_summary_table(
     if f"|ΔV|@{int(sample_times_ns[-1])}ns_mV" in summary.columns:
         sort_col = f"|ΔV|@{int(sample_times_ns[-1])}ns_mV"
         summary = summary.sort_values(sort_col, ascending=False)
-    return _df_to_markdown(summary)
+    return df_to_markdown(summary)
 
 
 def _executive_summary(
@@ -344,7 +345,7 @@ def _spec_interpretation_table(spec_df: pd.DataFrame) -> str:
         else:
             interp = "No tier in sweep meets target — weaker signal or tighter SA needed"
         rows.append({"model_id": row["model_id"], "status": row.get("status"), "read_guidance": interp})
-    return _df_to_markdown(pd.DataFrame(rows))
+    return df_to_markdown(pd.DataFrame(rows))
 
 
 def _csv_guide_section(*, has_signal: bool) -> str:
@@ -384,23 +385,3 @@ def _csv_guide_section(*, has_signal: bool) -> str:
         )
     return "\n".join(lines)
 
-
-def _df_to_markdown(df: pd.DataFrame) -> str:
-    """Render a DataFrame as a GitHub-flavored markdown table."""
-    if df.empty:
-        return "_No data._"
-    headers = "| " + " | ".join(str(c) for c in df.columns) + " |"
-    sep = "| " + " | ".join("---" for _ in df.columns) + " |"
-    body = []
-    for row in df.itertuples(index=False):
-        cells = []
-        for value in row:
-            if isinstance(value, float):
-                if pd.isna(value):
-                    cells.append("—")
-                else:
-                    cells.append(f"{value:.4g}")
-            else:
-                cells.append(str(value))
-        body.append("| " + " | ".join(cells) + " |")
-    return "\n".join([headers, sep, *body])

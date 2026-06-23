@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 | Suite | `sense_amp` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 16:05 UTC |
+| Generated | 2026-06-23 17:17 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -33,7 +33,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 ---
 ## Read-Path Signal & SA Requirement Sweep
 
-**Generated:** 2026-06-23 16:05 UTC  
+**Generated:** 2026-06-23 17:17 UTC  
 **Corner:** tt  
 **Simulator:** spectre  
 **Signal rows:** 84  
@@ -74,7 +74,7 @@ Reference: **Ccell = 20 fF**, **VBL_pre = 50% × Vdd** (compare access nodes at 
 
 |ΔV_BL| is the absolute differential BL voltage sampled from SPICE (access device + lumped BL RC + cell cap).
 
-| model_id | |ΔV|@5ns_mV | |ΔV|@8ns_mV | |ΔV|@10ns_mV | |ΔV|@12ns_mV | |ΔV|@15ns_mV |
+| model_id | \|ΔV\|@5ns_mV | \|ΔV\|@8ns_mV | \|ΔV\|@10ns_mV | \|ΔV\|@12ns_mV | \|ΔV\|@15ns_mV |
 | --- | --- | --- | --- | --- | --- |
 | 3D_gaa_Si | 29.06 | 46.37 | 54.28 | 60.35 | 67.16 |
 | 3D_gaa_AOS | 15.95 | 23.42 | 26.44 | 28.54 | 30.61 |
@@ -208,6 +208,7 @@ Use this to explore timing vs offset tradeoffs beyond the per-node summary.
 | [`sa_spec_per_node.csv`](sa_spec_per_node.csv) | Derived SA requirements per access node |
 | [`decks/`](decks/) | Generated SPICE decks |
 | [`figures/`](figures/) | Summary SVG plots |
+
 ## Reproduce
 
 ```bash

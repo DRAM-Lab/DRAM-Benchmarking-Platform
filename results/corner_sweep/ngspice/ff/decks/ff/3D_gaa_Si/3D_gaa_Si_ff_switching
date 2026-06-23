@@ -1355,7 +1355,7 @@ OSDI(debug) nn1: Warning: VSATCV(300.150000) = 9.182188e+02 is less than 1K, set
 
 No. of Data Rows : 217
                             * wl switching transient
-                            Transient Analysis  Tue Jun 23 23:47:03  2026
+                            Transient Analysis  Wed Jun 24 01:02:49  2026
 --------------------------------------------------------------------------------
 Index   time            v(g)            vg#branch       
 --------------------------------------------------------------------------------
@@ -1587,16 +1587,16 @@ Index   time            v(g)            vg#branch
 216	2.000000e-08	8.250000e-01	-1.49339e-12	
 
 
-Total analysis time (seconds) = 0.0319019
+Total analysis time (seconds) = 0.0260311
 
-Total elapsed time (seconds) = 0.040 
+Total elapsed time (seconds) = 0.032 
 
 Total DRAM available = 386307.215 MB.
-DRAM currently available = 14231.953 MB.
+DRAM currently available = 8833.883 MB.
 Maximum ngspice program size =  529.719 MB.
-Current ngspice program size =   14.168 MB.
+Current ngspice program size =   14.176 MB.
 
-Shared ngspice pages =   12.266 MB.
+Shared ngspice pages =   12.258 MB.
 Text (code) pages =    6.266 MB.
 Stack = 0 bytes.
 Library pages =   59.137 MB.

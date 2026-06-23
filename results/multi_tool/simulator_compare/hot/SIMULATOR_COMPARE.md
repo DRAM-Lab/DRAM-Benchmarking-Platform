@@ -16,8 +16,8 @@ Full guide: [docs/simulator_cross_check.md](../docs/simulator_cross_check.md)
 - Wide: `device_metrics_wide.csv`
 - Rel diff: `device_metrics_rel_diff.csv`
 
-| metric | max |rel diff| |
-|--------|-------------|
+| metric | max \|rel diff\| |
+| --- | --- |
 | rel_diff_vt_v_ngspice_vs_spectre | 0 |
 | rel_diff_ss_mv_dec_ngspice_vs_spectre | 0.2253 |
 | rel_diff_ion_a_ngspice_vs_spectre | 1.393 |
@@ -37,8 +37,8 @@ Full guide: [docs/simulator_cross_check.md](../docs/simulator_cross_check.md)
 - Wide: `cell_1t1c_metrics_wide.csv`
 - Rel diff: `cell_1t1c_metrics_rel_diff.csv`
 
-| metric | max |rel diff| |
-|--------|-------------|
+| metric | max \|rel diff\| |
+| --- | --- |
 | rel_diff_t_write_s_ngspice_vs_spectre | 0.0001389 |
 | rel_diff_t_read_s_ngspice_vs_spectre | 0.02456 |
 | rel_diff_i_hold_a_ngspice_vs_spectre | 94.6 |
@@ -48,8 +48,8 @@ Full guide: [docs/simulator_cross_check.md](../docs/simulator_cross_check.md)
 - Wide: `mini_array_metrics_wide.csv`
 - Rel diff: `mini_array_metrics_rel_diff.csv`
 
-| metric | max |rel diff| |
-|--------|-------------|
+| metric | max \|rel diff\| |
+| --- | --- |
 | rel_diff_t_bl_settle_s_ngspice_vs_spectre | 0.3806 |
 | rel_diff_i_bl_leak_a_ngspice_vs_spectre | 0.7111 |
 

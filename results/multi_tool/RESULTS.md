@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 | Suite | `multi_tool` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 16:04 UTC |
+| Generated | 2026-06-23 17:17 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -34,11 +34,11 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 ---
 ## Device benchmark
 
-**Generated:** 2026-06-23 16:04 UTC  
+**Generated:** 2026-06-23 17:17 UTC  
 **Corners:** tt (reference: **tt** for tables/plots)  
 **Simulator:** spectre  
 **Models:** 7 access devices  
-**OpenDRAMmodelV1 revision:** `416f124`
+**OpenDRAMmodelV1 revision:** `af06d66d`
 
 Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
 
@@ -47,6 +47,7 @@ Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) usin
 - **Highest Ion:** `3D_gaa_AOS` (1.885e-06 A)
 - **Lowest Ioff:** `3D_gaa_Si` (1.011e-14 A)
 - **Fastest 1T1C read @ 20 fF:** `3D_gaa_AOS` (2.257e-08 s)
+
 ## Simulator cross-check
 
 Relative differences vs **Spectre** when present. No golden baselines for cross-tool agreement.
@@ -57,7 +58,7 @@ Interpretation guide: [docs/simulator_cross_check.md](docs/simulator_cross_check
 
 ### Max |relative difference| (tt, device metrics)
 
-| Comparison | Max |rel diff| |
+| Comparison | Max \|rel diff\| |
 | --- | --- |
 | cgd f ngspice vs spectre | 1.507 |
 | cgg f ngspice vs spectre | 0.9925 |
@@ -218,6 +219,7 @@ Full transient sweep at 10, 20, and 30 fF per model.
 | [`MANIFEST.json`](MANIFEST.json) | Provenance manifest with SHA-256 checksums |
 | [`simulator_compare/`](simulator_compare/) | Cross-simulator agreement tables |
 | [`figures/`](figures/) | Summary SVG plots |
+
 ## Reproduce
 
 ```bash

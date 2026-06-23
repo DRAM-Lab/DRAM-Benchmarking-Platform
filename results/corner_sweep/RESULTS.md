@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 | Suite | `corner_sweep` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 16:04 UTC |
+| Generated | 2026-06-23 17:16 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -34,11 +34,11 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 ---
 ## Device benchmark
 
-**Generated:** 2026-06-23 16:04 UTC  
+**Generated:** 2026-06-23 17:16 UTC  
 **Corners:** all (reference: **tt** for tables/plots)  
 **Simulator:** spectre  
 **Models:** 7 access devices  
-**OpenDRAMmodelV1 revision:** `416f124`
+**OpenDRAMmodelV1 revision:** `af06d66d`
 
 Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
 
@@ -47,6 +47,7 @@ Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) usin
 - **Highest Ion:** `3D_gaa_AOS` (1.885e-06 A)
 - **Lowest Ioff:** `3D_gaa_Si` (1.011e-14 A)
 - **Fastest 1T1C read @ 20 fF:** `3D_gaa_AOS` (2.257e-08 s)
+
 
 ## Corner matrix summary
 
@@ -184,6 +185,7 @@ Full transient sweep at 10, 20, and 30 fF per model.
 |------|-------------|
 | [`MANIFEST.json`](MANIFEST.json) | Provenance manifest with SHA-256 checksums |
 | [`figures/`](figures/) | Summary SVG plots |
+
 ## Reproduce
 
 ```bash

@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3577281
-Memory  available: 229.7642 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3742264
+Memory  available: 230.8123 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2899.7] ( 24 ),  1 [2899.6] ( 25 ),  2 [2899.9] ( 26 )
-                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
-                 6 [2899.7] ( 30 ),  7 [2899.8] ( 31 ),  8 [2899.7] ( 32 )
+        0:       0 [2900.1] ( 24 ),  1 [2898.9] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [3300.0] ( 29 )
+                 6 [2800.8] ( 30 ),  7 [2900.0] ( 31 ),  8 [2897.8] ( 32 )
                  9 [2899.7] ( 33 ), 10 [2899.7] ( 34 ), 11 [2899.7] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.7] ( 39 ), 16 [3300.0] ( 40 ), 17 [2901.9] ( 41 )
-                18 [3300.0] ( 42 ), 19 [2899.7] ( 43 ), 20 [2900.1] ( 44 )
-                21 [2899.8] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
+        1:      12 [2899.8] ( 36 ), 13 [2895.4] ( 37 ), 14 [2899.7] ( 38 )
+                15 [3300.0] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.2] ( 41 )
+                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2901.9] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2899.7] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 70.2 %, 71.3 %, 77.4 %
+System load averages (1min, 5min, 15min) : 52.3 %, 47.4 %, 49.1 %
 Hyperthreading is enabled
 
 
-Simulating `3D_gaa_AOS_ss_mini_array.sp' on river at 11:48:12 PM, Tue Jun 23, 2026 (process id: 3577281).
+Simulating `3D_gaa_AOS_ss_mini_array.sp' on river at 1:03:43 AM, Wed Jun 24, 2026 (process id: 3742264).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ss/decks/ss/3D_gaa_AOS
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,10 +31,10 @@ Command line:
         3D_gaa_AOS_ss_mini_array.sp
 
 Licensing Information:
-[23:48:12.080289] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+[01:03:43.080217] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
 
 Licensing Information:
-[23:48:12.265880] Periodic Lic check successful
+[01:03:43.421587] Periodic Lic check successful
 
 Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
 Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
@@ -44,9 +44,9 @@ Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so 
 Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ss/decks/ss/3D_gaa_AOS/3D_gaa_AOS_ss_mini_array.sp
 Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
 Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc
-Time for NDB Parsing: CPU = 291.238 ms, elapsed = 502.274 ms.
-Time accumulated: CPU = 448.685 ms, elapsed = 502.277 ms.
-Peak resident memory used = 189 Mbytes.
+Time for NDB Parsing: CPU = 185.725 ms, elapsed = 398.543 ms.
+Time accumulated: CPU = 292.779 ms, elapsed = 398.546 ms.
+Peak resident memory used = 168 Mbytes.
 
 
 Warning from spectre during hierarchy flattening.
@@ -55,15 +55,15 @@ Warning from spectre during hierarchy flattening.
     WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
     WARNING (SFE-101): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/3D_gaa_AOS.inc" 4: Parameter 'sasatcv' has been ignored because it has been assigned to instance nfet of master 'bsimcmg'; however, it has not been defined for 'bsimcmg'. Specify a valid parameter and rerun the simulation.
 
-Time for Elaboration: CPU = 60.358 ms, elapsed = 30.102 ms.
-Time accumulated: CPU = 509.243 ms, elapsed = 532.577 ms.
-Peak resident memory used = 197 Mbytes.
+Time for Elaboration: CPU = 39.269 ms, elapsed = 19.449 ms.
+Time accumulated: CPU = 332.181 ms, elapsed = 418.126 ms.
+Peak resident memory used = 176 Mbytes.
 
 Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
 
-Time for EDB Visiting: CPU = 14.132 ms, elapsed = 7.21908 ms.
-Time accumulated: CPU = 523.553 ms, elapsed = 539.971 ms.
-Peak resident memory used = 203 Mbytes.
+Time for EDB Visiting: CPU = 8.49 ms, elapsed = 4.53115 ms.
+Time accumulated: CPU = 340.809 ms, elapsed = 422.793 ms.
+Peak resident memory used = 183 Mbytes.
 
 
 Netlist title:
@@ -92,9 +92,9 @@ Output statements:
            .measure 2     
                save 0     
 
-Time for parsing: CPU = 18.252 ms, elapsed = 15.564 ms.
-Time accumulated: CPU = 542.003 ms, elapsed = 555.732 ms.
-Peak resident memory used = 207 Mbytes.
+Time for parsing: CPU = 7.308 ms, elapsed = 5.20301 ms.
+Time accumulated: CPU = 349.277 ms, elapsed = 428.162 ms.
+Peak resident memory used = 186 Mbytes.
 
 ~~~~~~~~~~~~~~~~~~~~~~
 Pre-Simulation Summary
@@ -108,7 +108,7 @@ Transient Analysis `timeSweep': time = (0 s -> 25 ns)
 Notice from spectre during IC analysis, during transient analysis `timeSweep'.
     There are 9 IC nodes defined.
 
-DC simulation time: CPU = 3.351 ms, elapsed = 1.40405 ms.
+DC simulation time: CPU = 1.967 ms, elapsed = 983 us.
 
 Notice from spectre during transient analysis `timeSweep'.
     No outputs were found. Loosening output filter criterion to `allpub'.
@@ -193,26 +193,25 @@ Post-Transient Simulation Summary
 
 
 During simulation, the CPU load for active processors is :
-         0 (100.0 %)     1 (36.4 %)      2 (100.0 %)     3 (100.0 %)
-         4 (10.9 %)      5 (100.0 %)     6 (100.0 %)     7 (52.8 %)
-         8 (100.0 %)     9 (5.6 %)      10 (100.0 %)    11 (16.7 %)
-        12 (100.0 %)    13 (25.0 %)     14 (98.1 %)     15 (81.1 %)
-        16 (5.6 %)      17 (10.7 %)     18 (41.8 %)     19 (100.0 %)
-        20 (49.1 %)     21 (13.0 %)     22 (100.0 %)    23 (23.6 %)
-        24 (100.0 %)    25 (100.0 %)    26 (12.5 %)     27 (21.4 %)
-        28 (100.0 %)    29 (100.0 %)    30 (38.2 %)     31 (100.0 %)
-        32 (100.0 %)    33 (100.0 %)    34 (45.5 %)     35 (100.0 %)
-        36 (98.1 %)     37 (100.0 %)    38 (66.7 %)     39 (100.0 %)
-        40 (100.0 %)    41 (77.8 %)     42 (100.0 %)    43 (98.1 %)
-        44 (100.0 %)    45 (86.0 %)     46 (100.0 %)    47 (100.0 %)
-        Total: 3514.6%
-Initial condition solution time: CPU = 3.423 ms, elapsed = 1.4751 ms.
-Intrinsic tran analysis time:    CPU = 52.891 ms, elapsed = 32.0849 ms.
+         0 (78.6 %)      1 (4.8 %)       2 (100.0 %)     3 (100.0 %)
+         4 (100.0 %)     5 (26.2 %)      6 (4.9 %)       7 (2.4 %)
+         9 (17.1 %)     10 (100.0 %)    11 (100.0 %)    12 (9.5 %)
+        14 (100.0 %)    15 (2.3 %)      16 (100.0 %)    17 (2.4 %)
+        18 (100.0 %)    19 (100.0 %)    20 (9.1 %)      21 (34.1 %)
+        22 (4.8 %)      23 (100.0 %)    24 (21.4 %)     25 (100.0 %)
+        26 (100.0 %)    27 (100.0 %)    29 (100.0 %)    30 (100.0 %)
+        31 (100.0 %)    32 (100.0 %)    33 (100.0 %)    35 (2.4 %)
+        36 (100.0 %)    37 (100.0 %)    39 (100.0 %)    41 (100.0 %)
+        42 (2.4 %)      43 (4.7 %)      44 (45.0 %)     45 (11.9 %)
+        46 (100.0 %)    
+        Total: 2583.8%
+Initial condition solution time: CPU = 2.016 ms, elapsed = 1.03188 ms.
+Intrinsic tran analysis time:    CPU = 31.583 ms, elapsed = 17.6179 ms.
 Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ss/decks/ss/3D_gaa_AOS/3D_gaa_AOS_ss_mini_array.measure
 Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/corner_sweep/spectre/ss/decks/ss/3D_gaa_AOS/3D_gaa_AOS_ss_mini_array.mt0
-Total time required for tran analysis `timeSweep': CPU = 64.928 ms, elapsed = 38.229 ms, util. = 170%.
-Time accumulated: CPU = 658.711 ms, elapsed = 621.043 ms.
-Peak resident memory used = 216 Mbytes.
+Total time required for tran analysis `timeSweep': CPU = 39.595 ms, elapsed = 21.6639 ms, util. = 183%.
+Time accumulated: CPU = 422.55 ms, elapsed = 467.378 ms.
+Peak resident memory used = 195 Mbytes.
 
 
 Notice from spectre.
@@ -220,14 +219,14 @@ Notice from spectre.
 
 Licensing Information:
 Lic Summary:
-[23:48:13.002432] Cdslmd servers:/eda/cadence/license.dat
-[23:48:13.002486] Feature usage summary:
-[23:48:13.002486] Virtuoso_Spectre
+[01:03:43.023835] Cdslmd servers:/eda/cadence/license.dat
+[01:03:43.548164] Feature usage summary:
+[01:03:43.548165] Virtuoso_Spectre
 
 
-Aggregate audit (11:48:13 PM, Tue Jun 23, 2026):
-Time used: CPU = 666 ms, elapsed = 666 ms, util. = 100%.
-Time spent in licensing: elapsed = 287 ms, percentage of total = 43.1%.
-Peak memory used = 217 Mbytes.
-Simulation started at: 11:48:12 PM, Tue Jun 23, 2026, ended at: 11:48:13 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 666 ms.
+Aggregate audit (1:03:43 AM, Wed Jun 24, 2026):
+Time used: CPU = 429 ms, elapsed = 472 ms, util. = 91%.
+Time spent in licensing: elapsed = 260 ms, percentage of total = 55.1%.
+Peak memory used = 196 Mbytes.
+Simulation started at: 1:03:43 AM, Wed Jun 24, 2026, ended at: 1:03:43 AM, Wed Jun 24, 2026, with elapsed time (wall clock): 472 ms.
 spectre completes with 0 errors, 3 warnings, and 10 notices.

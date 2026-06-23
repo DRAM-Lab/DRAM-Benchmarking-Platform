@@ -9,6 +9,7 @@ from typing import Any
 
 import pandas as pd
 
+from dram_benchmark.report.markdown_tables import join_md_row
 from validation.card import model_git_sha
 from validation.correlation import correlate_device_metrics, correlation_dataframe
 from validation.paths import MODEL_SUBMODULE_REL, PROJECT_ROOT
@@ -44,21 +45,16 @@ def _format_cell(value: object, fmt: str) -> str:
         return str(value)
 
 
-def _sanitize_md_cell(text: str) -> str:
-    """Escape pipe characters so markdown tables render correctly."""
-    return text.replace("|", "\\|")
-
-
 def _table(df: pd.DataFrame, columns: list[tuple[str, str, str]]) -> str:
     """Render a markdown table from column specs."""
-    headers = [_sanitize_md_cell(h) for _, h, _ in columns]
+    headers = [h for _, h, _ in columns]
     lines = [
-        "| " + " | ".join(headers) + " |",
-        "| " + " | ".join(["---"] * len(headers)) + " |",
+        join_md_row(headers),
+        join_md_row(["---"] * len(headers)),
     ]
     for _, row in df.iterrows():
-        cells = [_sanitize_md_cell(_format_cell(row.get(col), fmt)) for col, _, fmt in columns]
-        lines.append("| " + " | ".join(cells) + " |")
+        cells = [_format_cell(row.get(col), fmt) for col, _, fmt in columns]
+        lines.append(join_md_row(cells))
     return "\n".join(lines)
 
 

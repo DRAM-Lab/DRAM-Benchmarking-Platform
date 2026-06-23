@@ -83,7 +83,7 @@ t_bl_settle         =  4.08085e-09
 i_bl_leak           =  -2.05169e-10 from=  1.50000e-08 to=  2.50000e-08
 
                             * mini-array n=8 layout
-                            Transient Analysis  Tue Jun 23 23:58:09  2026
+                            Transient Analysis  Wed Jun 24 01:11:34  2026
 --------------------------------------------------------------------------------
 Index   time            v(bl0)          v(bl7)          vpre#branch     
 --------------------------------------------------------------------------------
@@ -627,16 +627,16 @@ Index   time            v(bl0)          v(bl7)          vpre#branch
 513	2.500000e-08	4.280092e-01	4.280100e-01	-2.19908e-10	
 
 
-Total analysis time (seconds) = 0.0624098
+Total analysis time (seconds) = 0.0572364
 
-Total elapsed time (seconds) = 0.073 
+Total elapsed time (seconds) = 0.065 
 
 Total DRAM available = 386307.215 MB.
-DRAM currently available = 2038.609 MB.
+DRAM currently available = 7748.816 MB.
 Maximum ngspice program size =  529.848 MB.
-Current ngspice program size =   14.324 MB.
+Current ngspice program size =   14.266 MB.
 
-Shared ngspice pages =   12.367 MB.
+Shared ngspice pages =   12.328 MB.
 Text (code) pages =    6.266 MB.
 Stack = 0 bytes.
 Library pages =   59.266 MB.

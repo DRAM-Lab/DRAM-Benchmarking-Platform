@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 | Suite | `validation` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 16:05 UTC |
+| Generated | 2026-06-23 17:17 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -37,7 +37,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 
 **Status:** PASS — 8/8 models pass, 0 trend violation(s)
 
-- **Generated:** 2026-06-23 16:04 UTC
+- **Generated:** 2026-06-23 17:16 UTC
 - **Model SHA:** `e692790da857`
 - **Corner:** TT (27 °C)
 - **Pinned metrics:** `bench/validation/pinned/` (TT corner)
@@ -475,6 +475,7 @@ Model cards: `models/OpenDRAMmodelV1`
 | [`MANIFEST.json`](MANIFEST.json) | Provenance manifest with SHA-256 checksums |
 | [`data/`](data/) | Validation audit CSV exports |
 | [`figures/`](figures/) | Summary SVG plots |
+
 ## Reproduce
 
 ```bash

@@ -1,6 +1,9 @@
 [
   "tests/test_bench_report.py::test_executive_summary_all_na_t_read",
   "tests/test_bench_report.py::test_generate_report_with_empty_cell_metrics",
+  "tests/test_markdown_tables.py::test_df_to_markdown_escapes_column_headers_with_pipes",
+  "tests/test_markdown_tables.py::test_join_md_row_renders_valid_two_column_table",
+  "tests/test_markdown_tables.py::test_sanitize_md_cell_escapes_pipes",
   "tests/test_platform.py::test_list_models_cli",
   "tests/test_platform.py::test_manifest_lists_model_cards",
   "tests/test_platform.py::test_model_root_has_seven_cards",

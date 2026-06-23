@@ -348,7 +348,7 @@ def finalize_results_markdown(
     if artifacts:
         footer_parts.append(artifacts)
     footer_parts.append(_reproduce_section(suite=suite, corner=corner, results_dir=results_dir))
-    footer = "\n".join(part.rstrip() for part in footer_parts if part)
+    footer = "\n\n".join(part.strip() for part in footer_parts if part)
     full_body = lane_body.rstrip() + "\n\n" + footer
     toc = _extract_toc(full_body)
 

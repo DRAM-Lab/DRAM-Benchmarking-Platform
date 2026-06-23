@@ -10,7 +10,7 @@ Using SPARSE 1.3 as Direct Linear Solver
 
 No. of Data Rows : 101
                            * id-vd sweep vgs=0.9900v
-                           DC transfer characteristic  Tue Jun 23 23:54:24  2026
+                           DC transfer characteristic  Wed Jun 24 01:08:36  2026
 --------------------------------------------------------------------------------
 Index   v-sweep         vd#branch       v(d)            
 --------------------------------------------------------------------------------
@@ -120,14 +120,14 @@ Index   v-sweep         vd#branch       v(d)
 100	9.900000e-01	-3.40037e-06	9.900000e-01	
 
 
-Total analysis time (seconds) = 0.0081078
+Total analysis time (seconds) = 0.00690619
 
-Total elapsed time (seconds) = 0.016 
+Total elapsed time (seconds) = 0.012 
 
 Total DRAM available = 386307.215 MB.
-DRAM currently available = 2248.129 MB.
+DRAM currently available = 7957.742 MB.
 Maximum ngspice program size =  529.719 MB.
-Current ngspice program size =   14.055 MB.
+Current ngspice program size =   14.066 MB.
 
 Shared ngspice pages =   12.293 MB.
 Text (code) pages =    6.266 MB.

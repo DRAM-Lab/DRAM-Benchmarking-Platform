@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3597785
-Memory  available: 229.5058 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3765488
+Memory  available: 229.9675 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2899.7] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.7] ( 26 )
-                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
-                 6 [2899.7] ( 30 ),  7 [2899.7] ( 31 ),  8 [2899.8] ( 32 )
-                 9 [2899.7] ( 33 ), 10 [2900.0] ( 34 ), 11 [2899.7] ( 35 )
-        1:      12 [2899.7] ( 36 ), 13 [3300.0] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2899.9] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.9] ( 46 ), 23 [3300.0] ( 47 )
+        0:       0 [2899.9] ( 24 ),  1 [2899.7] ( 25 ),  2 [2899.9] ( 26 )
+                 3 [2899.7] ( 27 ),  4 [2899.9] ( 28 ),  5 [3300.0] ( 29 )
+                 6 [2899.1] ( 30 ),  7 [2899.5] ( 31 ),  8 [2899.7] ( 32 )
+                 9 [3300.0] ( 33 ), 10 [2899.5] ( 34 ), 11 [2899.7] ( 35 )
+        1:      12 [2900.2] ( 36 ), 13 [2899.8] ( 37 ), 14 [2899.7] ( 38 )
+                15 [2899.7] ( 39 ), 16 [2899.8] ( 40 ), 17 [2897.8] ( 41 )
+                18 [2898.6] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [2899.7] ( 45 ), 22 [2900.3] ( 46 ), 23 [2899.7] ( 47 )
         
-System load averages (1min, 5min, 15min) : 72.4 %, 74.2 %, 77.2 %
+System load averages (1min, 5min, 15min) : 56.0 %, 52.5 %, 50.8 %
 Hyperthreading is enabled
 
 
-Simulating `VCT_102_ff_idvg_vds_half.sp' on river at 11:53:38 PM, Tue Jun 23, 2026 (process id: 3597785).
+Simulating `VCT_102_ff_idvg_vds_half.sp' on river at 1:07:59 AM, Wed Jun 24, 2026 (process id: 3765488).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ff/decks/ff/VCT_102
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,10 +31,10 @@ Command line:
         VCT_102_ff_idvg_vds_half.sp
 
 Licensing Information:
-[23:53:38.080321] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+[01:07:59.080305] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
 
 Licensing Information:
-[23:53:39.195210] Periodic Lic check successful
+[01:07:59.399522] Periodic Lic check successful
 
 Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
 Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
@@ -44,9 +44,9 @@ Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so 
 Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ff/decks/ff/VCT_102/VCT_102_ff_idvg_vds_half.sp
 Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
 Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/VCT_102.inc
-Time for NDB Parsing: CPU = 291.779 ms, elapsed = 502.178 ms.
-Time accumulated: CPU = 445.793 ms, elapsed = 502.181 ms.
-Peak resident memory used = 168 Mbytes.
+Time for NDB Parsing: CPU = 190 ms, elapsed = 400.925 ms.
+Time accumulated: CPU = 296.853 ms, elapsed = 400.927 ms.
+Peak resident memory used = 167 Mbytes.
 
 
 Warning from spectre during hierarchy flattening.
@@ -54,14 +54,14 @@ Warning from spectre during hierarchy flattening.
 Warning from spectre during hierarchy flattening.
     WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/VCT_102.inc" 5: Duplicate specification for parameter `bulkmod' (using last value specified).
 
-Time for Elaboration: CPU = 53.977 ms, elapsed = 27.2539 ms.
-Time accumulated: CPU = 499.949 ms, elapsed = 529.613 ms.
+Time for Elaboration: CPU = 41.662 ms, elapsed = 20.91 ms.
+Time accumulated: CPU = 338.644 ms, elapsed = 421.964 ms.
 Peak resident memory used = 176 Mbytes.
 
 Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
 
-Time for EDB Visiting: CPU = 11.869 ms, elapsed = 5.93305 ms.
-Time accumulated: CPU = 512.989 ms, elapsed = 535.722 ms.
+Time for EDB Visiting: CPU = 10.074 ms, elapsed = 5.14007 ms.
+Time accumulated: CPU = 348.928 ms, elapsed = 427.312 ms.
 Peak resident memory used = 182 Mbytes.
 
 
@@ -90,8 +90,8 @@ Output statements:
            .measure 2     
                save 0     
 
-Time for parsing: CPU = 16.669 ms, elapsed = 14.7619 ms.
-Time accumulated: CPU = 529.849 ms, elapsed = 550.673 ms.
+Time for parsing: CPU = 8.052 ms, elapsed = 5.49483 ms.
+Time accumulated: CPU = 357.119 ms, elapsed = 432.945 ms.
 Peak resident memory used = 186 Mbytes.
 
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -123,25 +123,25 @@ V: V(g) = 990 mV
 I: I(Vs:p) = 1.259 uA
 Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ff/decks/ff/VCT_102/VCT_102_ff_idvg_vds_half.measure
 Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/multi_tool/spectre/ff/decks/ff/VCT_102/VCT_102_ff_idvg_vds_half.mt0
-DC simulation time: CPU = 61.985 ms, elapsed = 31.9769 ms.
+DC simulation time: CPU = 46.171 ms, elapsed = 24.076 ms.
 
 Notice from spectre at dc = 990 mV during DC analysis `dcrun1'.
     The value of parameter 'dc' has been reset to the original value 0.
 
-Total time required for dc analysis `dcrun1': CPU = 62.083 ms, elapsed = 32.073 ms, util. = 194%.
-Time accumulated: CPU = 641.216 ms, elapsed = 607.244 ms.
+Total time required for dc analysis `dcrun1': CPU = 46.251 ms, elapsed = 24.152 ms, util. = 191%.
+Time accumulated: CPU = 431.474 ms, elapsed = 471.36 ms.
 Peak resident memory used = 191 Mbytes.
 
 Licensing Information:
 Lic Summary:
-[23:53:39.392970] Cdslmd servers:/eda/cadence/license.dat
-[23:53:39.393014] Feature usage summary:
-[23:53:39.393015] Virtuoso_Spectre
+[01:08:00.052800] Cdslmd servers:/eda/cadence/license.dat
+[01:08:00.052830] Feature usage summary:
+[01:08:00.052831] Virtuoso_Spectre
 
 
-Aggregate audit (11:53:39 PM, Tue Jun 23, 2026):
-Time used: CPU = 648 ms, elapsed = 648 ms, util. = 100%.
-Time spent in licensing: elapsed = 291 ms, percentage of total = 44.9%.
-Peak memory used = 193 Mbytes.
-Simulation started at: 11:53:38 PM, Tue Jun 23, 2026, ended at: 11:53:39 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 648 ms.
+Aggregate audit (1:08:00 AM, Wed Jun 24, 2026):
+Time used: CPU = 437 ms, elapsed = 475 ms, util. = 92.1%.
+Time spent in licensing: elapsed = 261 ms, percentage of total = 55.1%.
+Peak memory used = 192 Mbytes.
+Simulation started at: 1:07:59 AM, Wed Jun 24, 2026, ended at: 1:08:00 AM, Wed Jun 24, 2026, with elapsed time (wall clock): 475 ms.
 spectre completes with 0 errors, 2 warnings, and 3 notices.

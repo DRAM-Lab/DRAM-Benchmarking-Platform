@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from dram_benchmark.report.markdown_tables import join_md_row
 from bench.paths import PROJECT_ROOT
 from bench.simulator import SimulatorBackend, available_backends
 
@@ -397,12 +398,12 @@ def write_simulator_comparison(
         if rel_cols:
             max_abs = diff[rel_cols].abs().max()
             summaries.append("")
-            summaries.append("| metric | max |rel diff| |")
-            summaries.append("|--------|-------------|")
+            summaries.append(join_md_row(["metric", "max |rel diff|"]))
+            summaries.append(join_md_row(["---", "---"]))
             for col in rel_cols:
                 val = max_abs[col]
                 if pd.notna(val):
-                    summaries.append(f"| {col} | {val:.4g} |")
+                    summaries.append(join_md_row([col, f"{val:.4g}"]))
         summaries.append("")
 
     outliers = build_known_outliers_table(diff_by_kind, corner)
@@ -536,14 +537,14 @@ def simulator_compare_report_markdown(
         if rel_cols:
             lines.append(f"### Max |relative difference| ({reference_corner}, device metrics)")
             lines.append("")
-            lines.append("| Comparison | Max |rel diff| |")
-            lines.append("| --- | --- |")
+            lines.append(join_md_row(["Comparison", "Max |rel diff|"]))
+            lines.append(join_md_row(["---", "---"]))
             max_abs = diff[rel_cols].abs().max()
             for col in sorted(rel_cols):
                 val = max_abs[col]
                 if pd.notna(val):
                     label = col.replace("rel_diff_", "").replace("_", " ")
-                    lines.append(f"| {label} | {val:.4g} |")
+                    lines.append(join_md_row([label, f"{val:.4g}"]))
             lines.append("")
 
     if wide_path.is_file():
@@ -556,8 +557,8 @@ def simulator_compare_report_markdown(
             header = ["Model"] + [c.replace("ion_a_", "") for c in ion_cols]
             if ioff_cols:
                 header += [f"ioff_{c.replace('ioff_a_', '')}" for c in ioff_cols]
-            lines.append("| " + " | ".join(header) + " |")
-            lines.append("| " + " | ".join(["---"] * len(header)) + " |")
+            lines.append(join_md_row(header))
+            lines.append(join_md_row(["---"] * len(header)))
             for _, row in wide.sort_values("model_id").iterrows():
                 cells = [str(row.get("model_id", ""))]
                 for col in ion_cols:
@@ -566,7 +567,7 @@ def simulator_compare_report_markdown(
                 for col in ioff_cols:
                     val = row.get(col)
                     cells.append(f"{val:.3e}" if pd.notna(val) else "—")
-                lines.append("| " + " | ".join(cells) + " |")
+                lines.append(join_md_row(cells))
             lines.append("")
 
     outliers_path = search_dir / "known_outliers.csv"

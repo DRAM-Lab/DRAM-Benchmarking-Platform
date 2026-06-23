@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from dram_benchmark.report.markdown_tables import join_md_row
 from bench.analysis import generate_figures
 from bench.corner_registry import registry_provenance
 from bench.paths import OPEN_DRAMMODEL_V1_ROOT
@@ -80,14 +81,14 @@ def metrics_table_markdown(df: pd.DataFrame) -> str:
     """Render device metrics as a markdown table."""
     headers = [header for _, header, _ in _TABLE_COLUMNS]
     lines = [
-        "| " + " | ".join(headers) + " |",
-        "| " + " | ".join(["---"] * len(headers)) + " |",
+        join_md_row(headers),
+        join_md_row(["---"] * len(headers)),
     ]
     for _, row in df.iterrows():
         cells = [
             _format_cell(row.get(col), fmt) for col, _, fmt in _TABLE_COLUMNS
         ]
-        lines.append("| " + " | ".join(cells) + " |")
+        lines.append(join_md_row(cells))
     return "\n".join(lines)
 
 
@@ -109,12 +110,12 @@ def _simple_table(df: pd.DataFrame, columns: list[tuple[str, str, str]]) -> str:
     """Render a generic markdown table."""
     headers = [header for _, header, _ in columns]
     lines = [
-        "| " + " | ".join(headers) + " |",
-        "| " + " | ".join(["---"] * len(headers)) + " |",
+        join_md_row(headers),
+        join_md_row(["---"] * len(headers)),
     ]
     for _, row in df.iterrows():
         cells = [_format_cell(row.get(col), fmt) for col, _, fmt in columns]
-        lines.append("| " + " | ".join(cells) + " |")
+        lines.append(join_md_row(cells))
     return "\n".join(lines)
 
 
@@ -400,6 +401,7 @@ Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) usin
 ## Executive summary
 
 {_executive_summary(df, cell_df)}
+
 {compare_section}{corner_section}
 ## Architecture highlights ({reference_corner})
 

@@ -5,25 +5,25 @@ Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwi
 
 Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
 
-User: yongfu   Host: river   HostID: 7F0100   PID: 3620447
-Memory  available: 229.4339 GB  physical: 405.0724 GB
+User: yongfu   Host: river   HostID: 7F0100   PID: 3786244
+Memory  available: 230.7259 GB  physical: 405.0724 GB
 Linux   : Red Hat Enterprise Linux release 9.7 (Plow)
 CPU Type: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz
         Socket: Processors [Frequency] (Hyperthreaded Processor)
-        0:       0 [2899.7] ( 24 ),  1 [2899.4] ( 25 ),  2 [2899.7] ( 26 )
-                 3 [2899.7] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.7] ( 29 )
-                 6 [2899.7] ( 30 ),  7 [2899.8] ( 31 ),  8 [2899.5] ( 32 )
-                 9 [2899.7] ( 33 ), 10 [2899.9] ( 34 ), 11 [2899.7] ( 35 )
+        0:       0 [2899.9] ( 24 ),  1 [2899.6] ( 25 ),  2 [2899.7] ( 26 )
+                 3 [3300.0] ( 27 ),  4 [2899.7] ( 28 ),  5 [2899.8] ( 29 )
+                 6 [2899.7] ( 30 ),  7 [3300.0] ( 31 ),  8 [3300.0] ( 32 )
+                 9 [2899.7] ( 33 ), 10 [2899.7] ( 34 ), 11 [3300.0] ( 35 )
         1:      12 [2899.7] ( 36 ), 13 [2899.7] ( 37 ), 14 [2899.7] ( 38 )
-                15 [2898.9] ( 39 ), 16 [2899.8] ( 40 ), 17 [2899.7] ( 41 )
-                18 [2899.9] ( 42 ), 19 [3300.0] ( 43 ), 20 [2899.7] ( 44 )
-                21 [2899.7] ( 45 ), 22 [2899.9] ( 46 ), 23 [2899.7] ( 47 )
+                15 [2899.7] ( 39 ), 16 [2899.7] ( 40 ), 17 [2899.7] ( 41 )
+                18 [2900.7] ( 42 ), 19 [2899.7] ( 43 ), 20 [2899.7] ( 44 )
+                21 [3300.0] ( 45 ), 22 [2900.6] ( 46 ), 23 [3300.0] ( 47 )
         
-System load averages (1min, 5min, 15min) : 74.2 %, 72.8 %, 75.4 %
+System load averages (1min, 5min, 15min) : 58.4 %, 56.1 %, 52.8 %
 Hyperthreading is enabled
 
 
-Simulating `BCAT_125_tt_read_10ff_vbl45.sp' on river at 11:59:45 PM, Tue Jun 23, 2026 (process id: 3620447).
+Simulating `BCAT_125_tt_read_10ff_vbl45.sp' on river at 1:12:51 AM, Wed Jun 24, 2026 (process id: 3786244).
 Current working directory: /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/sense_amp/decks/tt/BCAT_125
 Command line:
     /eda/cadence/SPECTRE241/tools/bin/spectre -64  \
@@ -31,10 +31,10 @@ Command line:
         BCAT_125_tt_read_10ff_vbl45.sp
 
 Licensing Information:
-[23:59:45.080353] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
+[01:12:52.080217] Configured Lic search path (24.01-s002): /eda/cadence/license.dat
 
 Licensing Information:
-[23:59:46.285232] Periodic Lic check successful
+[01:12:52.368259] Periodic Lic check successful
 
 Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
 Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
@@ -44,9 +44,9 @@ Loading /eda/cadence/SPECTRE241/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so 
 Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/sense_amp/decks/tt/BCAT_125/BCAT_125_tt_read_10ff_vbl45.sp
 Reading file:  /eda/cadence/SPECTRE241/tools.lnx86/spectre/etc/configs/spectre.cfg
 Reading file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/models/OpenDRAMmodelV1/models/access_tx/BCAT_125.inc
-Time for NDB Parsing: CPU = 286.984 ms, elapsed = 501.384 ms.
-Time accumulated: CPU = 451.394 ms, elapsed = 501.386 ms.
-Peak resident memory used = 168 Mbytes.
+Time for NDB Parsing: CPU = 294.22 ms, elapsed = 512.966 ms.
+Time accumulated: CPU = 403.801 ms, elapsed = 512.968 ms.
+Peak resident memory used = 167 Mbytes.
 
 
 Warning from spectre during hierarchy flattening.
@@ -54,14 +54,14 @@ Warning from spectre during hierarchy flattening.
 Warning from spectre during hierarchy flattening.
     WARNING (SFE-32): "/home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform//models/OpenDRAMmodelV1/models/access_tx/BCAT_125.inc" 7: Duplicate specification for parameter `bulkmod' (using last value specified).
 
-Time for Elaboration: CPU = 55.662 ms, elapsed = 27.9901 ms.
-Time accumulated: CPU = 507.244 ms, elapsed = 529.562 ms.
+Time for Elaboration: CPU = 57.952 ms, elapsed = 29.213 ms.
+Time accumulated: CPU = 461.966 ms, elapsed = 542.393 ms.
 Peak resident memory used = 176 Mbytes.
 
 Loading /eda/cadence/SPECTRE241/tools.lnx86/mdl/lib/64bit/libSpectreEH_sh.so ...
 
-Time for EDB Visiting: CPU = 13.44 ms, elapsed = 6.54197 ms.
-Time accumulated: CPU = 520.85 ms, elapsed = 536.268 ms.
+Time for EDB Visiting: CPU = 12.135 ms, elapsed = 6.19888 ms.
+Time accumulated: CPU = 475.282 ms, elapsed = 548.78 ms.
 Peak resident memory used = 182 Mbytes.
 
 
@@ -98,8 +98,8 @@ Output statements:
            .measure 5     
                save 0     
 
-Time for parsing: CPU = 17.89 ms, elapsed = 15.1539 ms.
-Time accumulated: CPU = 538.926 ms, elapsed = 551.607 ms.
+Time for parsing: CPU = 8.917 ms, elapsed = 6.02603 ms.
+Time accumulated: CPU = 484.407 ms, elapsed = 555.011 ms.
 Peak resident memory used = 186 Mbytes.
 
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -116,7 +116,7 @@ Notice from spectre during IC analysis, during transient analysis `timeSweep'.
 Warning from spectre during IC analysis, during transient analysis `timeSweep'.
     WARNING (SPECTRE-17412): Initial condition of 382.5 mV between nodes blb_sense and 0 has no capacitive path to ground. This may cause discontinuity between the operation point and the t=0 time point. It could result in convergence or performance issues on the first step of the transient analysis. If such issues happen, check the initial condition setting to make sure it is correct. If it is correct, set a small value to iccap option to smooth out the discontinuity and rerun the simulation.
 
-DC simulation time: CPU = 1.83 ms, elapsed = 849.009 us.
+DC simulation time: CPU = 1.87 ms, elapsed = 887.871 us.
 
 Notice from spectre during transient analysis `timeSweep'.
     No outputs were found. Loosening output filter criterion to `allpub'.
@@ -192,25 +192,25 @@ Post-Transient Simulation Summary
 
 
 During simulation, the CPU load for active processors is :
-         0 (100.0 %)     1 (100.0 %)     2 (100.0 %)     3 (100.0 %)
-         4 (100.0 %)     5 (100.0 %)     6 (100.0 %)     7 (100.0 %)
-         8 (2.0 %)       9 (100.0 %)    10 (100.0 %)    11 (3.8 %)
-        12 (100.0 %)    13 (100.0 %)    14 (83.0 %)     15 (5.7 %)
-        16 (66.0 %)     17 (100.0 %)    18 (100.0 %)    19 (16.7 %)
-        20 (20.4 %)     21 (44.2 %)     22 (58.8 %)     23 (86.3 %)
-        24 (100.0 %)    25 (100.0 %)    26 (1.9 %)      27 (100.0 %)
-        28 (3.8 %)      29 (100.0 %)    30 (9.4 %)      31 (3.8 %)
-        32 (100.0 %)    33 (49.1 %)     34 (14.8 %)     35 (100.0 %)
-        36 (98.1 %)     37 (82.0 %)     38 (10.9 %)     39 (100.0 %)
-        40 (50.0 %)     41 (13.2 %)     42 (9.3 %)      43 (100.0 %)
-        44 (94.3 %)     45 (100.0 %)    46 (100.0 %)    47 (98.1 %)
-        Total: 3325.6%
-Initial condition solution time: CPU = 1.892 ms, elapsed = 912.189 us.
-Intrinsic tran analysis time:    CPU = 38.614 ms, elapsed = 22.3501 ms.
+         0 (5.7 %)       1 (100.0 %)     2 (100.0 %)     3 (5.4 %)
+         4 (100.0 %)     5 (5.5 %)       6 (100.0 %)     7 (3.7 %)
+         8 (9.1 %)       9 (100.0 %)    10 (100.0 %)    11 (7.1 %)
+        12 (100.0 %)    13 (100.0 %)    14 (100.0 %)    15 (100.0 %)
+        16 (72.7 %)     17 (100.0 %)    18 (28.6 %)     19 (47.3 %)
+        20 (100.0 %)    21 (42.6 %)     22 (13.0 %)     23 (3.6 %)
+        24 (100.0 %)    25 (5.5 %)      26 (3.6 %)      27 (100.0 %)
+        28 (100.0 %)    29 (100.0 %)    30 (3.6 %)      31 (100.0 %)
+        32 (100.0 %)    33 (100.0 %)    34 (14.3 %)     35 (100.0 %)
+        36 (9.1 %)      37 (1.9 %)      38 (3.8 %)      39 (5.4 %)
+        40 (57.1 %)     41 (5.7 %)      42 (38.9 %)     43 (100.0 %)
+        44 (12.7 %)     45 (9.4 %)      46 (100.0 %)    47 (100.0 %)
+        Total: 2715.1%
+Initial condition solution time: CPU = 1.928 ms, elapsed = 945.807 us.
+Intrinsic tran analysis time:    CPU = 38.181 ms, elapsed = 20.613 ms.
 Opening measure  file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/sense_amp/decks/tt/BCAT_125/BCAT_125_tt_read_10ff_vbl45.measure
 Opening mt file:  /home/yongfu/proj/dram-lab/projects/DRAM-Benchmarking-Platform/results/sense_amp/decks/tt/BCAT_125/BCAT_125_tt_read_10ff_vbl45.mt0
-Total time required for tran analysis `timeSweep': CPU = 51.187 ms, elapsed = 28.1019 ms, util. = 182%.
-Time accumulated: CPU = 646.342 ms, elapsed = 608.998 ms.
+Total time required for tran analysis `timeSweep': CPU = 50.577 ms, elapsed = 27.077 ms, util. = 187%.
+Time accumulated: CPU = 587.077 ms, elapsed = 609.226 ms.
 Peak resident memory used = 194 Mbytes.
 
 
@@ -219,14 +219,14 @@ Notice from spectre.
 
 Licensing Information:
 Lic Summary:
-[23:59:46.484747] Cdslmd servers:/eda/cadence/license.dat
-[23:59:46.484791] Feature usage summary:
-[23:59:46.484796] Virtuoso_Spectre
+[01:12:52.033137] Cdslmd servers:/eda/cadence/license.dat
+[01:12:52.557485] Feature usage summary:
+[01:12:52.557487] Virtuoso_Spectre
 
 
-Aggregate audit (11:59:46 PM, Tue Jun 23, 2026):
-Time used: CPU = 653 ms, elapsed = 653 ms, util. = 100%.
-Time spent in licensing: elapsed = 290 ms, percentage of total = 44.4%.
+Aggregate audit (1:12:52 AM, Wed Jun 24, 2026):
+Time used: CPU = 596 ms, elapsed = 615 ms, util. = 96.9%.
+Time spent in licensing: elapsed = 370 ms, percentage of total = 60.2%.
 Peak memory used = 195 Mbytes.
-Simulation started at: 11:59:45 PM, Tue Jun 23, 2026, ended at: 11:59:46 PM, Tue Jun 23, 2026, with elapsed time (wall clock): 653 ms.
+Simulation started at: 1:12:51 AM, Wed Jun 24, 2026, ended at: 1:12:52 AM, Wed Jun 24, 2026, with elapsed time (wall clock): 615 ms.
 spectre completes with 0 errors, 3 warnings, and 11 notices.

@@ -11,7 +11,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 | Suite | `ccell` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 16:05 UTC |
+| Generated | 2026-06-23 17:17 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -32,7 +32,7 @@ Reproducible benchmark automation for Open DRAM model cards. This platform exten
 ---
 ## OpenDRAM Cell Capacitance Roadmap
 
-_Generated: 2026-06-23 16:04 UTC · revision `416f124`_
+_Generated: 2026-06-23 17:16 UTC · revision `af06d66d`_
 
 ## Executive summary
 
@@ -70,6 +70,7 @@ _Generated: 2026-06-23 16:04 UTC · revision `416f124`_
 | VCT_091 | 28 | 23.8 | 5.0 | False |
 | VCT_102 | 34 | 28.9 | 5.0 | False |
 | VCT_125 | 40 | 34.0 | 6.6 | False |
+
 _Cap-limited under S-aggressive: BCAT_125_
 
 ### S-base
@@ -83,6 +84,7 @@ _Cap-limited under S-aggressive: BCAT_125_
 | VCT_091 | 20 | 17.0 | 5.0 | False |
 | VCT_102 | 22 | 18.7 | 5.0 | False |
 | VCT_125 | 25 | 21.3 | 6.6 | False |
+
 _Cap-limited under S-base: 3D_gaa_Si, BCAT_125_
 
 ### S-conservative
@@ -96,6 +98,7 @@ _Cap-limited under S-base: 3D_gaa_Si, BCAT_125_
 | VCT_091 | 16 | 13.6 | 5.0 | False |
 | VCT_102 | 17 | 14.5 | 5.0 | False |
 | VCT_125 | 18 | 15.3 | 6.6 | False |
+
 _Cap-limited under S-conservative: 3D_gaa_Si, BCAT_125_
 
 
@@ -170,6 +173,7 @@ _Cap-limited under S-conservative: 3D_gaa_Si, BCAT_125_
 | [`MANIFEST.json`](MANIFEST.json) | Provenance manifest with SHA-256 checksums |
 | [`ccell_sweep.csv`](ccell_sweep.csv) | Ccell retention vs read binding sweep |
 | [`figures/`](figures/) | Summary SVG plots |
+
 ## Reproduce
 
 ```bash

@@ -66,3 +66,4 @@ def test_signal_report_executive_summary(tmp_path: Path) -> None:
     assert "Per-node SA requirements" in text
     assert "How to analyze the CSVs" in text
     assert "VCT_125" in text
+    assert "\\|ΔV\\|@" in text

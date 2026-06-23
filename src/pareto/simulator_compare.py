@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from dram_benchmark.report.markdown_tables import join_md_row
 from bench.plot_style import (
     FIGSIZE,
     LABEL_SIZE,
@@ -843,12 +844,12 @@ def write_simulator_comparison(
     rel_cols = [c for c in diff.columns if c.startswith("rel_diff_")]
     if rel_cols:
         max_abs = diff[rel_cols].abs().max()
-        summaries.append("| metric | max |rel diff| |")
-        summaries.append("| --- | --- |")
+        summaries.append(join_md_row(["metric", "max |rel diff|"]))
+        summaries.append(join_md_row(["---", "---"]))
         for col in rel_cols:
             val = max_abs[col]
             if pd.notna(val):
-                summaries.append(f"| {col} | {val:.4g} |")
+                summaries.append(join_md_row([col, f"{val:.4g}"]))
         summaries.append("")
 
     summary_path = out / "SIMULATOR_COMPARE.md"

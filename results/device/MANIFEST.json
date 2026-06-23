@@ -1,7 +1,7 @@
 {
   "platform": "OpenDRAMBench",
   "platform_version": "0.2.0",
-  "generated_at": "2026-06-23T16:04:47Z",
+  "generated_at": "2026-06-23T17:16:54Z",
   "status": "complete",
   "suite": "device",
   "corner": "tt",
@@ -29,28 +29,28 @@
   "artifacts": [
     {
       "path": "RESULTS.md",
-      "bytes": 6256,
-      "sha256": "7f8796695dc786af79d9f63efe716b8611b2f2e28c10a230a574de70776da171"
+      "bytes": 6258,
+      "sha256": "d06b42417bdff045892d69551dc2af11fa2eb8374ca4824024974a8e7a1ba35f"
     },
     {
       "path": "figures/ccell_scaling.svg",
       "bytes": 51661,
-      "sha256": "acd4da50bf1b9a98e9b640965078f1837d873db7e0801aca5750ea6000fcd05d"
+      "sha256": "c3df8ab2798431ca627f6e6b8c8205f2fa23fee9aac0e6132352dfd654b4d783"
     },
     {
       "path": "figures/pareto_ion_ioff.svg",
       "bytes": 55536,
-      "sha256": "ca9fa456e1818eda4d8a786ed51e0d37deb8066eb4d5b0773ddb98a39731f5cd"
+      "sha256": "10cc4575854c69ada97f26db5c1455d26cc58da137031133baa78d73a3750e4b"
     },
     {
       "path": "figures/radar_fom.svg",
       "bytes": 59170,
-      "sha256": "caf16f85998e99b5b377b6aeb88077c90751f152799db79da95bf12f7a04aa21"
+      "sha256": "937c5789e49e8a7c6057b1f1343f40cda6a7e19be4084a9746607a9296b0726c"
     },
     {
       "path": "figures/vct_scaling.svg",
       "bytes": 48277,
-      "sha256": "5fe78d49170877626a351e5285af936e75ae0b68877800f06b30c54326a21604"
+      "sha256": "670deeaaabfa5d27c373b61df1e25650523c4b277ad89cfec2e8bee5afb72186"
     }
   ]
 }

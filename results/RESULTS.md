@@ -9,7 +9,7 @@ Self-contained benchmark automation for Open DRAM Model cards. Full per-suite re
 | Suite | `all` |
 | Corner | `tt` |
 | Simulator | ngspice, spectre |
-| Generated | 2026-06-23 16:05 UTC |
+| Generated | 2026-06-23 17:17 UTC |
 | Status | complete |
 | Model bundle | OpenDRAMmodelV1 `e692790da857` |
 
@@ -45,11 +45,11 @@ Detail report: [device/RESULTS.md](device/RESULTS.md)
 
 ### Device benchmark
 
-**Generated:** 2026-06-23 16:04 UTC  
+**Generated:** 2026-06-23 17:16 UTC  
 **Corners:** tt (reference: **tt** for tables/plots)  
 **Simulator:** spectre  
 **Models:** 7 access devices  
-**OpenDRAMmodelV1 revision:** `416f124`
+**OpenDRAMmodelV1 revision:** `af06d66d`
 
 Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
 
@@ -58,6 +58,7 @@ Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) usin
 - **Highest Ion:** `3D_gaa_AOS` (1.885e-06 A)
 - **Lowest Ioff:** `3D_gaa_Si` (1.011e-14 A)
 - **Fastest 1T1C read @ 20 fF:** `3D_gaa_AOS` (2.257e-08 s)
+
 
 ### Architecture highlights (tt)
 
@@ -176,11 +177,11 @@ Detail report: [corner_sweep/RESULTS.md](corner_sweep/RESULTS.md)
 
 ### Device benchmark
 
-**Generated:** 2026-06-23 16:04 UTC  
+**Generated:** 2026-06-23 17:16 UTC  
 **Corners:** all (reference: **tt** for tables/plots)  
 **Simulator:** spectre  
 **Models:** 7 access devices  
-**OpenDRAMmodelV1 revision:** `416f124`
+**OpenDRAMmodelV1 revision:** `af06d66d`
 
 Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
 
@@ -189,6 +190,7 @@ Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) usin
 - **Highest Ion:** `3D_gaa_AOS` (1.885e-06 A)
 - **Lowest Ioff:** `3D_gaa_Si` (1.011e-14 A)
 - **Fastest 1T1C read @ 20 fF:** `3D_gaa_AOS` (2.257e-08 s)
+
 
 ### Corner matrix summary
 
@@ -328,11 +330,11 @@ Detail report: [multi_tool/RESULTS.md](multi_tool/RESULTS.md)
 
 ### Device benchmark
 
-**Generated:** 2026-06-23 16:04 UTC  
+**Generated:** 2026-06-23 17:17 UTC  
 **Corners:** tt (reference: **tt** for tables/plots)  
 **Simulator:** spectre  
 **Models:** 7 access devices  
-**OpenDRAMmodelV1 revision:** `416f124`
+**OpenDRAMmodelV1 revision:** `af06d66d`
 
 Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) using OpenDRAMmodelV1.
 
@@ -341,6 +343,7 @@ Cross-architecture DRAM access transistor benchmark (BCAT vs VCT vs 3D GAA) usin
 - **Highest Ion:** `3D_gaa_AOS` (1.885e-06 A)
 - **Lowest Ioff:** `3D_gaa_Si` (1.011e-14 A)
 - **Fastest 1T1C read @ 20 fF:** `3D_gaa_AOS` (2.257e-08 s)
+
 ### Simulator cross-check
 
 Relative differences vs **Spectre** when present. No golden baselines for cross-tool agreement.
@@ -351,7 +354,7 @@ Interpretation guide: [docs/simulator_cross_check.md](multi_tool/docs/simulator_
 
 #### Max |relative difference| (tt, device metrics)
 
-| Comparison | Max |rel diff| |
+| Comparison | Max \|rel diff\| |
 | --- | --- |
 | cgd f ngspice vs spectre | 1.507 |
 | cgg f ngspice vs spectre | 0.9925 |
@@ -513,7 +516,7 @@ Detail report: [sense_amp/RESULTS.md](sense_amp/RESULTS.md)
 
 ### Read-Path Signal & SA Requirement Sweep
 
-**Generated:** 2026-06-23 16:05 UTC  
+**Generated:** 2026-06-23 17:17 UTC  
 **Corner:** tt  
 **Simulator:** spectre  
 **Signal rows:** 84  
@@ -554,7 +557,7 @@ Reference: **Ccell = 20 fF**, **VBL_pre = 50% × Vdd** (compare access nodes at 
 
 |ΔV_BL| is the absolute differential BL voltage sampled from SPICE (access device + lumped BL RC + cell cap).
 
-| model_id | |ΔV|@5ns_mV | |ΔV|@8ns_mV | |ΔV|@10ns_mV | |ΔV|@12ns_mV | |ΔV|@15ns_mV |
+| model_id | \|ΔV\|@5ns_mV | \|ΔV\|@8ns_mV | \|ΔV\|@10ns_mV | \|ΔV\|@12ns_mV | \|ΔV\|@15ns_mV |
 | --- | --- | --- | --- | --- | --- |
 | 3D_gaa_Si | 29.06 | 46.37 | 54.28 | 60.35 | 67.16 |
 | 3D_gaa_AOS | 15.95 | 23.42 | 26.44 | 28.54 | 30.61 |
@@ -686,7 +689,7 @@ Detail report: [ccell/RESULTS.md](ccell/RESULTS.md)
 
 ### OpenDRAM Cell Capacitance Roadmap
 
-_Generated: 2026-06-23 16:04 UTC · revision `416f124`_
+_Generated: 2026-06-23 17:16 UTC · revision `af06d66d`_
 
 ### Executive summary
 
@@ -724,6 +727,7 @@ _Generated: 2026-06-23 16:04 UTC · revision `416f124`_
 | VCT_091 | 28 | 23.8 | 5.0 | False |
 | VCT_102 | 34 | 28.9 | 5.0 | False |
 | VCT_125 | 40 | 34.0 | 6.6 | False |
+
 _Cap-limited under S-aggressive: BCAT_125_
 
 #### S-base
@@ -737,6 +741,7 @@ _Cap-limited under S-aggressive: BCAT_125_
 | VCT_091 | 20 | 17.0 | 5.0 | False |
 | VCT_102 | 22 | 18.7 | 5.0 | False |
 | VCT_125 | 25 | 21.3 | 6.6 | False |
+
 _Cap-limited under S-base: 3D_gaa_Si, BCAT_125_
 
 #### S-conservative
@@ -750,6 +755,7 @@ _Cap-limited under S-base: 3D_gaa_Si, BCAT_125_
 | VCT_091 | 16 | 13.6 | 5.0 | False |
 | VCT_102 | 17 | 14.5 | 5.0 | False |
 | VCT_125 | 18 | 15.3 | 6.6 | False |
+
 _Cap-limited under S-conservative: 3D_gaa_Si, BCAT_125_
 
 
@@ -827,7 +833,7 @@ Detail report: [validation/RESULTS.md](validation/RESULTS.md)
 
 **Status:** PASS — 8/8 models pass, 0 trend violation(s)
 
-- **Generated:** 2026-06-23 16:04 UTC
+- **Generated:** 2026-06-23 17:16 UTC
 - **Model SHA:** `e692790da857`
 - **Corner:** TT (27 °C)
 - **Pinned metrics:** `bench/validation/pinned/` (TT corner)
@@ -1265,6 +1271,7 @@ Model cards: `models/OpenDRAMmodelV1`
 | File | Description |
 |------|-------------|
 | [`MANIFEST.json`](MANIFEST.json) | Provenance manifest with SHA-256 checksums |
+
 ## Reproduce
 
 ```bash
