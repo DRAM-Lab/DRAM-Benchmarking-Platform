@@ -63,6 +63,14 @@ echo ""
 echo ">>> Installing package"
 "$PYTHON" -m pip install -q -e ".[dev]"
 
+# ngspice (auto-selected when Spectre/HSPICE are absent) needs BSIM-CMG OSDI.
+if [[ -z "$SIMULATOR" || "$SIMULATOR" == "ngspice" ]]; then
+  if command -v ngspice &>/dev/null || [[ -n "${NGSPICE:-}" ]]; then
+    echo ">>> ngspice OSDI setup"
+    PYTHON="$PYTHON" "$SCRIPT_DIR/setup_ngspice_osdi.sh"
+  fi
+fi
+
 RUN_ARGS=(run --suite "$SUITE" --corner "$CORNER" --output "$RESULTS_DIR")
 if [[ "$GENERATE_ONLY" == "1" ]]; then
   RUN_ARGS+=(--generate-only)

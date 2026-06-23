@@ -89,7 +89,15 @@ Python dependencies install via `pip` (NumPy, pandas, PyYAML, matplotlib, SciPy,
 
 ### ngspice setup
 
-ngspice requires a BSIM-CMG OSDI build (cached under `build/ngspice_osdi/` on first run). Set `OPEN_DRAM_VA_MODELS_ROOT` to a local VA-Models tree when building the OSDI library. Set `NGSPICE=/path/to/ngspice` if not on `PATH`.
+ngspice requires a BSIM-CMG OSDI build (cached under `build/ngspice_osdi/` on first run). The experiment script runs `scripts/setup_ngspice_osdi.sh` automatically when ngspice is the selected backend; you can also run it manually:
+
+```bash
+./scripts/setup_ngspice_osdi.sh
+```
+
+This clones [VA-Models](https://github.com/dwarning/VA-Models) into `third_party/VA-Models` (or use `OPEN_DRAM_VA_MODELS_ROOT` for an existing tree) and builds `bsimcmg.osdi` with `openvaf`. Set `NGSPICE=/path/to/ngspice` if not on `PATH`.
+
+**Note:** ngspice uses `/tmp` for internal temp files; ensure the root filesystem has free space.
 
 ## Installation
 
