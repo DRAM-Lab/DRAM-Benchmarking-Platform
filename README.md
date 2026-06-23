@@ -30,6 +30,7 @@ Self-contained, reproducible DRAM model benchmarking for **Paper A1**. One insta
 - [Repository layout](#repository-layout)
 - [Development](#development)
 - [License](#license)
+- [Citation](#citation)
 - [References](#references)
 
 ## Scope and limitations
@@ -505,11 +506,71 @@ This platform is licensed under [CC BY 4.0](https://creativecommons.org/licenses
 
 Vendored model cards in `models/OpenDRAMmodelV1/` remain under the [MATRIX-PDK academic / non-commercial license](models/OpenDRAMmodelV1/LICENSE) (Georgia Institute of Technology).
 
+## Citation
+
+### What to cite
+
+| If you use… | Cite |
+|-------------|------|
+| This benchmarking platform (Paper A1 automation, suites, validation) | **DRAM Benchmarking Platform** entry below |
+| Open DRAM Model `.inc` cards or model-derived results | **Part I and Part II** papers (required by [OpenDRAMmodelV1](models/OpenDRAMmodelV1/README.md)) |
+| Both platform reruns and model cards | Platform entry **and** both papers |
+
+Golden specs and pinned metrics trace to Part I/II via `data/paper/extracted_refs.yaml`; model card use still requires the paper citations per upstream license.
+
+### This repository
+
+```bibtex
+@misc{dram_benchmarking_platform,
+  title        = {DRAM Benchmarking Platform},
+  author       = {{DRAM Benchmarking Platform}},
+  year         = {2026},
+  version      = {0.2.0},
+  publisher    = {GitHub},
+  howpublished = {\url{https://github.com/DRAM-Lab/DRAM-Benchmarking-Platform}},
+  note         = {Self-contained Paper A1 benchmark automation for Open DRAM Model cards}
+}
+```
+
+### Model bundle (software)
+
+```bibtex
+@misc{opendrammodelv1,
+  title        = {Open DRAM Model v1 (MATRIX-PDK)},
+  author       = {Lee, Kiseok and Lim, Seongkwang and Yu, Shimeng},
+  year         = {2026},
+  publisher    = {GitHub},
+  howpublished = {\url{https://github.com/MATRIX-PDK/OpenDRAMmodelV1}},
+  note         = {Vendored in DRAM Benchmarking Platform; cite Part I and Part II papers when using model cards}
+}
+```
+
+### Publications (required for model cards)
+
+```bibtex
+@article{lee2026opendram_part1,
+  author  = {Lee, Kiseok and Lim, Seongkwang and Datta, Suman and Yu, Shimeng},
+  title   = {{Open DRAM Model Part I: Cross-Layer Device, Array, and Circuit Analysis with BL-to-BL Coupling Mitigation for 4F² VCT DRAM}},
+  journal = {IEEE Journal on Exploratory Solid-State Computational Devices and Circuits},
+  year    = {2026},
+  doi     = {10.1109/JXCDC.2026.3704358}
+}
+
+@article{lee2026opendram_part2,
+  author  = {Lee, Kiseok and Lim, Seongkwang and Datta, Suman and Yu, Shimeng},
+  title   = {{Open DRAM Model Part II: Enabling Processing-in-Memory in 3D DRAM}},
+  journal = {IEEE Journal on Exploratory Solid-State Computational Devices and Circuits},
+  year    = {2026},
+  doi     = {10.1109/JXCDC.2026.3704508}
+}
+```
+
 ## References
 
 ### Software
 
-- **[MATRIX-PDK/OpenDRAMmodelV1](https://github.com/MATRIX-PDK/OpenDRAMmodelV1)** — TCAD-calibrated BSIM-CMG access cards (vendored in this repo).
+- **[DRAM-Lab/DRAM-Benchmarking-Platform](https://github.com/DRAM-Lab/DRAM-Benchmarking-Platform)** — this repo (Paper A1 suites, validation, vendored models).
+- **[MATRIX-PDK/OpenDRAMmodelV1](https://github.com/MATRIX-PDK/OpenDRAMmodelV1)** — TCAD-calibrated BSIM-CMG access and periphery cards (vendored under `models/OpenDRAMmodelV1/`).
 
 ### Publications
 
