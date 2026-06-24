@@ -151,6 +151,7 @@ Use via `dram-bench run --suite <name>` or `SUITE=<name> ./scripts/run_experimen
 
 | Variable | Default | Description |
 |----------|---------|-------------|
+| `OPEN_DRAM_PROJECT_ROOT` | editable-install source root | Repo root when checkout path differs from install path |
 | `OPEN_DRAM_MODEL_ROOT` | `models/OpenDRAMmodelV1/models/access_tx` | Access `.inc` card directory |
 | `OPEN_DRAM_CORNER_SOURCE` | `local` | `local`, `registry`, or `auto` |
 | `OPEN_DRAM_CORNER_REGISTRY` | `bench/registry/corner_registry.yaml` | Corner registry YAML |
@@ -337,7 +338,7 @@ Top-level folders separate **code** (`src/`), **inputs** (`bench/`, `models/`, `
 | Path | Purpose |
 |------|---------|
 | [`src/`](src/) | Installable Python packages — one lane per subdirectory plus the `dram-bench` orchestrator |
-| [`bench/`](bench/) | Repo configs and pinned CSVs (YAML, golden references) — not Python code |
+| [`bench/`](bench/) | Repo configs and pinned CSVs (YAML, golden references) — see [bench/VENDORED.md](bench/VENDORED.md) |
 | [`models/`](models/) | Bundled SPICE model cards and paper golden YAML |
 | [`data/`](data/) | Paper tables and literature roadmap inputs for validation |
 | [`docs/`](docs/) | Benchmark spec, simulator notes, generated audit markdown |

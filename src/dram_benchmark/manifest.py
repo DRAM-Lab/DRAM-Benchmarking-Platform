@@ -13,6 +13,7 @@ from typing import Any
 
 from dram_benchmark.paths import (
     PROJECT_ROOT,
+    STANDARD_ACCESS_MODEL_IDS,
     model_bundle_revision,
     resolve_engine_root,
     resolve_model_root,
@@ -79,7 +80,9 @@ def build_manifest(
     """Build a machine-readable manifest for a benchmark run."""
     model_root = resolve_model_root()
     model_cards = {
-        path.name: _sha256_file(path) for path in sorted(model_root.glob("*.inc"))
+        f"{model_id}.inc": _sha256_file(model_root / f"{model_id}.inc")
+        for model_id in STANDARD_ACCESS_MODEL_IDS
+        if (model_root / f"{model_id}.inc").is_file()
     }
 
     manifest: dict[str, Any] = {

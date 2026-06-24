@@ -4,7 +4,7 @@ backends:
 - spectre
 - hspice
 - ngspice
-source: /data1/yongfu/proj/dram-lab/experiments/OpenDRAM-device-benchmark/results
+source: bench/validation/pinned (platform device-lane results)
 notes: 'Post-fix pin: HSPICE -inc, ngspice parser/measures'
 backend_status:
   spectre: reference

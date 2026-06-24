@@ -33,7 +33,7 @@ def cmd_derive(args: argparse.Namespace) -> int:
     points = derive_pareto_points(bench_root=args.bench_input)
     df = points_to_dataframe(points)
     if df.empty:
-        logging.error("No derived points — run OpenDRAM-device-benchmark first.")
+        logging.error("No derived points — run dram-bench device lane first (dram-bench run --suite device).")
         return 1
     args.output.mkdir(parents=True, exist_ok=True)
     out = args.output / "pareto_roadmap.csv"

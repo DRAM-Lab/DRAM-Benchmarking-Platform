@@ -5,8 +5,9 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-PACKAGE_ROOT = Path(__file__).resolve().parents[2]
-PROJECT_ROOT = PACKAGE_ROOT
+from dram_benchmark.project_root import resolve_project_root
+
+PROJECT_ROOT = resolve_project_root()
 
 OPEN_DRAMMODEL_V1_ROOT = PROJECT_ROOT / "models" / "OpenDRAMmodelV1"
 MODEL_SUBMODULE_REL = "models/OpenDRAMmodelV1/models/access_tx"

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Extract Open DRAM Model paper reference metrics into ``data/paper/extracted_refs.yaml``.
 
-Reads Part I / Part II PDFs from ``data/paper/docs``, ``~/proj/dram-lab/docs``
-(monorepo sibling), or ``PAPER_DOCS_ROOT`` / ``--docs-root``, and writes
-structured YAML used by the validation harness for paper-vs-SPICE correlation.
+Reads Part I / Part II PDFs from ``data/paper/docs`` or ``PAPER_DOCS_ROOT`` / ``--docs-root``,
+and writes structured YAML used by the validation harness for paper-vs-SPICE correlation.
 
 Usage::
 
@@ -472,7 +471,7 @@ def main() -> int:
         "--docs-root",
         type=Path,
         default=None,
-        help="Directory with Part I/II PDFs (default: auto — data/paper/docs or dram-lab/docs)",
+        help="Directory with Part I/II PDFs (default: data/paper/docs or PAPER_DOCS_ROOT)",
     )
     parser.add_argument(
         "--output",
@@ -488,7 +487,7 @@ def main() -> int:
         print(f"Skipping paper extraction — PDFs not found under {docs_root}:")
         for path in missing:
             print(f"  - {path.name}")
-        print("Set PAPER_DOCS_ROOT or add PDFs to data/paper/docs or ~/proj/dram-lab/docs")
+        print("Set PAPER_DOCS_ROOT or add PDFs to data/paper/docs")
         return 0
 
     bundle = extract(docs_root)

@@ -495,7 +495,7 @@ def generate_report(
             "",
             "## Notes and limitations",
             "",
-            "- Derived points reuse OpenDRAM-device-benchmark 1T1C hold leakage when native "
+            "- Derived points reuse device-lane 1T1C hold leakage when native "
             "Pareto SPICE sims are not run.",
             "- Multi-simulator verification (Spectre / HSPICE / ngspice) uses per-backend "
             "result trees under `results/{spectre,hspice,ngspice}/` with Spectre as reference.",

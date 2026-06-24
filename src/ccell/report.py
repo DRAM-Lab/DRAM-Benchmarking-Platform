@@ -173,7 +173,7 @@ def generate_report(
         [
             "## Methodology",
             "",
-            "- Retention and read decks reuse OpenDRAM-pareto-roadmap and OpenDRAM-sense-amp-vct pipelines.",
+            "- Retention and read decks reuse vendored pareto and sense-amp lanes.",
             "- Geometric capacitor model: "
             f"Ccell = k·ε₀·α·structure·fpitch² / t_EOT · β with t_EOT = "
             f"{cfg.capacitor_geometry.t_dielectric_nm:.1f} nm.",

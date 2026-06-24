@@ -1,4 +1,4 @@
-"""Derive Pareto points from OpenDRAM-device-benchmark CSV exports."""
+"""Derive Pareto points from vendored device-lane CSV exports."""
 
 from __future__ import annotations
 

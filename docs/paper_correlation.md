@@ -4,7 +4,7 @@ Metrics transcribed from Open DRAM Model Part I/II papers and compared
 to pinned TT SPICE extraction. Regenerate with `dram-validate paper`.
 
 - **Extracted:** 2026-06-23T01:48:37Z
-- **Docs root:** `/home/yongfu/proj/dram-lab/docs`
+- **Docs root:** `data/paper/docs`
 
 ## Alignment matrix
 

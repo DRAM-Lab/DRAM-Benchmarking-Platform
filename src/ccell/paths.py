@@ -5,8 +5,9 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-PACKAGE_ROOT = Path(__file__).resolve().parents[2]
-PROJECT_ROOT = PACKAGE_ROOT
+from dram_benchmark.project_root import resolve_project_root
+
+PROJECT_ROOT = resolve_project_root()
 CONFIG_PATH = PROJECT_ROOT / "bench" / "ccell_roadmap" / "configs" / "ccell.yaml"
 DEFAULT_BENCH_RESULTS = PROJECT_ROOT / "results" / "device"
 DEFAULT_PARETO_RESULTS = PROJECT_ROOT / "results" / "pareto"

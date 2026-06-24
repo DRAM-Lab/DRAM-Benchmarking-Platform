@@ -5,8 +5,9 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-PACKAGE_ROOT = Path(__file__).resolve().parents[2]
-PROJECT_ROOT = PACKAGE_ROOT
+from dram_benchmark.project_root import resolve_project_root
+
+PROJECT_ROOT = resolve_project_root()
 MODEL_BUNDLE_ROOT = PROJECT_ROOT / "models" / "OpenDRAMmodelV1"
 DEFAULT_MODEL_ROOT = MODEL_BUNDLE_ROOT / "models" / "access_tx"
 RESULTS_ROOT = PROJECT_ROOT / "results"
@@ -58,5 +59,13 @@ def list_access_model_ids() -> tuple[str, ...]:
     present = {path.stem for path in root.glob("*.inc")}
     missing = [mid for mid in STANDARD_ACCESS_MODEL_IDS if mid not in present]
     if missing:
-        raise FileNotFoundError(f"Missing model cards under {root}: {missing}")
+        project_root = resolve_project_root()
+        msg = (
+            f"Missing model cards under {root}: {missing}. "
+            "The bundled OpenDRAMmodelV1 tree must include all seven access "
+            f"`.inc` files under {project_root / 'models/OpenDRAMmodelV1/models/access_tx'}. "
+            "If you cloned the repo and see an empty models/OpenDRAMmodelV1 directory, "
+            "pull the latest commit (models are vendored in-tree) or set OPEN_DRAM_MODEL_ROOT."
+        )
+        raise FileNotFoundError(msg)
     return STANDARD_ACCESS_MODEL_IDS

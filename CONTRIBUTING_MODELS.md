@@ -16,7 +16,7 @@ Model pull requests must pass the OpenDRAM validation harness before merge.
 
 ```bash
 pip install -e ".[dev]"
-python scripts/extract_paper_refs.py --docs-root ~/proj/dram-lab/docs
+python scripts/extract_paper_refs.py --docs-root data/paper/docs
 python scripts/publish_golden_from_paper.py
 pytest                          # offline + structure checks
 dram-validate check         # golden spice bands vs pinned metrics

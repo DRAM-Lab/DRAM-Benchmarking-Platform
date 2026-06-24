@@ -5,8 +5,9 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-PACKAGE_ROOT = Path(__file__).resolve().parents[2]
-PROJECT_ROOT = PACKAGE_ROOT
+from dram_benchmark.project_root import resolve_project_root
+
+PROJECT_ROOT = resolve_project_root()
 
 OPEN_DRAMMODEL_V1_ROOT = PROJECT_ROOT / "models" / "OpenDRAMmodelV1"
 MODEL_SUBMODULE_REL = "models/OpenDRAMmodelV1"
@@ -16,7 +17,6 @@ GOLDEN_ROOT = OPEN_DRAMMODEL_V1_ROOT / "validation" / "golden"
 LITERATURE_ROOT = PROJECT_ROOT / "data" / "literature"
 PAPER_ROOT = PROJECT_ROOT / "data" / "paper"
 LOCAL_PAPER_DOCS_ROOT = PAPER_ROOT / "docs"
-DRAM_LAB_DOCS_ROOT = PROJECT_ROOT.parent.parent / "docs"
 PAPER_DOCS_ROOT = LOCAL_PAPER_DOCS_ROOT
 PINNED_METRICS_PATH = PROJECT_ROOT / "bench" / "validation" / "pinned" / "tt_device_metrics.csv"
 PINNED_CELL_METRICS_PATH = PINNED_METRICS_PATH.parent / "tt_cell_1t1c_metrics_20ff.csv"
@@ -41,7 +41,7 @@ def resolve_paper_docs_root(explicit: Path | None = None) -> Path:
     env = os.environ.get("PAPER_DOCS_ROOT")
     if env:
         return Path(env)
-    for candidate in (LOCAL_PAPER_DOCS_ROOT, DRAM_LAB_DOCS_ROOT):
+    for candidate in (LOCAL_PAPER_DOCS_ROOT,):
         if paper_pdfs_present(candidate):
             return candidate
     return LOCAL_PAPER_DOCS_ROOT

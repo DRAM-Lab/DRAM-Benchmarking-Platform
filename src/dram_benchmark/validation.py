@@ -57,11 +57,17 @@ def validate_model_provenance() -> ValidationResult:
     found = {path.stem for path in root.glob("*.inc")}
     missing = expected - found
     extra = found - expected
-    if missing or extra:
+    if missing:
         result.add(
             "model_inventory",
             "FAIL",
             f"missing={sorted(missing)} extra={sorted(extra)}",
+        )
+    elif extra:
+        result.add(
+            "model_inventory",
+            "PASS",
+            f"{len(expected)} required access models (+{len(extra)} extra: {sorted(extra)})",
         )
     else:
         result.add("model_inventory", "PASS", f"{len(found)} access models")

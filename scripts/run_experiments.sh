@@ -44,9 +44,25 @@ fi
 
 if [[ ! -d "models/OpenDRAMmodelV1/models/access_tx" ]]; then
   echo "ERROR: Bundled model cards missing under models/OpenDRAMmodelV1/models/access_tx" >&2
+  echo "       Pull the latest repo — models/OpenDRAMmodelV1 is vendored in-tree (not a submodule)." >&2
   exit 1
 fi
 
+_REQUIRED_CARDS=(BCAT_125 VCT_082 VCT_091 VCT_102 VCT_125 3D_gaa_Si 3D_gaa_AOS)
+_MISSING_CARDS=()
+for card in "${_REQUIRED_CARDS[@]}"; do
+  if [[ ! -f "models/OpenDRAMmodelV1/models/access_tx/${card}.inc" ]]; then
+    _MISSING_CARDS+=("$card")
+  fi
+done
+if [[ ${#_MISSING_CARDS[@]} -gt 0 ]]; then
+  echo "ERROR: Missing access model cards: ${_MISSING_CARDS[*]}" >&2
+  echo "       Expected under: $REPO_ROOT/models/OpenDRAMmodelV1/models/access_tx/" >&2
+  echo "       If models/OpenDRAMmodelV1 is empty after clone, git pull the latest commit." >&2
+  exit 1
+fi
+
+export OPEN_DRAM_PROJECT_ROOT="$REPO_ROOT"
 export OPEN_DRAM_MODEL_ROOT="$REPO_ROOT/models/OpenDRAMmodelV1/models/access_tx"
 export OPEN_DRAM_CORNER_SOURCE="${OPEN_DRAM_CORNER_SOURCE:-local}"
 export OPEN_DRAM_CORNER_REGISTRY="${OPEN_DRAM_CORNER_REGISTRY:-$REPO_ROOT/bench/registry/corner_registry.yaml}"
@@ -76,6 +92,7 @@ if [[ "$SUITE" == "all" ]]; then
 fi
 echo "Models:     $OPEN_DRAM_MODEL_ROOT"
 echo "Engine:     $REPO_ROOT (bundled)"
+echo "Project:    $OPEN_DRAM_PROJECT_ROOT"
 echo "Results:    $RESULTS_DIR"
 echo ""
 

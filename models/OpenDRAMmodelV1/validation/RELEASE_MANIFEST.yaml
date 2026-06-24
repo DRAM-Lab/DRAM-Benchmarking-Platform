@@ -1,0 +1,32 @@
+# Auto-generated release manifest for vendored OpenDRAMmodelV1 bundle.
+model_bundle: OpenDRAMmodelV1
+distribution: vendored
+upstream: https://github.com/MATRIX-PDK/OpenDRAMmodelV1
+upstream_snapshot: c53ccc9
+model_bundle_fingerprint: e692790da857
+golden_schema: validation/golden/v1
+generated_at: '2026-06-23T01:49:12Z'
+extracted_refs_sha256: 6619e0f85d85c4dc85e1d9ab00c9c3bab7752a0885219d05c0210c840c5d1bb7
+reference_backend: spectre
+reference_corner: tt
+card_hashes:
+  BCAT_125: ddaf6b5572803f3167d9b675e464dc063778d0a0198be784e200305df8b36c4f
+  VCT_082: c9d00646315bbb3d33a6f32796767c03504a290420c093d943d6ebd4f9878e31
+  VCT_091: eb4e6209433d029b74e58673946401904256e141e00e595fc377440bbf7a9866
+  VCT_102: 60f51e88584143b4791f0e4581af3e57dfe228430e15aab7024389e5ea8103d5
+  VCT_125: 7461669b2dffee82020c3d97ebf6e0edb6e32494b844d76e3b2d40a7c215d316
+  3D_gaa_Si: 43e1c1d004a79fa30079824acaf6fdbf29921ab9456234494148a48a898998cf
+  3D_gaa_AOS: 46e9cdac6afcb287cfdcc12acf8377ab5eb2d583b9989983e39b59e88c3c8aad
+  hv_peri_28_32: c885cece711c5868e2ed57f8843021cee4507756c4cb268e03372a87349df502
+golden_files:
+- bcat_125.yaml
+- vct_082.yaml
+- vct_091.yaml
+- vct_102.yaml
+- vct_125.yaml
+- 3d_gaa_si.yaml
+- 3d_gaa_aos.yaml
+- hv_peri_28_32.yaml
+evidence:
+  paper_metrics: data/paper/extracted_refs.yaml (PDF via extract_paper_refs.py)
+  spice_regression: bench/validation/pinned/tt_device_metrics.csv

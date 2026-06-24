@@ -3,7 +3,7 @@
 
 Workflow::
 
-    python scripts/extract_paper_refs.py --docs-root ~/proj/dram-lab/docs
+    python scripts/extract_paper_refs.py --docs-root data/paper/docs
     python scripts/publish_golden_from_paper.py
 
 Paper-transcribed metrics (Ion, Ioff, t_read) use ``validation: paper`` and are

@@ -1,15 +1,31 @@
 # Generated benchmark outputs
 results/
-.pytest_cache/
+build/
+
+# Python bytecode and caches
 __pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
 *.pyc
 *.pyo
+.Python
+
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+dist/
 
 # Local ngspice OSDI build cache (rebuilt by dram-device)
 build/ngspice_osdi/
+
+# Model card handoff backups (local only)
+*.handoff.bak
 
 # VA-Models checkout for ngspice OSDI (scripts/setup_ngspice_osdi.sh)
 third_party/VA-Models/
 
 # Validation run logs
 validation.log
+models/OpenDRAMmodelV1/models/access_tx/VCT_110.inc

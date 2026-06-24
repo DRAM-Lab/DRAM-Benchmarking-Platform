@@ -56,7 +56,7 @@ def effective_corner_source(
         if reg is None or not reg.is_file():
             raise FileNotFoundError(
                 "Registry mode requires corner_registry.yaml "
-                "(set OPEN_DRAM_CORNER_REGISTRY or sibling OpenDRAM-corner-pipeline)"
+                "(set OPEN_DRAM_CORNER_REGISTRY or bench/registry/corner_registry.yaml)"
             )
         return "registry"
     if reg is not None and reg.is_file():

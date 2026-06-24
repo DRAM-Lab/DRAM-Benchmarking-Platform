@@ -1,4 +1,4 @@
-"""Read-signal estimation for Ccell sweep (OpenDRAM-sense-amp-vct aligned)."""
+"""Read-signal estimation for Ccell sweep (sense-amp lane aligned)."""
 
 from __future__ import annotations
 

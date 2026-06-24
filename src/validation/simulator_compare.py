@@ -263,8 +263,7 @@ def refresh_simulator_compare(
         from bench.runner import run_all_simulators  # type: ignore[import-untyped]
     except ImportError as exc:
         raise RuntimeError(
-            "dram-device not installed. Install with "
-            "pip install -e ../OpenDRAM-device-benchmark"
+            "dram-device not installed. Install with pip install -e \".[dev]\""
         ) from exc
 
     scratch = output_dir or (PROJECT_ROOT / "bench" / "validation" / "simulator_refresh")
@@ -355,7 +354,7 @@ def generate_simulator_compare_markdown(
             "No pinned simulator comparison data found. Refresh with:",
             "",
             "```bash",
-            "pip install -e ../OpenDRAM-device-benchmark",
+            "pip install -e \".[dev]\"",
             "dram-validate simulators --refresh",
             "dram-validate report",
             "```",

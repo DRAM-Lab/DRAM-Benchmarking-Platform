@@ -1,0 +1,75 @@
+# Simulator comparison (tt)
+
+Relative differences use Spectre as reference when present.
+
+## Documented cross-simulator expectations
+
+Full guide: [docs/simulator_cross_check.md](../docs/simulator_cross_check.md)
+
+- **3D_gaa_Si** — `ion_a, ron_ohm, ron_boost_ohm, ron_x_cload` (hspice, ngspice vs spectre): Spectre loads BSIM-CMG 105.03 (112.x compatibility patch); HSPICE/ngspice use native 112.0.0 — Ion and Ron diverge (~40–71% @ tt).
+- **BCAT_125** — `i_hold_a` (ngspice vs spectre): ngspice OSDI BSIM-CMG shows higher subthreshold leakage in the 1T1C hold window.
+- **all models** — `ion_a, ron_ohm, ron_boost_ohm` (ngspice vs spectre): ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only.
+- **all models** — `cgg_f, cgd_f, ion_per_cgg` (ngspice vs spectre): Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than Spectre.
+- **all models** — `t_bl_settle_s` (ngspice vs spectre): Transient timestep and OSDI trajectory vs Spectre (~35–40% @ tt).
+
+## device
+- Wide: `device_metrics_wide.csv`
+- Rel diff: `device_metrics_rel_diff.csv`
+
+| metric | max \|rel diff\| |
+| --- | --- |
+| rel_diff_vt_v_ngspice_vs_spectre | 0 |
+| rel_diff_ss_mv_dec_ngspice_vs_spectre | 0.2417 |
+| rel_diff_ion_a_ngspice_vs_spectre | 0.7834 |
+| rel_diff_ioff_a_ngspice_vs_spectre | 0.9693 |
+| rel_diff_dibl_mv_v_ngspice_vs_spectre | 0.3435 |
+| rel_diff_ron_ohm_ngspice_vs_spectre | 0.4393 |
+| rel_diff_ron_boost_ohm_ngspice_vs_spectre | 0.44 |
+| rel_diff_cgg_f_ngspice_vs_spectre | 0.9924 |
+| rel_diff_cgd_f_ngspice_vs_spectre | 0.8851 |
+| rel_diff_igidl_a_ngspice_vs_spectre | 0.9693 |
+| rel_diff_esw_j_ngspice_vs_spectre | 0.137 |
+| rel_diff_ion_per_cgg_ngspice_vs_spectre | 233.8 |
+| rel_diff_ron_x_cload_ngspice_vs_spectre | 0.4393 |
+| rel_diff_ioff_density_a_m2_ngspice_vs_spectre | 0.9693 |
+
+## cell
+- Wide: `cell_1t1c_metrics_wide.csv`
+- Rel diff: `cell_1t1c_metrics_rel_diff.csv`
+
+| metric | max \|rel diff\| |
+| --- | --- |
+| rel_diff_t_write_s_ngspice_vs_spectre | 6.984e-05 |
+| rel_diff_t_read_s_ngspice_vs_spectre | 0.00293 |
+| rel_diff_i_hold_a_ngspice_vs_spectre | 0.4677 |
+| rel_diff_q_read_c_ngspice_vs_spectre | 0.377 |
+
+## mini_array
+- Wide: `mini_array_metrics_wide.csv`
+- Rel diff: `mini_array_metrics_rel_diff.csv`
+
+| metric | max \|rel diff\| |
+| --- | --- |
+| rel_diff_t_bl_settle_s_ngspice_vs_spectre | 0.305 |
+| rel_diff_i_bl_leak_a_ngspice_vs_spectre | 0.1561 |
+
+## Known / flagged outliers
+
+Rows with |rel diff| ≥ 0.35 or documented known patterns @ **tt**.
+See [docs/simulator_cross_check.md](../docs/simulator_cross_check.md) for full context.
+
+| suite | model | metric | backend | rel diff | known | note |
+| --- | --- | --- | --- | --- | --- | --- |
+| cell | VCT_110 | i_hold_a | ngspice | -0.4677 | auto | Exceeds automatic rel-diff threshold |
+| cell | VCT_110 | q_read_c | ngspice | 0.377 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_110 | cgd_f | ngspice | 0.8851 | yes | Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than... |
+| device | VCT_110 | cgg_f | ngspice | -0.9924 | yes | Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than... |
+| device | VCT_110 | igidl_a | ngspice | -0.9693 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_110 | ioff_a | ngspice | -0.9693 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_110 | ioff_density_a_m2 | ngspice | -0.9693 | auto | Exceeds automatic rel-diff threshold |
+| device | VCT_110 | ion_a | ngspice | 0.7834 | yes | ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only. |
+| device | VCT_110 | ion_per_cgg | ngspice | 233.8 | yes | Capacitance from transient qg/qd integration on OSDI VA model; stripped HSPICE-only cap flags — often much lower than... |
+| device | VCT_110 | ron_boost_ohm | ngspice | -0.44 | yes | ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only. |
+| device | VCT_110 | ron_ohm | ngspice | -0.4393 | yes | ngspice OSDI often reports higher Ion than Spectre; Ron follows V/I and is lower. Directional use only. |
+| device | VCT_110 | ron_x_cload | ngspice | -0.4393 | auto | Exceeds automatic rel-diff threshold |
+| mini_array | VCT_110 | t_bl_settle_s | ngspice | -0.305 | yes | Transient timestep and OSDI trajectory vs Spectre (~35–40% @ tt). |

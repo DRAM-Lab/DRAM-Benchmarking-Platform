@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 from dram_benchmark.paths import PROJECT_ROOT, resolve_engine_root, resolve_model_root
+from dram_benchmark.project_root import resolve_project_root
 from dram_benchmark.suites import (
     BENCHMARK_SUITES,
     SUITE_CHOICES,
@@ -27,7 +28,9 @@ def _bench_env(
     sense_amp_results: Path | None = None,
 ) -> dict[str, str]:
     env = os.environ.copy()
-    env["OPEN_DRAM_MODEL_ROOT"] = str(resolve_model_root())
+    if "OPEN_DRAM_MODEL_ROOT" not in env:
+        env["OPEN_DRAM_MODEL_ROOT"] = str(resolve_model_root())
+    env.setdefault("OPEN_DRAM_PROJECT_ROOT", str(resolve_project_root()))
     env.setdefault("OPEN_DRAM_CORNER_SOURCE", "local")
     registry = PROJECT_ROOT / "bench" / "registry" / "corner_registry.yaml"
     if registry.is_file():
